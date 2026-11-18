@@ -1,0 +1,43 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Architecture" id="architecture-diagram">
+    <mxGraphModel dx="1267" dy="824" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="presentation" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Presentation&lt;/b&gt;&lt;br&gt;lib/features/*/*_screen.dart&lt;br&gt;lib/routing/ (go_router)" vertex="1">
+          <mxGeometry height="80" width="350" x="380" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cubits" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Application State&lt;/b&gt;&lt;br&gt;lib/features/*/cubit/ &amp;#8212; one Cubit per use case (21 total)&lt;br&gt;Equatable states, consumed via BlocBuilder/BlocListener" vertex="1">
+          <mxGeometry height="80" width="350" x="380" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="domain" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=8;" value="&lt;b&gt;Core Domain&lt;/b&gt; (framework-free Dart)&lt;br&gt;lib/core/, lib/models/&lt;br&gt;EloCalculator&lt;br&gt;ScoringStrategy + Factory&lt;br&gt;BracketEngine&lt;br&gt;AchievementEvaluator&lt;br&gt;10 immutable model classes" vertex="1">
+          <mxGeometry height="120" width="210" x="100" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="repositories" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Repositories&lt;/b&gt;&lt;br&gt;lib/repositories/ &amp;#8212; 10 repositories, one per Firestore collection / external API&lt;br&gt;Only layer touching Firestore or the network" vertex="1">
+          <mxGeometry height="90" width="350" x="380" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="external" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="&lt;b&gt;External Services&lt;/b&gt;&lt;br&gt;Cloud Firestore &amp;middot; Firebase Auth &amp;middot; FCM (Android)&lt;br&gt;Open-Meteo &amp;middot; OpenStreetMap tiles &amp;middot; Regolo LLM" vertex="1">
+          <mxGeometry height="80" width="350" x="380" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="presentation" style="endArrow=block;html=1;" target="cubits">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="cubits" style="endArrow=block;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" target="domain">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="cubits" style="endArrow=block;html=1;" target="repositories">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="repositories" style="endArrow=block;html=1;" target="external">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="repositories" style="endArrow=block;html=1;dashed=1;exitX=0;exitY=0.5;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" target="domain" value="uses">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontStyle=2;fontColor=#666666;" value="Dependencies point strictly downward: no lower layer imports an upper one." vertex="1">
+          <mxGeometry height="30" width="480" x="300" y="560" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,1984 @@
+{
+  "@@locale": "en",
+  "appTitle": "CampusArena",
+  "@appTitle": {
+    "description": "The application title shown in the app bar and OS task switcher"
+  },
+  "playButtonLabel": "Play",
+  "@playButtonLabel": {
+    "description": "Label for the primary check-in play button"
+  },
+  "sportPingPong": "Ping Pong",
+  "@sportPingPong": {
+    "description": "Display name for the ping pong sport"
+  },
+  "sportFoosball": "Foosball",
+  "@sportFoosball": {
+    "description": "Display name for the foosball sport"
+  },
+  "eloLabel": "ELO",
+  "@eloLabel": {
+    "description": "Caption under a rating's ELO figure on the dashboard card"
+  },
+  "rankPlaceholder": "—",
+  "@rankPlaceholder": {
+    "description": "Shown in place of a rank while it is still being computed"
+  },
+  "matchesPlayedCount": "{count, plural, =0{No matches yet} one{1 match played} other{{count} matches played}}",
+  "@matchesPlayedCount": {
+    "description": "Number of matches played for a sport on the dashboard card",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "recentMatchesTitle": "Recent Matches",
+  "@recentMatchesTitle": {
+    "description": "Section header above the recent match history list"
+  },
+  "noRecentMatches": "No matches yet — scan a facility QR code to play your first ranked match.",
+  "@noRecentMatches": {
+    "description": "Empty state for the recent match history list"
+  },
+  "vsOpponents": "vs {opponents}",
+  "@vsOpponents": {
+    "description": "Match history row title naming the opponent(s)",
+    "placeholders": {
+      "opponents": {
+        "type": "String",
+        "example": "Alice"
+      }
+    }
+  },
+  "matchWon": "Won",
+  "@matchWon": {
+    "description": "Result label on a confirmed match the user won"
+  },
+  "matchLost": "Lost",
+  "@matchLost": {
+    "description": "Result label on a confirmed match the user lost"
+  },
+  "matchStateDisputed": "Disputed",
+  "@matchStateDisputed": {
+    "description": "Status label on a disputed match history row"
+  },
+  "matchStateUnconfirmed": "Unconfirmed",
+  "@matchStateUnconfirmed": {
+    "description": "Status label on an unconfirmed match history row"
+  },
+  "matchStateAbandoned": "Abandoned",
+  "@matchStateAbandoned": {
+    "description": "Status label on an abandoned match history row"
+  },
+  "dashboardLoadError": "Couldn't load your dashboard.",
+  "@dashboardLoadError": {
+    "description": "Error message shown when the dashboard fails to load"
+  },
+  "retryButtonLabel": "Retry",
+  "@retryButtonLabel": {
+    "description": "Button to retry a failed load"
+  },
+  "eloRatingLabel": "ELO Rating",
+  "@eloRatingLabel": {
+    "description": "Uppercased label above the big ELO figure on the dashboard hero card"
+  },
+  "assistantCardTitle": "Arena Assistant",
+  "@assistantCardTitle": {
+    "description": "Title of the Arena Assistant entry card on the dashboard"
+  },
+  "assistantCardSubtitle": "Ask about free tables, queues & ELO",
+  "@assistantCardSubtitle": {
+    "description": "Subtitle of the Arena Assistant entry card on the dashboard"
+  },
+  "chatbotTitle": "Arena Assistant",
+  "@chatbotTitle": {
+    "description": "App bar title for the Arena Assistant chat screen"
+  },
+  "chatbotComingSoon": "The Arena Assistant is coming soon.",
+  "@chatbotComingSoon": {
+    "description": "Placeholder body shown on the stubbed Arena Assistant screen"
+  },
+  "homeTab": "Home",
+  "@homeTab": {
+    "description": "Label for the home tab"
+  },
+  "mapTab": "Map",
+  "@mapTab": {
+    "description": "Label for the map tab"
+  },
+  "leaderboardsTab": "Leaderboards",
+  "@leaderboardsTab": {
+    "description": "Label for the leaderboards tab"
+  },
+  "profileTab": "Profile",
+  "@profileTab": {
+    "description": "Label for the profile tab"
+  },
+  "landingTagline": "Track your ELO, climb the campus ranks, and rule ping pong & foosball at PoliMi.",
+  "@landingTagline": {
+    "description": "Tagline shown on the landing screen"
+  },
+  "splashTagline": "Own the table.",
+  "@splashTagline": {
+    "description": "Tagline shown on the splash screen"
+  },
+  "logIn": "Log In",
+  "@logIn": {
+    "description": "Label for the log-in action / screen title"
+  },
+  "register": "Register",
+  "@register": {
+    "description": "Label for the register action / screen title"
+  },
+  "signIn": "Sign In",
+  "@signIn": {
+    "description": "Primary submit button on the login screen"
+  },
+  "createAccount": "Create Account",
+  "@createAccount": {
+    "description": "Primary submit button on the registration screen"
+  },
+  "completeProfileTitle": "Complete your profile",
+  "@completeProfileTitle": {
+    "description": "App-bar title of the registration screen when it is recreating a missing profile for an already-signed-in account"
+  },
+  "completeProfileMessage": "Your account doesn't have a profile yet. Pick a name and username to finish setting up.",
+  "@completeProfileMessage": {
+    "description": "Explanation shown when an authenticated account has no profile document and must recreate it"
+  },
+  "completeProfileButton": "Finish setup",
+  "@completeProfileButton": {
+    "description": "Submit button that recreates the missing profile for an already-signed-in account"
+  },
+  "emailLabel": "Email",
+  "@emailLabel": {
+    "description": "Label for the email input field"
+  },
+  "passwordLabel": "Password",
+  "@passwordLabel": {
+    "description": "Label for the password input field"
+  },
+  "togglePasswordVisibility": "Toggle password visibility",
+  "@togglePasswordVisibility": {
+    "description": "Icon button tooltip that shows/hides the password field's text"
+  },
+  "nameLabel": "Full Name",
+  "@nameLabel": {
+    "description": "Label for the full-name input field"
+  },
+  "usernameLabel": "Username",
+  "@usernameLabel": {
+    "description": "Label for the username input field"
+  },
+  "degreeProgramLabel": "Degree Program",
+  "@degreeProgramLabel": {
+    "description": "Label for the degree-program dropdown"
+  },
+  "degreeProgramHint": "Select your degree program",
+  "@degreeProgramHint": {
+    "description": "Hint shown in the degree-program dropdown before selection"
+  },
+  "forgotPasswordLink": "Forgot password?",
+  "@forgotPasswordLink": {
+    "description": "Link from the login screen to the password-reset screen"
+  },
+  "forgotPasswordTitle": "Reset Password",
+  "@forgotPasswordTitle": {
+    "description": "Title of the forgot-password screen"
+  },
+  "forgotPasswordInstructions": "Enter your email and we'll send you a link to reset your password.",
+  "@forgotPasswordInstructions": {
+    "description": "Instructional copy on the forgot-password screen"
+  },
+  "sendResetLink": "Send Reset Link",
+  "@sendResetLink": {
+    "description": "Submit button on the forgot-password screen"
+  },
+  "passwordResetSent": "If that email is registered, a reset link has been sent.",
+  "@passwordResetSent": {
+    "description": "Confirmation shown after requesting a password reset"
+  },
+  "noAccountPromptPrefix": "Don't have an account?",
+  "@noAccountPromptPrefix": {
+    "description": "Plain-text portion of the login screen's link to registration, immediately followed by the register action word"
+  },
+  "haveAccountPromptPrefix": "Already have an account?",
+  "@haveAccountPromptPrefix": {
+    "description": "Plain-text portion of the registration screen's link to login, immediately followed by the log-in action word"
+  },
+  "fieldRequired": "This field is required",
+  "@fieldRequired": {
+    "description": "Validation message for an empty required field"
+  },
+  "invalidEmail": "Enter a valid email address",
+  "@invalidEmail": {
+    "description": "Validation message for a malformed email"
+  },
+  "invalidUsername": "3–20 lowercase letters, numbers or underscores",
+  "@invalidUsername": {
+    "description": "Validation message for a username with an invalid length or characters"
+  },
+  "passwordTooShort": "Password must be at least 6 characters",
+  "@passwordTooShort": {
+    "description": "Validation message for a too-short password"
+  },
+  "authErrorGeneric": "Something went wrong. Please try again.",
+  "@authErrorGeneric": {
+    "description": "Fallback auth error message"
+  },
+  "authErrorInvalidCredentials": "Incorrect email or password.",
+  "@authErrorInvalidCredentials": {
+    "description": "Auth error for wrong credentials"
+  },
+  "authErrorEmailInUse": "An account with this email already exists.",
+  "@authErrorEmailInUse": {
+    "description": "Auth error when registering an email already in use"
+  },
+  "authErrorInvalidEmail": "That email address is invalid.",
+  "@authErrorInvalidEmail": {
+    "description": "Auth error for a malformed email rejected by Firebase"
+  },
+  "authErrorWeakPassword": "Please choose a stronger password.",
+  "@authErrorWeakPassword": {
+    "description": "Auth error for a weak password"
+  },
+  "authErrorNetwork": "Network error. Check your connection.",
+  "@authErrorNetwork": {
+    "description": "Auth error for a failed network request"
+  },
+  "authErrorUsernameTaken": "That username is already taken.",
+  "@authErrorUsernameTaken": {
+    "description": "Registration error when the chosen username is already claimed by another account"
+  },
+  "tutorialSkip": "Skip",
+  "@tutorialSkip": {
+    "description": "Button to skip the walkthrough"
+  },
+  "tutorialNext": "Next",
+  "@tutorialNext": {
+    "description": "Button to advance to the next tutorial slide"
+  },
+  "tutorialDone": "Get Started",
+  "@tutorialDone": {
+    "description": "Button on the last tutorial slide that finishes onboarding"
+  },
+  "tutorialSlide1Title": "Play Ranked Matches",
+  "@tutorialSlide1Title": {
+    "description": "Title of the first tutorial slide"
+  },
+  "tutorialSlide1Body": "Scan a facility's QR code to check in and record your match.",
+  "@tutorialSlide1Body": {
+    "description": "Body of the first tutorial slide"
+  },
+  "tutorialSlide2Title": "Climb the Leaderboards",
+  "@tutorialSlide2Title": {
+    "description": "Title of the second tutorial slide"
+  },
+  "tutorialSlide2Body": "Every win updates your ELO. Compete across sports and degree programs.",
+  "@tutorialSlide2Body": {
+    "description": "Body of the second tutorial slide"
+  },
+  "tutorialSlide3Title": "Join the Queue",
+  "@tutorialSlide3Title": {
+    "description": "Title of the third tutorial slide"
+  },
+  "tutorialSlide3Body": "See live facility status on the map and reserve your spot in line.",
+  "@tutorialSlide3Body": {
+    "description": "Body of the third tutorial slide"
+  },
+  "degAerospace": "Aerospace Engineering",
+  "degArchitecture": "Architecture",
+  "degBiomedical": "Biomedical Engineering",
+  "degChemical": "Chemical Engineering",
+  "degCivil": "Civil Engineering",
+  "degComputer": "Computer Science and Engineering",
+  "degDesign": "Design",
+  "degElectrical": "Electrical Engineering",
+  "degElectronic": "Electronic Engineering",
+  "degEnergy": "Energy Engineering",
+  "degManagement": "Management Engineering",
+  "degMathematical": "Mathematical Engineering",
+  "degMechanical": "Mechanical Engineering",
+  "degTelecom": "Telecommunication Engineering",
+  "degUrban": "Urban Planning",
+  "weatherLabel": "Weather",
+  "@weatherLabel": {
+    "description": "Label on the current-conditions snippet of an outdoor facility detail card"
+  },
+  "weatherTemperature": "{value}°",
+  "@weatherTemperature": {
+    "description": "Temperature in degrees Celsius, pre-formatted for the locale",
+    "placeholders": {
+      "value": {
+        "type": "String",
+        "example": "19"
+      }
+    }
+  },
+  "weatherPrecipitation": "{value} mm",
+  "@weatherPrecipitation": {
+    "description": "Precipitation in millimetres, pre-formatted for the locale",
+    "placeholders": {
+      "value": {
+        "type": "String",
+        "example": "0"
+      }
+    }
+  },
+  "weatherWind": "{value} km/h",
+  "@weatherWind": {
+    "description": "Wind speed in km/h, pre-formatted for the locale",
+    "placeholders": {
+      "value": {
+        "type": "String",
+        "example": "8"
+      }
+    }
+  },
+  "weatherUnavailable": "Weather unavailable",
+  "@weatherUnavailable": {
+    "description": "Error state of the weather snippet / forecast strip when the fetch fails"
+  },
+  "weatherRetry": "Retry",
+  "@weatherRetry": {
+    "description": "Action on the weather error state that retries the fetch"
+  },
+  "forecastLabel": "Forecast",
+  "@forecastLabel": {
+    "description": "Header of the hourly forecast strip on outdoor tournament views"
+  },
+  "queueJoin": "Join Queue",
+  "@queueJoin": {
+    "description": "Primary button on the facility detail card that adds the user to the queue"
+  },
+  "queueLeave": "Leave queue",
+  "@queueLeave": {
+    "description": "Button that removes the user from the queue they are currently in"
+  },
+  "queueRetry": "Retry",
+  "@queueRetry": {
+    "description": "Action shown after a failed join/leave that retries the queue write"
+  },
+  "queuePositionCounter": "You're #{position} of {total}",
+  "@queuePositionCounter": {
+    "description": "Live counter of the user's queue position and total queue length",
+    "placeholders": {
+      "position": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "queueYoureNext": "You're next",
+  "@queueYoureNext": {
+    "description": "Badge on the position counter when the user holds the front of the queue"
+  },
+  "queueError": "Couldn't update the queue. Check your connection.",
+  "@queueError": {
+    "description": "Inline error shown when a join or leave write fails"
+  },
+  "queueTableReadyTitle": "Your table is ready",
+  "@queueTableReadyTitle": {
+    "description": "Title of the in-app banner shown to the front-of-queue player when the table frees"
+  },
+  "queueTableReadyBody": "You're first in line — head to the table now.",
+  "@queueTableReadyBody": {
+    "description": "Body of the table-ready banner"
+  },
+  "queueTableReadyDismiss": "Dismiss",
+  "@queueTableReadyDismiss": {
+    "description": "Tooltip on the button that dismisses the table-ready banner"
+  },
+  "availabilityDisclaimerShort": "Based on app activity only — the table may be in use by non-app players. Not a reservation.",
+  "@availabilityDisclaimerShort": {
+    "description": "Mandatory short availability disclaimer (project_description.md §3.10) shown in card footers wherever facility availability is surfaced"
+  },
+  "availabilityDisclaimerFull": "Availability shows CampusArena activity only. A table marked as empty may still be in use by people who aren't playing through the app. CampusArena is not a booking service — spots can't be reserved.",
+  "@availabilityDisclaimerFull": {
+    "description": "Mandatory full availability disclaimer (project_description.md §3.10) shown in banners and info panels"
+  },
+  "queuePriorityTitle": "Someone is ahead of you",
+  "@queuePriorityTitle": {
+    "description": "Title of the soft priority-warning dialog shown when a non-front user tries to claim a table"
+  },
+  "queuePriorityBody": "You're #{position} in the queue and #{frontPosition} is next in line. Please let them play first.",
+  "@queuePriorityBody": {
+    "description": "Body of the priority-warning dialog comparing the user's ticket to the front of the queue",
+    "placeholders": {
+      "position": {
+        "type": "int",
+        "example": "3"
+      },
+      "frontPosition": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "queuePriorityProceed": "Claim anyway",
+  "@queuePriorityProceed": {
+    "description": "Action on the priority-warning dialog that proceeds despite not being first"
+  },
+  "queuePriorityCancel": "Wait my turn",
+  "@queuePriorityCancel": {
+    "description": "Action on the priority-warning dialog that backs out of claiming the table"
+  },
+  "chatbotIntroDisclaimer": "Availability shows CampusArena activity only. A table marked as empty may still be in use by people who aren't playing through the app. CampusArena is not a booking service — spots can't be reserved.",
+  "@chatbotIntroDisclaimer": {
+    "description": "Chatbot first-open banner; carries the full availability disclaimer copy (project_description.md §3.10)"
+  },
+  "mapAttribution": "© OpenStreetMap contributors",
+  "@mapAttribution": {
+    "description": "OpenStreetMap tile attribution shown on the facility map"
+  },
+  "mapViewList": "List",
+  "@mapViewList": {
+    "description": "Label for the List segment of the map/list view toggle (the Map segment reuses mapTab)"
+  },
+  "facilityListSortedByProximity": "Sorted by proximity",
+  "@facilityListSortedByProximity": {
+    "description": "Header above the facility list when it is ordered by distance from the user"
+  },
+  "distanceMeters": "{meters} m",
+  "@distanceMeters": {
+    "description": "Distance in metres shown on a facility list row (under 1 km)",
+    "placeholders": {
+      "meters": {
+        "type": "int"
+      }
+    }
+  },
+  "distanceKilometers": "{kilometers} km",
+  "@distanceKilometers": {
+    "description": "Distance in kilometres shown on a facility list row (1 km or more)",
+    "placeholders": {
+      "kilometers": {
+        "type": "double",
+        "format": "decimalPatternDigits",
+        "optionalParameters": {
+          "decimalDigits": 1
+        }
+      }
+    }
+  },
+  "facilityStatusFree": "Free",
+  "@facilityStatusFree": {
+    "description": "Facility status label / map legend entry for a free facility"
+  },
+  "facilityStatusOccupied": "Occupied",
+  "@facilityStatusOccupied": {
+    "description": "Facility status label / map legend entry for an occupied facility"
+  },
+  "facilityStatusQueued": "Queued",
+  "@facilityStatusQueued": {
+    "description": "Facility status label / map legend entry for a facility with a queue"
+  },
+  "facilityOutdoorLabel": "Outdoor",
+  "@facilityOutdoorLabel": {
+    "description": "Tag next to the status chip marking an outdoor facility"
+  },
+  "facilityPlayersLabel": "Players",
+  "@facilityPlayersLabel": {
+    "description": "Caption of the current-players tile on the facility detail card"
+  },
+  "facilityMatchDurationLabel": "Match duration",
+  "@facilityMatchDurationLabel": {
+    "description": "Caption of the match-duration tile on the facility detail card"
+  },
+  "facilityDurationMinutes": "{minutes} min",
+  "@facilityDurationMinutes": {
+    "description": "Elapsed match duration in minutes on the facility detail card",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "facilityValuePlaceholder": "—",
+  "@facilityValuePlaceholder": {
+    "description": "Shown on a facility detail tile when there is no active match to read the value from"
+  },
+  "facilityKingOfTable": "King of the Table",
+  "@facilityKingOfTable": {
+    "description": "Caption of the reigning-champion row on the facility detail card"
+  },
+  "facilityKingWins": "{count, plural, one{1 win} other{{count} wins}}",
+  "@facilityKingWins": {
+    "description": "Consecutive win count of the facility's King of the Table",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "24"
+      }
+    }
+  },
+  "facilityNoKing": "No King of the Table yet",
+  "@facilityNoKing": {
+    "description": "Empty state of the King of the Table row when nobody holds the title"
+  },
+  "facilityLoadError": "Couldn't load facilities.",
+  "@facilityLoadError": {
+    "description": "Error state shown on the map when the facility stream fails"
+  },
+  "facilityListEmpty": "No facilities on campus yet.",
+  "@facilityListEmpty": {
+    "description": "Empty state when the facility list has no entries"
+  },
+  "mapRecenterTooltip": "Center on my location",
+  "@mapRecenterTooltip": {
+    "description": "Tooltip of the map button that recenters on the user's position"
+  },
+  "locationUnavailable": "Location unavailable.",
+  "@locationUnavailable": {
+    "description": "Snackbar shown when recentering fails (permission denied or location services off)"
+  },
+  "qrScanTitle": "Scan table QR",
+  "@qrScanTitle": {
+    "description": "Title under the QR viewfinder on the scan screen"
+  },
+  "qrScanHint": "Point your camera at the QR code on the table",
+  "@qrScanHint": {
+    "description": "Subtitle under the QR viewfinder guiding the user to aim the camera"
+  },
+  "qrEnterManually": "Enter code manually",
+  "@qrEnterManually": {
+    "description": "Button that opens the manual fallback-code entry when the camera can't read the sticker"
+  },
+  "qrManualEntryTitle": "Enter table code",
+  "@qrManualEntryTitle": {
+    "description": "Title of the manual fallback-code entry sheet"
+  },
+  "qrManualEntryLabel": "Table code",
+  "@qrManualEntryLabel": {
+    "description": "Text-field label for the printed alphanumeric fallback code"
+  },
+  "qrManualEntrySubmit": "Check in",
+  "@qrManualEntrySubmit": {
+    "description": "Submit button on the manual fallback-code entry sheet"
+  },
+  "qrGpsWarning": "You seem far from this table — check-in still allowed",
+  "@qrGpsWarning": {
+    "description": "Soft, non-blocking GPS warning shown when the user is beyond the distance threshold from the facility"
+  },
+  "qrCheckInButton": "Check in to {facility}",
+  "@qrCheckInButton": {
+    "description": "Confirm-check-in button shown when the facility is already known (deep link)",
+    "placeholders": {
+      "facility": {
+        "type": "String",
+        "example": "Table 3 — BL27"
+      }
+    }
+  },
+  "matchSetupTitle": "Set up match",
+  "@matchSetupTitle": {
+    "description": "App-bar title of the match-setup screen where the creator picks singles/doubles and their side before checking in"
+  },
+  "matchSetupSubtitle": "Choose the match type, then check in at {facility}.",
+  "@matchSetupSubtitle": {
+    "description": "Guidance under the setup heading, naming the resolved facility",
+    "placeholders": {
+      "facility": {
+        "type": "String",
+        "example": "Table 3 — BL27"
+      }
+    }
+  },
+  "matchModeLabel": "Match type",
+  "@matchModeLabel": {
+    "description": "Label above the singles/doubles selector on the check-in screen"
+  },
+  "matchModeSingles": "Singles",
+  "@matchModeSingles": {
+    "description": "Singles (1v1) option in the match-type selector"
+  },
+  "matchModeDoubles": "Doubles",
+  "@matchModeDoubles": {
+    "description": "Doubles (2v2) option in the match-type selector"
+  },
+  "matchTeamLabel": "Your team",
+  "@matchTeamLabel": {
+    "description": "Label above the Team 1 / Team 2 side selector when creating or joining a doubles match"
+  },
+  "matchTeam1": "Team 1",
+  "@matchTeam1": {
+    "description": "First side of a doubles match"
+  },
+  "matchTeam2": "Team 2",
+  "@matchTeam2": {
+    "description": "Second side of a doubles match"
+  },
+  "matchPickSideTitle": "Pick your side",
+  "@matchPickSideTitle": {
+    "description": "Prompt shown to a doubles joiner who must choose a team before joining"
+  },
+  "matchPickSideBody": "Choose a team to join this doubles match.",
+  "@matchPickSideBody": {
+    "description": "Guidance under the pick-your-side prompt for a doubles joiner"
+  },
+  "matchSideFull": "Full",
+  "@matchSideFull": {
+    "description": "Badge on a doubles side that already has two players"
+  },
+  "matchWaitingPlayersBody": "Ask the others to scan this table's QR and pick a side.",
+  "@matchWaitingPlayersBody": {
+    "description": "Guidance shown while a doubles roster is still filling"
+  },
+  "qrInvalidCode": "That code doesn't match any table. Check it and try again.",
+  "@qrInvalidCode": {
+    "description": "Error shown when a scanned or typed code resolves to no facility"
+  },
+  "qrCheckInError": "Couldn't start the match. Check your connection and try again.",
+  "@qrCheckInError": {
+    "description": "Error shown when creating the match fails (e.g. offline, since ranked writes require connectivity)"
+  },
+  "qrTableBusy": "This table already has a match in progress. Wait for it to finish.",
+  "@qrTableBusy": {
+    "description": "Error shown when scanning a table whose live match is full or already awaiting confirmation, so there is no slot to join"
+  },
+  "qrSportMismatch": "This table isn't for {sport}. Scan a {sport} table to play your challenge.",
+  "@qrSportMismatch": {
+    "description": "Error shown when scanning a table whose sport differs from the accepted challenge's sport",
+    "placeholders": {
+      "sport": {
+        "type": "String",
+        "example": "Ping Pong"
+      }
+    }
+  },
+  "leaveMatchTitle": "Leave match?",
+  "@leaveMatchTitle": {
+    "description": "Title of the confirmation dialog shown when backing out of a live match"
+  },
+  "leaveMatchMessage": "Leaving now abandons this match for both players and frees the table.",
+  "@leaveMatchMessage": {
+    "description": "Body of the confirmation dialog shown when backing out of a live match"
+  },
+  "leaveMatchConfirm": "Leave",
+  "@leaveMatchConfirm": {
+    "description": "Confirm button that abandons the match and leaves the screen"
+  },
+  "leaveMatchCancel": "Stay",
+  "@leaveMatchCancel": {
+    "description": "Cancel button that dismisses the leave-match dialog and stays in the match"
+  },
+  "matchLiveBadge": "Live",
+  "@matchLiveBadge": {
+    "description": "Pulsing badge on the active-match screen indicating the session is in progress"
+  },
+  "matchVs": "VS",
+  "@matchVs": {
+    "description": "Separator between the two player cards on the active-match screen"
+  },
+  "matchRecordResult": "Record result",
+  "@matchRecordResult": {
+    "description": "Primary button on the active-match screen that opens the result-entry flow"
+  },
+  "matchEloValue": "{elo} ELO",
+  "@matchEloValue": {
+    "description": "A player's ELO under their name on the active-match screen",
+    "placeholders": {
+      "elo": {
+        "type": "int",
+        "example": "1482"
+      }
+    }
+  },
+  "matchWaitingOpponentTitle": "Waiting for opponent",
+  "@matchWaitingOpponentTitle": {
+    "description": "Placeholder shown in the opponent slot before a second player has checked in"
+  },
+  "matchWaitingOpponentBody": "Ask your opponent to scan this table's QR to join.",
+  "@matchWaitingOpponentBody": {
+    "description": "Guidance shown while waiting for the opponent to check in"
+  },
+  "matchResultSubmittedStatus": "Result submitted — waiting for confirmation",
+  "@matchResultSubmittedStatus": {
+    "description": "Status line shown on the active-match screen once a result was submitted and awaits opponent confirmation"
+  },
+  "matchConfirmedStatus": "Result confirmed",
+  "@matchConfirmedStatus": {
+    "description": "Status shown when the streamed match reaches the confirmed state"
+  },
+  "matchDisputedStatus": "Result disputed",
+  "@matchDisputedStatus": {
+    "description": "Status shown when the streamed match reaches the disputed state"
+  },
+  "matchEndedStatus": "Match ended",
+  "@matchEndedStatus": {
+    "description": "Status shown when the streamed match ends without a confirmed result (unconfirmed/abandoned)"
+  },
+  "matchLoadError": "Couldn't load the match.",
+  "@matchLoadError": {
+    "description": "Error state shown when the active match can't be loaded"
+  },
+  "matchClose": "Close",
+  "@matchClose": {
+    "description": "Button that leaves a terminal-state match screen"
+  },
+  "matchReviewResult": "Review result",
+  "@matchReviewResult": {
+    "description": "Active-match CTA when the opponent submitted a result the user must review"
+  },
+  "matchViewStatus": "View status",
+  "@matchViewStatus": {
+    "description": "Active-match CTA when the user submitted a result and is awaiting the opponent"
+  },
+  "matchViewSummary": "View summary",
+  "@matchViewSummary": {
+    "description": "Active-match CTA when the match is confirmed, opening the result summary"
+  },
+  "resultEnterScoreTitle": "Enter score",
+  "@resultEnterScoreTitle": {
+    "description": "Title of the score-entry screen"
+  },
+  "resultSideYou": "You",
+  "@resultSideYou": {
+    "description": "Label under the current user's avatar on the score-entry and review screens"
+  },
+  "resultSideOpponent": "Opponent",
+  "@resultSideOpponent": {
+    "description": "Label under the opponent's avatar on the score-entry screen"
+  },
+  "resultSideOpponents": "Opponents",
+  "@resultSideOpponents": {
+    "description": "Label under the opposing pair on the doubles review screen"
+  },
+  "resultSetLabel": "Set {number}",
+  "@resultSetLabel": {
+    "description": "Per-set row caption in the ping pong score entry",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "resultAddSet": "Add set",
+  "@resultAddSet": {
+    "description": "Button that appends another set row in the ping pong score entry"
+  },
+  "resultGoalsLabel": "Goals",
+  "@resultGoalsLabel": {
+    "description": "Centre caption between the two goal steppers in the foosball score entry"
+  },
+  "resultSubmit": "Submit result",
+  "@resultSubmit": {
+    "description": "Button that submits the entered score for opponent confirmation"
+  },
+  "resultInvalidHint": "Enter a completed score to submit.",
+  "@resultInvalidHint": {
+    "description": "Helper shown under the disabled submit button while the score is incomplete or invalid"
+  },
+  "resultConfirmTitle": "Confirm result",
+  "@resultConfirmTitle": {
+    "description": "Title of the opponent confirmation / review screen"
+  },
+  "resultSubmittedBy": "Submitted by {name}",
+  "@resultSubmittedBy": {
+    "description": "Banner naming the player who entered the result",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "resultSetsLabel": "Sets",
+  "@resultSetsLabel": {
+    "description": "Caption between the two set-count totals on the review score card"
+  },
+  "resultWaitingConfirm": "Waiting for opponent to confirm…",
+  "@resultWaitingConfirm": {
+    "description": "Footer shown to the submitter while the opponent has not yet confirmed"
+  },
+  "resultDispute": "Dispute",
+  "@resultDispute": {
+    "description": "Button the opponent taps to dispute the submitted result"
+  },
+  "resultConfirm": "Confirm",
+  "@resultConfirm": {
+    "description": "Button the opponent taps to confirm the submitted result"
+  },
+  "resultDisputeDialogTitle": "Dispute this result?",
+  "@resultDisputeDialogTitle": {
+    "description": "Title of the dispute confirmation dialog"
+  },
+  "resultDisputeDialogBody": "The match will be marked disputed with no rating change. This can't be undone.",
+  "@resultDisputeDialogBody": {
+    "description": "Body of the dispute confirmation dialog"
+  },
+  "resultDisputeDialogCancel": "Cancel",
+  "@resultDisputeDialogCancel": {
+    "description": "Cancel action in the dispute confirmation dialog"
+  },
+  "resultVictoryTitle": "Victory!",
+  "@resultVictoryTitle": {
+    "description": "Summary header shown when the current user's side won"
+  },
+  "resultDefeatTitle": "Defeat",
+  "@resultDefeatTitle": {
+    "description": "Summary header shown when the current user's side lost"
+  },
+  "resultNewRank": "New campus rank",
+  "@resultNewRank": {
+    "description": "Label above the updated campus rank on the summary screen"
+  },
+  "resultRankValue": "#{rank}",
+  "@resultRankValue": {
+    "description": "The campus rank number, prefixed with a hash",
+    "placeholders": {
+      "rank": {
+        "type": "int"
+      }
+    }
+  },
+  "resultDone": "Done",
+  "@resultDone": {
+    "description": "Button that leaves the summary screen back to Home"
+  },
+  "resultClosedDisputedTitle": "Result disputed",
+  "@resultClosedDisputedTitle": {
+    "description": "Title of the closed screen when the match was disputed"
+  },
+  "resultClosedDisputedBody": "This result was disputed, so no rating change was applied.",
+  "@resultClosedDisputedBody": {
+    "description": "Body of the closed screen when the match was disputed"
+  },
+  "resultClosedUnconfirmedTitle": "Not confirmed in time",
+  "@resultClosedUnconfirmedTitle": {
+    "description": "Title of the closed screen when the match expired unconfirmed"
+  },
+  "resultClosedUnconfirmedBody": "The opponent never confirmed, so the match expired with no rating change.",
+  "@resultClosedUnconfirmedBody": {
+    "description": "Body of the closed screen when the match expired unconfirmed"
+  },
+  "resultClosedAbandonedTitle": "Match abandoned",
+  "@resultClosedAbandonedTitle": {
+    "description": "Title of the closed screen when the match was abandoned"
+  },
+  "resultClosedAbandonedBody": "This match was abandoned before a result was recorded.",
+  "@resultClosedAbandonedBody": {
+    "description": "Body of the closed screen when the match was abandoned"
+  },
+  "resultErrorTitle": "Something went wrong",
+  "@resultErrorTitle": {
+    "description": "Title of the result-flow error state"
+  },
+  "resultErrorBody": "Check your connection and try again.",
+  "@resultErrorBody": {
+    "description": "Body of the result-flow error state"
+  },
+  "resultRetry": "Retry",
+  "@resultRetry": {
+    "description": "Button that retries the failed result-flow action"
+  },
+  "leaderboardSearchHint": "Search players",
+  "@leaderboardSearchHint": {
+    "description": "Placeholder for the leaderboard player-search field"
+  },
+  "leaderboardScopeGlobal": "Global",
+  "@leaderboardScopeGlobal": {
+    "description": "Leaderboard scope segment for the unfiltered campus-wide board"
+  },
+  "leaderboardScopeFriends": "Friends",
+  "@leaderboardScopeFriends": {
+    "description": "Leaderboard scope segment limiting the board to the user's friends"
+  },
+  "leaderboardScopeMyCourse": "My course",
+  "@leaderboardScopeMyCourse": {
+    "description": "Leaderboard scope segment limiting the board to the user's degree program"
+  },
+  "leaderboardThisIsYou": "This is you!",
+  "@leaderboardThisIsYou": {
+    "description": "Snackbar shown when the user taps their own leaderboard row (own profile drill-in is blocked)"
+  },
+  "leaderboardYourRank": "Your rank",
+  "@leaderboardYourRank": {
+    "description": "Label on the pinned bar showing the current user's own ranking"
+  },
+  "leaderboardYou": "You",
+  "@leaderboardYou": {
+    "description": "Fallback name for the current user on the your-rank bar before their name resolves"
+  },
+  "leaderboardEmpty": "No ranked players yet — play a match to get on the board.",
+  "@leaderboardEmpty": {
+    "description": "Empty state when the leaderboard has no entries for the sport/scope"
+  },
+  "leaderboardNoPlayers": "No players found.",
+  "@leaderboardNoPlayers": {
+    "description": "Empty state when a player search returns no matches"
+  },
+  "leaderboardLoadError": "Couldn't load the leaderboard.",
+  "@leaderboardLoadError": {
+    "description": "Error message shown when the leaderboard fails to load"
+  },
+  "profileSettingsTooltip": "Settings",
+  "@profileSettingsTooltip": {
+    "description": "Tooltip of the settings gear in the profile app bar"
+  },
+  "profileIdentityLine": "@{username} · {degreeProgram}",
+  "@profileIdentityLine": {
+    "description": "Username and degree program line under the display name on the profile header",
+    "placeholders": {
+      "username": {
+        "type": "String",
+        "example": "mrossi"
+      },
+      "degreeProgram": {
+        "type": "String",
+        "example": "Computer Science and Engineering"
+      }
+    }
+  },
+  "profileEloTrendTitle": "ELO trend",
+  "@profileEloTrendTitle": {
+    "description": "Title of the ELO trend chart card on the profile screen"
+  },
+  "profileTrendEmpty": "Confirmed matches will chart your ELO here.",
+  "@profileTrendEmpty": {
+    "description": "Empty state inside the trend card when the sport has fewer than two rated matches"
+  },
+  "profileTrendTooltipPoint": "{elo} · {date}",
+  "@profileTrendTooltipPoint": {
+    "description": "Touch tooltip on a trend chart point: the ELO after that match and its date",
+    "placeholders": {
+      "elo": {
+        "type": "int",
+        "example": "1482"
+      },
+      "date": {
+        "type": "String",
+        "example": "Jun 30"
+      }
+    }
+  },
+  "profileStatGames": "Games",
+  "@profileStatGames": {
+    "description": "Caption of the total-games stat tile"
+  },
+  "profileStatWins": "Wins",
+  "@profileStatWins": {
+    "description": "Caption of the wins stat tile"
+  },
+  "profileStatLosses": "Losses",
+  "@profileStatLosses": {
+    "description": "Caption of the losses stat tile"
+  },
+  "profileStatWinRate": "Win rate",
+  "@profileStatWinRate": {
+    "description": "Caption of the win-rate stat tile"
+  },
+  "profileStatStreak": "Streak",
+  "@profileStatStreak": {
+    "description": "Caption of the current win-streak stat tile"
+  },
+  "profileStatBest": "Best",
+  "@profileStatBest": {
+    "description": "Caption of the all-time best win-streak stat tile"
+  },
+  "profileWinRateValue": "{percent}%",
+  "@profileWinRateValue": {
+    "description": "Win rate figure as a whole percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "67"
+      }
+    }
+  },
+  "profileBlackBeastTitle": "Black Beast",
+  "@profileBlackBeastTitle": {
+    "description": "Title of the fun-stat card naming the opponent who beat the user most"
+  },
+  "profileFavoriteVictimTitle": "Favorite Victim",
+  "@profileFavoriteVictimTitle": {
+    "description": "Title of the fun-stat card naming the opponent the user beat most"
+  },
+  "profileHeadToHeadTally": "{wins}W–{losses}L",
+  "@profileHeadToHeadTally": {
+    "description": "Head-to-head record on a fun-stat card, from the user's perspective",
+    "placeholders": {
+      "wins": {
+        "type": "int",
+        "example": "9"
+      },
+      "losses": {
+        "type": "int",
+        "example": "1"
+      }
+    }
+  },
+  "profileMatchHistoryTitle": "Match history",
+  "@profileMatchHistoryTitle": {
+    "description": "Section header above the full match history list on the profile screen"
+  },
+  "profileHistoryEmpty": "No matches yet — finished matches will appear here.",
+  "@profileHistoryEmpty": {
+    "description": "Empty state of the profile match history list"
+  },
+  "profileLoadError": "Couldn't load this profile.",
+  "@profileLoadError": {
+    "description": "Error message shown when the profile fails to load"
+  },
+  "teamProfileTitle": "Team",
+  "@teamProfileTitle": {
+    "description": "App bar title of the doubles team (pair) profile screen"
+  },
+  "teamProfileLoadError": "Couldn't load this team.",
+  "@teamProfileLoadError": {
+    "description": "Error message shown when the team profile fails to load"
+  },
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": "App bar title of the settings screen"
+  },
+  "settingsAccountSection": "Account",
+  "@settingsAccountSection": {
+    "description": "Section header above the account settings group"
+  },
+  "settingsPreferencesSection": "Preferences",
+  "@settingsPreferencesSection": {
+    "description": "Section header above the preferences settings group"
+  },
+  "settingsChangePassword": "Change password",
+  "@settingsChangePassword": {
+    "description": "Account row that sends a password-reset email"
+  },
+  "settingsPrivacy": "Privacy",
+  "@settingsPrivacy": {
+    "description": "Account row opening the privacy info page"
+  },
+  "settingsNotifications": "Notifications",
+  "@settingsNotifications": {
+    "description": "Preferences row toggling push notifications for this device"
+  },
+  "settingsNotificationsUnavailable": "Not available on this device",
+  "@settingsNotificationsUnavailable": {
+    "description": "Subtitle shown on the disabled notifications row when no FCM token is available"
+  },
+  "settingsLanguage": "Language",
+  "@settingsLanguage": {
+    "description": "Preferences row with the EN/IT language segmented control"
+  },
+  "languageEnglishShort": "EN",
+  "@languageEnglishShort": {
+    "description": "Short English language-code label on the language switcher segment; shown in its own form regardless of active locale"
+  },
+  "languageItalianShort": "IT",
+  "@languageItalianShort": {
+    "description": "Short Italian language-code label on the language switcher segment; shown in its own form regardless of active locale"
+  },
+  "settingsLogout": "Log out",
+  "@settingsLogout": {
+    "description": "Destructive button that signs the user out"
+  },
+  "settingsVersion": "CampusArena · v{version}",
+  "@settingsVersion": {
+    "description": "Version footer line at the bottom of the settings screen",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "1.0.0"
+      }
+    }
+  },
+  "settingsPasswordResetSent": "Password reset email sent to {email}.",
+  "@settingsPasswordResetSent": {
+    "description": "Confirmation snackbar after requesting a password reset from settings",
+    "placeholders": {
+      "email": {
+        "type": "String",
+        "example": "you@polimi.it"
+      }
+    }
+  },
+  "settingsPasswordResetError": "Couldn't send the reset email. Check your connection and try again.",
+  "@settingsPasswordResetError": {
+    "description": "Error snackbar when the password-reset request fails (offline / rate-limited)"
+  },
+  "settingsPrivacyTitle": "Privacy",
+  "@settingsPrivacyTitle": {
+    "description": "App bar title of the privacy info page"
+  },
+  "settingsPrivacyIntro": "Here's what CampusArena stores about you.",
+  "@settingsPrivacyIntro": {
+    "description": "Intro line on the privacy info page"
+  },
+  "settingsPrivacyProfile": "Profile: your name, username, email and degree program.",
+  "@settingsPrivacyProfile": {
+    "description": "Privacy page bullet describing stored profile data"
+  },
+  "settingsPrivacyMatches": "Match results: scores and opponents of the ranked matches you play.",
+  "@settingsPrivacyMatches": {
+    "description": "Privacy page bullet describing stored match data"
+  },
+  "settingsPrivacyRatings": "Ratings: your ELO and campus ranking per sport.",
+  "@settingsPrivacyRatings": {
+    "description": "Privacy page bullet describing stored rating data"
+  },
+  "settingsPrivacyLocation": "Location: a one-off distance check when you check in to a facility — never continuous tracking.",
+  "@settingsPrivacyLocation": {
+    "description": "Privacy page bullet describing the GPS distance audit"
+  },
+  "settingsPrivacySharing": "CampusArena does not share your data with third parties.",
+  "@settingsPrivacySharing": {
+    "description": "Privacy page line stating there is no third-party data sharing"
+  },
+  "friendsTitle": "Friends",
+  "@friendsTitle": {
+    "description": "App bar title of the friends screen"
+  },
+  "friendsAddSectionTitle": "Add a friend",
+  "@friendsAddSectionTitle": {
+    "description": "Heading above the add-friend username field"
+  },
+  "friendsSearchHint": "Search by username",
+  "@friendsSearchHint": {
+    "description": "Hint of the add-friend search field"
+  },
+  "friendsSearchHelper": "Search players by username, then tap Add.",
+  "@friendsSearchHelper": {
+    "description": "Helper text under the add-friend search field"
+  },
+  "friendsAddButton": "Add",
+  "@friendsAddButton": {
+    "description": "Button on a search-result row that adds that player as a friend"
+  },
+  "friendsAddedLabel": "Added",
+  "@friendsAddedLabel": {
+    "description": "Label on a search-result row for a player who is already a friend"
+  },
+  "friendsYouLabel": "You",
+  "@friendsYouLabel": {
+    "description": "Label on the search-result row that is the signed-in user themselves"
+  },
+  "friendsHandle": "@{username}",
+  "@friendsHandle": {
+    "description": "A player's username rendered as an @-handle",
+    "placeholders": {
+      "username": {
+        "type": "String",
+        "example": "alice"
+      }
+    }
+  },
+  "friendsEmptyTitle": "No friends yet",
+  "@friendsEmptyTitle": {
+    "description": "Title of the empty friends list"
+  },
+  "friendsEmptyBody": "Search for a player by username above to start your private leaderboard.",
+  "@friendsEmptyBody": {
+    "description": "Body of the empty friends list"
+  },
+  "friendsLoadError": "Couldn't load your friends.",
+  "@friendsLoadError": {
+    "description": "Error state shown when the friends stream fails"
+  },
+  "friendsRemoveTooltip": "Remove friend",
+  "@friendsRemoveTooltip": {
+    "description": "Tooltip on the remove-friend affordance in a friend row"
+  },
+  "friendsRemoveTitle": "Remove friend?",
+  "@friendsRemoveTitle": {
+    "description": "Title of the remove-friend confirmation dialog"
+  },
+  "friendsRemoveMessage": "Remove {name} from your friends?",
+  "@friendsRemoveMessage": {
+    "description": "Body of the remove-friend confirmation dialog",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Alice"
+      }
+    }
+  },
+  "friendsRemoveConfirm": "Remove",
+  "@friendsRemoveConfirm": {
+    "description": "Confirm action of the remove-friend dialog"
+  },
+  "friendsRemoveCancel": "Cancel",
+  "@friendsRemoveCancel": {
+    "description": "Cancel action of the remove-friend dialog"
+  },
+  "friendsAddedSnack": "{username} added to your friends.",
+  "@friendsAddedSnack": {
+    "description": "Confirmation snackbar after adding a friend",
+    "placeholders": {
+      "username": {
+        "type": "String",
+        "example": "alice"
+      }
+    }
+  },
+  "friendsSearchEmpty": "No players match “{query}”.",
+  "@friendsSearchEmpty": {
+    "description": "Empty state when the add-friend search returns no players",
+    "placeholders": {
+      "query": {
+        "type": "String",
+        "example": "alice"
+      }
+    }
+  },
+  "friendsSearchFailed": "Couldn't search right now. Try again.",
+  "@friendsSearchFailed": {
+    "description": "Shown when the add-friend search query itself fails (offline / permission)"
+  },
+  "friendsAddFailedSnack": "Couldn't add that friend. Try again.",
+  "@friendsAddFailedSnack": {
+    "description": "Snackbar shown when adding a friend fails to write"
+  },
+  "tournamentCreateTitle": "Create tournament",
+  "@tournamentCreateTitle": {
+    "description": "App bar title of the create-tournament form"
+  },
+  "tournamentNameLabel": "Tournament name",
+  "@tournamentNameLabel": {
+    "description": "Label for the tournament name field on the create form"
+  },
+  "tournamentSportLabel": "Sport",
+  "@tournamentSportLabel": {
+    "description": "Label above the sport selector on the create-tournament form"
+  },
+  "tournamentFacilityLabel": "Facility",
+  "@tournamentFacilityLabel": {
+    "description": "Label for the facility dropdown on the create-tournament form"
+  },
+  "tournamentMaxLabel": "Max participants",
+  "@tournamentMaxLabel": {
+    "description": "Label for the max-participants stepper on the create-tournament form"
+  },
+  "tournamentDeadlineLabel": "Registration deadline",
+  "@tournamentDeadlineLabel": {
+    "description": "Label for the registration-deadline picker on the create-tournament form"
+  },
+  "tournamentScheduleLabel": "Scheduled time",
+  "@tournamentScheduleLabel": {
+    "description": "Label for the scheduled-time picker on the create-tournament form"
+  },
+  "tournamentPickPrompt": "Select",
+  "@tournamentPickPrompt": {
+    "description": "Placeholder shown in a date/time field before a value is picked"
+  },
+  "tournamentCreateButton": "Create",
+  "@tournamentCreateButton": {
+    "description": "Submit button on the create-tournament form"
+  },
+  "tournamentNameRequired": "Enter a tournament name",
+  "@tournamentNameRequired": {
+    "description": "Validation error when the tournament name is empty"
+  },
+  "tournamentFacilityRequired": "Select a facility",
+  "@tournamentFacilityRequired": {
+    "description": "Facility dropdown placeholder and validation error when none is chosen"
+  },
+  "tournamentScheduleRequired": "Select a scheduled time",
+  "@tournamentScheduleRequired": {
+    "description": "Validation error when no scheduled time is chosen"
+  },
+  "tournamentDeadlineFuture": "The deadline must be in the future",
+  "@tournamentDeadlineFuture": {
+    "description": "Validation error when the registration deadline is not in the future"
+  },
+  "tournamentDeadlineBeforeSchedule": "The deadline must be on or before the scheduled time",
+  "@tournamentDeadlineBeforeSchedule": {
+    "description": "Validation error when the deadline is after the scheduled time"
+  },
+  "tournamentCreateError": "Couldn't create the tournament. Try again.",
+  "@tournamentCreateError": {
+    "description": "SnackBar error shown when creating a tournament fails"
+  },
+  "tournamentLoadError": "Couldn't load the tournament.",
+  "@tournamentLoadError": {
+    "description": "Error message shown when the bracket screen fails to load"
+  },
+  "tournamentRegistrationOpenTitle": "Registration open",
+  "@tournamentRegistrationOpenTitle": {
+    "description": "Title of the bracket placeholder shown while a tournament is still registering"
+  },
+  "tournamentRegistrationOpenBody": "The bracket appears once seeding closes at the registration deadline, or sooner if it fills first.",
+  "@tournamentRegistrationOpenBody": {
+    "description": "Body of the bracket placeholder shown while a tournament is still registering"
+  },
+  "tournamentCancelledTitle": "Tournament cancelled",
+  "@tournamentCancelledTitle": {
+    "description": "Title of the bracket placeholder shown when a tournament was cancelled"
+  },
+  "tournamentCancelledBody": "Not enough players joined before the registration deadline.",
+  "@tournamentCancelledBody": {
+    "description": "Body of the bracket placeholder shown when a tournament was cancelled"
+  },
+  "tournamentCompletedBanner": "{name} won the tournament!",
+  "@tournamentCompletedBanner": {
+    "description": "Banner announcing the champion on a completed tournament's bracket",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Alice"
+      }
+    }
+  },
+  "bracketBye": "BYE",
+  "@bracketBye": {
+    "description": "Label for an empty bracket position the opponent advances past"
+  },
+  "roundOf32": "Round of 32",
+  "@roundOf32": {
+    "description": "Bracket column header for a 32-player round"
+  },
+  "roundOf16": "Round of 16",
+  "@roundOf16": {
+    "description": "Bracket column header for a 16-player round"
+  },
+  "roundQuarterfinal": "Quarterfinals",
+  "@roundQuarterfinal": {
+    "description": "Bracket column header for the quarterfinal round"
+  },
+  "roundSemifinal": "Semifinals",
+  "@roundSemifinal": {
+    "description": "Bracket column header for the semifinal round"
+  },
+  "roundFinal": "Final",
+  "@roundFinal": {
+    "description": "Bracket column header for the final round"
+  },
+  "tournamentsTitle": "Tournaments",
+  "@tournamentsTitle": {
+    "description": "Tournaments browser app-bar title"
+  },
+  "tournamentsTooltip": "Tournaments",
+  "@tournamentsTooltip": {
+    "description": "Tooltip for the trophy entry-point button in the Home app bar"
+  },
+  "tournamentsUpcoming": "Upcoming",
+  "@tournamentsUpcoming": {
+    "description": "Section header for registering/seeded tournaments"
+  },
+  "tournamentsOngoing": "Ongoing",
+  "@tournamentsOngoing": {
+    "description": "Section header for active tournaments"
+  },
+  "tournamentsEmptyTitle": "No tournaments yet",
+  "@tournamentsEmptyTitle": {
+    "description": "Empty-state title on the tournaments browser"
+  },
+  "tournamentsEmptyBody": "New tournaments for this sport will show up here.",
+  "@tournamentsEmptyBody": {
+    "description": "Empty-state body on the tournaments browser"
+  },
+  "tournamentsLoadError": "Couldn't load tournaments.",
+  "@tournamentsLoadError": {
+    "description": "Error state on the tournaments browser"
+  },
+  "tournamentToday": "Today",
+  "@tournamentToday": {
+    "description": "Schedule-line label for a tournament scheduled today"
+  },
+  "tournamentTomorrow": "Tomorrow",
+  "@tournamentTomorrow": {
+    "description": "Schedule-line label for a tournament scheduled tomorrow"
+  },
+  "tournamentRegister": "Register",
+  "@tournamentRegister": {
+    "description": "Register button on a tournament card"
+  },
+  "tournamentRegistered": "Registered",
+  "@tournamentRegistered": {
+    "description": "Disabled button state once the user has registered"
+  },
+  "tournamentFull": "Full",
+  "@tournamentFull": {
+    "description": "Disabled button state when the tournament is at capacity"
+  },
+  "tournamentStatusRegistering": "Registering",
+  "@tournamentStatusRegistering": {
+    "description": "Status pill: open for registration"
+  },
+  "tournamentStatusSeeded": "Seeded",
+  "@tournamentStatusSeeded": {
+    "description": "Status pill: bracket drawn, ready to play"
+  },
+  "tournamentStatusActive": "Active",
+  "@tournamentStatusActive": {
+    "description": "Status pill: tournament underway"
+  },
+  "tournamentStatusCompleted": "Completed",
+  "@tournamentStatusCompleted": {
+    "description": "Status pill: tournament finished"
+  },
+  "tournamentStatusCancelled": "Cancelled",
+  "@tournamentStatusCancelled": {
+    "description": "Status pill: tournament called off"
+  },
+  "tournamentRegisteredSnack": "You're registered.",
+  "@tournamentRegisteredSnack": {
+    "description": "Confirmation snackbar after registering"
+  },
+  "tournamentRegisterError": "Couldn't register right now. Try again.",
+  "@tournamentRegisterError": {
+    "description": "Error snackbar when registration fails"
+  },
+  "tournamentStandings": "Standings",
+  "@tournamentStandings": {
+    "description": "Standings section header on the tournament detail"
+  },
+  "tournamentOrganizerControls": "Organizer controls",
+  "@tournamentOrganizerControls": {
+    "description": "Organizer controls section header"
+  },
+  "tournamentAdvanceSlot": "Advance slot",
+  "@tournamentAdvanceSlot": {
+    "description": "Organizer button: pick the winner of a playable slot"
+  },
+  "tournamentMarkForfeit": "Mark forfeit",
+  "@tournamentMarkForfeit": {
+    "description": "Organizer button: mark a player as forfeited"
+  },
+  "tournamentBracket": "Bracket",
+  "@tournamentBracket": {
+    "description": "Button opening the live bracket screen"
+  },
+  "tournamentDetailError": "Couldn't load this tournament.",
+  "@tournamentDetailError": {
+    "description": "Error state on the tournament detail screen"
+  },
+  "tournamentCancelAction": "Cancel tournament",
+  "@tournamentCancelAction": {
+    "description": "Overflow-menu item to cancel a tournament (organizer, registering only)"
+  },
+  "tournamentCancelTitle": "Cancel this tournament?",
+  "@tournamentCancelTitle": {
+    "description": "Cancel-tournament confirmation dialog title"
+  },
+  "tournamentCancelBody": "Registered players will be notified it's off. This can't be undone.",
+  "@tournamentCancelBody": {
+    "description": "Cancel-tournament confirmation dialog body"
+  },
+  "tournamentCancelConfirm": "Cancel tournament",
+  "@tournamentCancelConfirm": {
+    "description": "Confirm action of the cancel-tournament dialog"
+  },
+  "tournamentCancelDismiss": "Keep it",
+  "@tournamentCancelDismiss": {
+    "description": "Dismiss action of the cancel-tournament dialog"
+  },
+  "tournamentForfeitTitle": "Mark a player as forfeited",
+  "@tournamentForfeitTitle": {
+    "description": "Title of the mark-forfeit bottom sheet"
+  },
+  "tournamentAdvanceTitle": "Advance a slot",
+  "@tournamentAdvanceTitle": {
+    "description": "Title of the advance-slot bottom sheet"
+  },
+  "tournamentAdvancePickWinner": "Who won {slot}?",
+  "@tournamentAdvancePickWinner": {
+    "description": "Prompt to pick the winner of a chosen slot",
+    "placeholders": {
+      "slot": {
+        "type": "String",
+        "example": "A. Esposito vs S. Conti"
+      }
+    }
+  },
+  "tournamentSlotVs": "{playerA} vs {playerB}",
+  "@tournamentSlotVs": {
+    "description": "A bracket slot pairing label",
+    "placeholders": {
+      "playerA": {
+        "type": "String",
+        "example": "A. Esposito"
+      },
+      "playerB": {
+        "type": "String",
+        "example": "S. Conti"
+      }
+    }
+  },
+  "tournamentNoPlayableSlots": "No slots are ready to advance yet.",
+  "@tournamentNoPlayableSlots": {
+    "description": "Empty state of the advance-slot sheet"
+  },
+  "tournamentNoAliveParticipants": "No active players to forfeit.",
+  "@tournamentNoAliveParticipants": {
+    "description": "Empty state of the mark-forfeit sheet"
+  },
+  "challengePendingTitle": "Pending challenge",
+  "@challengePendingTitle": {
+    "description": "Title/label for a pending direct challenge (design 'pending')"
+  },
+  "challengeChallengedYou": "challenged you to {sport}",
+  "@challengeChallengedYou": {
+    "description": "Subtitle on an incoming challenge card: who challenged the user and to which sport",
+    "placeholders": {
+      "sport": {
+        "type": "String",
+        "example": "Ping Pong"
+      }
+    }
+  },
+  "challengeAccept": "Accept",
+  "@challengeAccept": {
+    "description": "Accept button on an incoming challenge card"
+  },
+  "challengeDecline": "Decline",
+  "@challengeDecline": {
+    "description": "Decline button on an incoming challenge card"
+  },
+  "challengeAcceptTooltip": "Accept challenge",
+  "@challengeAcceptTooltip": {
+    "description": "Tooltip for the round accept (check) icon button"
+  },
+  "challengeDeclineTooltip": "Decline challenge",
+  "@challengeDeclineTooltip": {
+    "description": "Tooltip for the round decline (close) icon button"
+  },
+  "challengeButtonTooltip": "Challenge",
+  "@challengeButtonTooltip": {
+    "description": "Tooltip for the challenge action on a friends-list row"
+  },
+  "challengeSheetTitle": "Challenge {name}",
+  "@challengeSheetTitle": {
+    "description": "Title of the send-challenge bottom sheet",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Marco Bruno"
+      }
+    }
+  },
+  "challengeSheetPickSport": "Choose a sport",
+  "@challengeSheetPickSport": {
+    "description": "Prompt above the sport chips in the send-challenge sheet"
+  },
+  "challengeSheetSend": "Send challenge",
+  "@challengeSheetSend": {
+    "description": "Send button in the send-challenge sheet"
+  },
+  "challengeSentSnack": "Challenge sent to {name}.",
+  "@challengeSentSnack": {
+    "description": "Confirmation snackbar after sending a challenge",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Marco Bruno"
+      }
+    }
+  },
+  "challengeErrorDuplicate": "You already have a pending challenge with them for this sport.",
+  "@challengeErrorDuplicate": {
+    "description": "Send error when a pending challenge for the same friend and sport already exists"
+  },
+  "challengeErrorNotFriends": "You can only challenge friends.",
+  "@challengeErrorNotFriends": {
+    "description": "Send error when the recipient is not in the user's friends"
+  },
+  "challengeErrorGeneric": "Couldn't send the challenge. Try again.",
+  "@challengeErrorGeneric": {
+    "description": "Generic send-challenge failure"
+  },
+  "challengeActionExpired": "This challenge has expired.",
+  "@challengeActionExpired": {
+    "description": "Error shown when accepting/declining a challenge that had already lapsed past its timeout (it leaves the inbox)"
+  },
+  "challengeActionUnavailable": "Couldn't respond right now. Check your connection and try again.",
+  "@challengeActionUnavailable": {
+    "description": "Error shown when accepting/declining a challenge fails to write (offline or a transient error) — the action is retryable"
+  },
+  "challengeActionNoLongerAvailable": "This challenge is no longer available.",
+  "@challengeActionNoLongerAvailable": {
+    "description": "Error shown when accepting/declining a challenge that was already resolved by the other side or removed (a race)"
+  },
+  "challengeReceivedSnack": "New challenge from {name}.",
+  "@challengeReceivedSnack": {
+    "description": "In-app alert when a new incoming challenge arrives while foregrounded",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Marco Bruno"
+      }
+    }
+  },
+  "challengeOutgoingSectionTitle": "Sent",
+  "@challengeOutgoingSectionTitle": {
+    "description": "Small header above the list of challenges the user has sent"
+  },
+  "challengeOutgoingLabel": "vs {name}",
+  "@challengeOutgoingLabel": {
+    "description": "Counterpart label on an outgoing challenge row",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Marco Bruno"
+      }
+    }
+  },
+  "challengeStatusWaiting": "Waiting",
+  "@challengeStatusWaiting": {
+    "description": "Status chip for an outgoing challenge still pending a response"
+  },
+  "challengeStatusAccepted": "Accepted",
+  "@challengeStatusAccepted": {
+    "description": "Status chip for an accepted challenge"
+  },
+  "challengeStatusDeclined": "Declined",
+  "@challengeStatusDeclined": {
+    "description": "Status chip for a declined challenge"
+  },
+  "challengeStatusExpired": "Expired",
+  "@challengeStatusExpired": {
+    "description": "Status chip for an expired challenge"
+  },
+  "challengePlayerFallback": "A player",
+  "@challengePlayerFallback": {
+    "description": "Fallback name when a challenge counterpart's profile can't be resolved"
+  },
+  "challengeScreenTitle": "Challenge",
+  "@challengeScreenTitle": {
+    "description": "App bar title of the challenge detail screen"
+  },
+  "challengeWaitingTitle": "Waiting for {name}",
+  "@challengeWaitingTitle": {
+    "description": "Sender's waiting state on the challenge detail screen",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Marco Bruno"
+      }
+    }
+  },
+  "challengeWaitingBody": "They'll see your challenge in the app.",
+  "@challengeWaitingBody": {
+    "description": "Body of the sender's waiting state"
+  },
+  "challengeScanToPlay": "Scan to play",
+  "@challengeScanToPlay": {
+    "description": "CTA that opens the QR scanner after a challenge is accepted"
+  },
+  "challengeAcceptedCta": "Challenge accepted — scan the table QR to start.",
+  "@challengeAcceptedCta": {
+    "description": "Inline message after accepting, prompting the standard QR check-in"
+  },
+  "challengeNotFound": "Challenge not found.",
+  "@challengeNotFound": {
+    "description": "Empty state when a challenge deep-link resolves to no document"
+  },
+  "challengeLoadError": "Couldn't load this challenge.",
+  "@challengeLoadError": {
+    "description": "Error state on the challenge detail screen"
+  },
+  "achievement_first_victory_name": "First Victory",
+  "@achievement_first_victory_name": {
+    "description": "Name of the first-victory achievement badge"
+  },
+  "achievement_first_victory_desc": "Win your first ranked match.",
+  "@achievement_first_victory_desc": {
+    "description": "Description of the first-victory achievement badge"
+  },
+  "achievement_streak_5_name": "On Fire",
+  "@achievement_streak_5_name": {
+    "description": "Name of the 5-win-streak achievement badge"
+  },
+  "achievement_streak_5_desc": "Win 5 ranked matches in a row.",
+  "@achievement_streak_5_desc": {
+    "description": "Description of the 5-win-streak achievement badge"
+  },
+  "achievement_giant_slayer_name": "Giant Slayer",
+  "@achievement_giant_slayer_name": {
+    "description": "Name of the giant-slayer achievement badge"
+  },
+  "achievement_giant_slayer_desc": "Beat an opponent rated 200+ ELO above you.",
+  "@achievement_giant_slayer_desc": {
+    "description": "Description of the giant-slayer achievement badge"
+  },
+  "achievement_explorer_name": "Explorer",
+  "@achievement_explorer_name": {
+    "description": "Name of the explorer achievement badge"
+  },
+  "achievement_explorer_desc": "Play at least once at every facility on campus.",
+  "@achievement_explorer_desc": {
+    "description": "Description of the explorer achievement badge"
+  },
+  "achievement_tournament_champion_name": "Champion",
+  "@achievement_tournament_champion_name": {
+    "description": "Name of the tournament-champion achievement badge"
+  },
+  "achievement_tournament_champion_desc": "Win an official tournament.",
+  "@achievement_tournament_champion_desc": {
+    "description": "Description of the tournament-champion achievement badge"
+  },
+  "achievement_workaholic_name": "Workaholic",
+  "@achievement_workaholic_name": {
+    "description": "Name of the workaholic achievement badge"
+  },
+  "achievement_workaholic_desc": "Play 15 matches in a single month.",
+  "@achievement_workaholic_desc": {
+    "description": "Description of the workaholic achievement badge"
+  },
+  "profileAchievementsTitle": "Achievements",
+  "@profileAchievementsTitle": {
+    "description": "Section header for the achievement badge grid on the profile"
+  },
+  "achievementUnlockedOn": "Unlocked {date}",
+  "@achievementUnlockedOn": {
+    "description": "System message shown when tapping an earned badge in the profile grid",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "9 Jul 2026"
+      }
+    }
+  },
+  "achievementUnlockHint": "Unlock by: {description}",
+  "@achievementUnlockHint": {
+    "description": "System message shown when tapping a locked badge in the profile grid",
+    "placeholders": {
+      "description": {
+        "type": "String",
+        "example": "Win 5 ranked matches in a row."
+      }
+    }
+  },
+  "achievementUnlockHeadline": "Achievement unlocked!",
+  "@achievementUnlockHeadline": {
+    "description": "Headline of the in-app badge reveal on the match summary"
+  },
+  "chatbotClearChat": "Clear chat",
+  "@chatbotClearChat": {
+    "description": "Overflow menu action that clears the current chat session"
+  },
+  "chatbotSettingsTooltip": "Assistant settings",
+  "@chatbotSettingsTooltip": {
+    "description": "Tooltip for the settings (gear) icon button on the chat app bar"
+  },
+  "chatbotGreeting": "Hi! Ask me about empty tables, today's tournaments, ELO, or your queue position.",
+  "@chatbotGreeting": {
+    "description": "Greeting bubble shown when the chat is first opened"
+  },
+  "chatbotInputHint": "Ask Arena Assistant...",
+  "@chatbotInputHint": {
+    "description": "Placeholder text in the chat input field"
+  },
+  "chatbotSend": "Send",
+  "@chatbotSend": {
+    "description": "Accessibility label for the send button"
+  },
+  "chatbotLimitedModeBadge": "Limited mode - basic answers only",
+  "@chatbotLimitedModeBadge": {
+    "description": "Pill shown under the app bar when no API key is configured or the device is offline"
+  },
+  "chatbotErrorMessage": "I couldn't reach the assistant — showing basic answers.",
+  "@chatbotErrorMessage": {
+    "description": "Error bubble text shown when the assistant fails to respond"
+  },
+  "chatbotRetry": "Retry",
+  "@chatbotRetry": {
+    "description": "Retry button on an error bubble"
+  },
+  "chatbotChipEmptyTables": "What tables are empty?",
+  "@chatbotChipEmptyTables": {
+    "description": "Suggested-question chip label"
+  },
+  "chatbotChipTournamentsToday": "Tournaments today",
+  "@chatbotChipTournamentsToday": {
+    "description": "Suggested-question chip label"
+  },
+  "chatbotChipHowElo": "How does ELO work?",
+  "@chatbotChipHowElo": {
+    "description": "Suggested-question chip label"
+  },
+  "chatbotChipQueuePosition": "Where am I in the queue?",
+  "@chatbotChipQueuePosition": {
+    "description": "Suggested-question chip label"
+  },
+  "chatbotOpenMap": "Open Map",
+  "@chatbotOpenMap": {
+    "description": "Button on a facility availability card that deep-links to the map"
+  },
+  "chatbotViewTournament": "View",
+  "@chatbotViewTournament": {
+    "description": "Button on a tournament card that opens the tournament detail"
+  },
+  "chatbotDismissBanner": "Dismiss",
+  "@chatbotDismissBanner": {
+    "description": "Button that dismisses the first-open disclaimer info banner"
+  },
+  "chatbotHomeEntryTitle": "Arena Assistant",
+  "@chatbotHomeEntryTitle": {
+    "description": "Title of the Home tab entry point card/button that opens the chatbot"
+  },
+  "chatbotHomeEntrySubtitle": "Ask about tables, tournaments, and ELO",
+  "@chatbotHomeEntrySubtitle": {
+    "description": "Subtitle of the Home tab entry point card that opens the chatbot"
+  },
+  "tutorialSlide3Disclaimer": "Availability reflects app activity only — not a live guarantee, and not a reservation.",
+  "@tutorialSlide3Disclaimer": {
+    "description": "One-line disclaimer appended to the mini-tutorial's map/queue step"
+  },
+  "chatbotSettingsTitle": "Assistant Settings",
+  "@chatbotSettingsTitle": {
+    "description": "App bar title on the Assistant Settings screen"
+  },
+  "chatbotSettingsProviderLabel": "Provider",
+  "@chatbotSettingsProviderLabel": {
+    "description": "Label for the LLM provider dropdown"
+  },
+  "chatbotSettingsApiKeyLabel": "API Key",
+  "@chatbotSettingsApiKeyLabel": {
+    "description": "Label for the API key text field"
+  },
+  "chatbotSettingsModelLabel": "Model",
+  "@chatbotSettingsModelLabel": {
+    "description": "Label for the model id text field"
+  },
+  "chatbotSettingsShowKey": "Show API key",
+  "@chatbotSettingsShowKey": {
+    "description": "Tooltip for the icon that reveals the obscured API key field"
+  },
+  "chatbotSettingsHideKey": "Hide API key",
+  "@chatbotSettingsHideKey": {
+    "description": "Tooltip for the icon that re-obscures the API key field"
+  },
+  "chatbotSettingsTestConnection": "Test Connection",
+  "@chatbotSettingsTestConnection": {
+    "description": "Button that fires a minimal request to verify the API key"
+  },
+  "chatbotSettingsSave": "Save",
+  "@chatbotSettingsSave": {
+    "description": "Button that persists the assistant settings"
+  },
+  "chatbotSettingsSaved": "Assistant settings saved",
+  "@chatbotSettingsSaved": {
+    "description": "Confirmation snackbar/message after saving assistant settings"
+  },
+  "chatbotSettingsTestSuccess": "Connection successful",
+  "@chatbotSettingsTestSuccess": {
+    "description": "Feedback shown when testConnection succeeds"
+  },
+  "chatbotSettingsTestFailurePrefix": "Connection failed:",
+  "@chatbotSettingsTestFailurePrefix": {
+    "description": "Prefix shown before the mapped error reason when testConnection fails"
+  },
+  "chatbotSettingsNoKeyBanner": "No API key configured — the assistant answers in limited mode. Add a key to enable full AI answers.",
+  "@chatbotSettingsNoKeyBanner": {
+    "description": "Banner/pill in the chat screen linking to Assistant Settings when unconfigured"
+  },
+  "chatbotSettingsResetModelPrompt": "Reset the model field to this provider's default?",
+  "@chatbotSettingsResetModelPrompt": {
+    "description": "Prompt shown when the user switches provider and had a custom model value"
+  },
+  "chatbotSettingsResetModelYes": "Reset",
+  "@chatbotSettingsResetModelYes": {
+    "description": "Confirms resetting the model field to the new provider's default"
+  },
+  "chatbotSettingsResetModelNo": "Keep",
+  "@chatbotSettingsResetModelNo": {
+    "description": "Keeps the current model field value after switching provider"
+  },
+  "chatbotErrorInvalidApiKey": "That API key was rejected. Double-check it and try again.",
+  "@chatbotErrorInvalidApiKey": {
+    "description": "Localized error text for an HTTP 401/403 from the LLM provider"
+  },
+  "chatbotErrorRateLimited": "The provider is rate-limiting requests right now. Try again shortly.",
+  "@chatbotErrorRateLimited": {
+    "description": "Localized error text for an HTTP 429 from the LLM provider"
+  },
+  "chatbotErrorNetwork": "Couldn't reach the network. Check your connection and try again.",
+  "@chatbotErrorNetwork": {
+    "description": "Localized error text for a network/socket failure calling the LLM provider"
+  },
+  "chatbotErrorMissingApiKey": "Add an API key first.",
+  "@chatbotErrorMissingApiKey": {
+    "description": "Localized error text when Test Connection is tapped with no API key entered"
+  },
+  "chatbotErrorGeneric": "Something went wrong reaching the assistant.",
+  "@chatbotErrorGeneric": {
+    "description": "Fallback localized error text for any other assistant/provider failure"
+  },
+  "chatbotErrorTimeout": "The assistant took too long to respond. Try again.",
+  "@chatbotErrorTimeout": {
+    "description": "Localized error text when the LLM request times out"
+  },
+  "chatbotAnswerNoFreeTables": "No tables are currently free based on app activity.",
+  "@chatbotAnswerNoFreeTables": {
+    "description": "Rule-based (limited-mode) answer when no facilities are free"
+  },
+  "chatbotAnswerFreeTables": "Free right now: {names}.",
+  "@chatbotAnswerFreeTables": {
+    "description": "Rule-based (limited-mode) answer listing the free tables",
+    "placeholders": {
+      "names": {
+        "type": "String"
+      }
+    }
+  },
+  "chatbotAnswerNoTournaments": "There are no tournaments scheduled for today.",
+  "@chatbotAnswerNoTournaments": {
+    "description": "Rule-based (limited-mode) answer when no tournaments are scheduled today"
+  },
+  "chatbotAnswerTournamentsToday": "Today's tournaments: {names}.",
+  "@chatbotAnswerTournamentsToday": {
+    "description": "Rule-based (limited-mode) answer listing today's tournaments (each item already formatted as 'Name (count/max)')",
+    "placeholders": {
+      "names": {
+        "type": "String"
+      }
+    }
+  },
+  "chatbotAnswerQueueNone": "You're not currently in any queue.",
+  "@chatbotAnswerQueueNone": {
+    "description": "Rule-based (limited-mode) answer when the user is not queued anywhere"
+  },
+  "chatbotAnswerQueuePosition": "You're at position {position} in the queue for {facility}.",
+  "@chatbotAnswerQueuePosition": {
+    "description": "Rule-based (limited-mode) answer giving the user's queue position",
+    "placeholders": {
+      "position": {
+        "type": "int"
+      },
+      "facility": {
+        "type": "String"
+      }
+    }
+  },
+  "chatbotAnswerEloExplainer": "CampusArena ELO starts every player at 1200. After each confirmed match, the winner gains points and the loser loses points based on the ELO difference between the two players (beating a higher-rated opponent earns more than beating a lower-rated one). The K-factor (how much a single match can move your rating) is 32 for your first 10 matches in a sport, then drops to 16 once you are established. Ratings are tracked separately per sport (Ping Pong, Foosball). Ratings can also lazily decay after long inactivity.",
+  "@chatbotAnswerEloExplainer": {
+    "description": "Rule-based (limited-mode) explanation of how ELO works"
+  },
+  "chatbotAnswerYourElo": "Your current Ping Pong ELO is {elo} after {matches} matches.",
+  "@chatbotAnswerYourElo": {
+    "description": "Rule-based (limited-mode) line stating the user's current Ping Pong ELO and match count",
+    "placeholders": {
+      "elo": {
+        "type": "int"
+      },
+      "matches": {
+        "type": "int"
+      }
+    }
+  },
+  "chatbotAnswerYourEloRanked": "Your current Ping Pong ELO is {elo}, ranked #{rank}, after {matches} matches.",
+  "@chatbotAnswerYourEloRanked": {
+    "description": "Rule-based (limited-mode) line stating the user's current Ping Pong ELO, leaderboard rank, and match count",
+    "placeholders": {
+      "elo": {
+        "type": "int"
+      },
+      "rank": {
+        "type": "int"
+      },
+      "matches": {
+        "type": "int"
+      }
+    }
+  },
+  "chatbotAnswerGeneral": "I can help with empty tables, today's tournaments, ELO, and your queue position. Try one of the suggested questions below, or ask me directly.",
+  "@chatbotAnswerGeneral": {
+    "description": "Rule-based (limited-mode) fallback answer for an unrecognized question"
+  }
+}

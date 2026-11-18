@@ -1,0 +1,77 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="ER" id="er-diagram">
+    <mxGraphModel dx="2189" dy="2324" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ratings" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;RATINGS&lt;/b&gt;&lt;br&gt;ratingId = sportId_ownerId (PK)&lt;br&gt;ownerType (user|pair), ownerId&lt;br&gt;sportId, elo, matchesPlayed" vertex="1">
+          <mxGeometry height="90" width="250" x="230" y="-660" as="geometry" />
+        </mxCell>
+        <mxCell id="users" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;USERS&lt;/b&gt;&lt;br&gt;uid (PK)&lt;br&gt;username, degreeProgram&lt;br&gt;friendUids, badges&lt;br&gt;disputeCount" vertex="1">
+          <mxGeometry height="110" width="240" x="650" y="-670" as="geometry" />
+        </mxCell>
+        <mxCell id="usernames" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;USERNAMES&lt;/b&gt;&lt;br&gt;username (PK, lowercased)&lt;br&gt;uid" vertex="1">
+          <mxGeometry height="70" width="220" x="960" y="-650" as="geometry" />
+        </mxCell>
+        <mxCell id="facilities" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;FACILITIES&lt;/b&gt;&lt;br&gt;facilityId (PK)&lt;br&gt;sportId, status, isOutdoor&lt;br&gt;currentMatchId, queueTailPosition" vertex="1">
+          <mxGeometry height="90" width="240" x="239" y="-475" as="geometry" />
+        </mxCell>
+        <mxCell id="matches" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;MATCHES&lt;/b&gt;&lt;br&gt;matchId (PK)&lt;br&gt;facilityId, playerUids, state&lt;br&gt;result, eloDeltas&lt;br&gt;tournamentId, tournamentRound" vertex="1">
+          <mxGeometry height="100" width="240" x="650" y="-480" as="geometry" />
+        </mxCell>
+        <mxCell id="tournaments" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;TOURNAMENTS&lt;/b&gt;&lt;br&gt;tournamentId (PK)&lt;br&gt;sportId, facilityId, status&lt;br&gt;bracket, eloMultiplier" vertex="1">
+          <mxGeometry height="90" width="260" x="960" y="-480" as="geometry" />
+        </mxCell>
+        <mxCell id="challenges" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;CHALLENGES&lt;/b&gt;&lt;br&gt;challengeId (PK)&lt;br&gt;fromUserId, toUserId&lt;br&gt;sportId, status, matchId" vertex="1">
+          <mxGeometry height="90" width="260" x="1220" y="-660" as="geometry" />
+        </mxCell>
+        <mxCell id="queue" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;dashed=1;fillColor=#f5f5f5;strokeColor=#666666;" value="&lt;b&gt;QUEUE&lt;/b&gt; (subcollection)&lt;br&gt;uid (PK)&lt;br&gt;position, joinedAt" vertex="1">
+          <mxGeometry height="70" width="240" x="239" y="-320" as="geometry" />
+        </mxCell>
+        <mxCell id="participants" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;dashed=1;fillColor=#f5f5f5;strokeColor=#666666;" value="&lt;b&gt;PARTICIPANTS&lt;/b&gt; (subcollection)&lt;br&gt;uid (PK)&lt;br&gt;seed, eliminated" vertex="1">
+          <mxGeometry height="70" width="260" x="960" y="-320" as="geometry" />
+        </mxCell>
+        <mxCell id="achievementDefs" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;ACHIEVEMENT_DEFS&lt;/b&gt;&lt;br&gt;id = slug (PK)&lt;br&gt;condition, badge asset" vertex="1">
+          <mxGeometry height="80" width="240" x="650" y="-840" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" edge="1" parent="1" source="users" style="endArrow=none;html=1;" target="usernames" value="1 : 1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" edge="1" parent="1" source="users" style="endArrow=none;html=1;" target="ratings" value="1 : N&#xa;(ownerId = uid or pairId)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" edge="1" parent="1" source="facilities" style="endArrow=none;html=1;" target="queue" value="1 : N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" edge="1" parent="1" source="facilities" style="endArrow=none;html=1;" target="matches" value="1 : N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r5" edge="1" parent="1" source="users" style="endArrow=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="matches" value="N : M&#xa;(playerUids)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r6" edge="1" parent="1" source="tournaments" style="endArrow=none;html=1;" target="participants" value="1 : N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r7" edge="1" parent="1" source="matches" style="endArrow=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.002;entryY=0.553;entryDx=0;entryDy=0;entryPerimeter=0;" target="tournaments" value="1 : N&#xa;(optional)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r8" edge="1" parent="1" source="users" style="endArrow=none;html=1;exitX=0.75;exitY=0;entryX=0.5;entryY=0;" target="challenges" value="1 : N&#xa;(from / to)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="830" y="-700" />
+              <mxPoint x="1350" y="-700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r9" edge="1" parent="1" source="users" style="endArrow=none;html=1;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;exitDx=0;exitDy=0;entryDx=0;entryDy=0;" target="achievementDefs" value="N : M&#xa;(badges map)">
+          <mxGeometry relative="1" x="0.1111" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="770" y="-700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

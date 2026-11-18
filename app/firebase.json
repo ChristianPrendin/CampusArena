@@ -1,0 +1,34 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "campus-arena-app",
+          "appId": "1:281082040965:android:275b72f395654ceefc8fec",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "campus-arena-app",
+          "appId": "1:281082040965:ios:b140297a9093c8b7fc8fec",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "campus-arena-app",
+          "configurations": {
+            "android": "1:281082040965:android:275b72f395654ceefc8fec",
+            "ios": "1:281082040965:ios:b140297a9093c8b7fc8fec"
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+}

@@ -1,0 +1,87 @@
+name: campus_arena
+description: >
+  CampusArena — ELO-based ranking and real-time facility management
+  for campus Ping Pong and Foosball.
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.12.2
+  # flutter_map 8.3.1 / latlong2 0.10.1 raise the effective Flutter floor to
+  # 3.44.0 (see pubspec.lock). Declared explicitly so a teammate on an older
+  # toolchain gets a clear version-solve error, not a cryptic build break.
+  flutter: '>=3.44.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # --- State Management ---
+  flutter_bloc: ^9.1.1
+  equatable: ^2.0.8
+
+  # --- Navigation ---
+  go_router: ^17.3.0
+
+  # --- Firebase ---
+  firebase_core: ^4.11.0
+  firebase_auth: ^6.5.4
+  cloud_firestore: ^6.6.0
+  firebase_messaging: ^16.4.1
+  # --- Maps ---
+  # 8.3.1 reverts the 8.3.0 `Crs.checkLatLng` regression (#2199) that threw
+  # "LatLng is not finite" on any transient non-finite projection (fling/pinch
+  # mid-gesture, pre-layout camera size). Do not drop below 8.3.1.
+  flutter_map: ^8.3.1
+  latlong2: ^0.10.1
+  # Persistent OSM tile cache (Tile Usage Policy MUST): honours HTTP cache
+  # headers with a maxStale fallback, backed by an on-disk drift/sqlite store.
+  flutter_map_cache: ^2.1.0
+  http_cache_drift_store: ^7.0.0
+  path_provider: ^2.1.6
+
+  # --- QR / Camera ---
+  mobile_scanner: ^7.2.0
+
+  # --- Location ---
+  geolocator: ^14.0.3
+
+  # --- Charts ---
+  fl_chart: ^1.2.0
+
+  # --- Networking (Open-Meteo weather, Arena Assistant LLM providers) ---
+  http: ^1.6.0
+
+  # --- Local persistence (Arena Assistant settings: provider/key/model) ---
+  shared_preferences: ^2.5.3
+
+  # --- Internationalisation ---
+  intl: any  # version managed by flutter_localizations
+
+  # --- Misc ---
+  cupertino_icons: ^1.0.8
+  permission_handler: ^12.0.3
+  url_launcher: ^6.3.2  # open OSM licence page from the map attribution
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  bloc_test: ^10.0.0
+  mocktail: ^1.0.5
+  fake_cloud_firestore: ^4.1.1
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/app_icon.png"
+  remove_alpha_ios: true
+
+flutter:
+  uses-material-design: true
+  generate: true  # enables codegen for flutter_localizations / intl
+  assets:
+    - assets/badges/

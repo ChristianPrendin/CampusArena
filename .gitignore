@@ -1,0 +1,51 @@
+# Flutter and Dart build artifacts
+app/.dart_tool/
+app/.packages
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/.pub-cache/
+app/.pub/
+app/build/
+app/coverage/
+app/lib/generated_plugin_registrant.dart
+
+# Android local configurations
+app/android/.gradle/
+app/android/local.properties
+app/android/key.properties
+app/android/**/GeneratedPluginRegistrant.java
+app/android/gradlew
+app/android/gradlew.bat
+
+# iOS and macOS local configurations
+app/ios/DeveloperSettings.xcconfig
+app/ios/.generated/
+app/ios/Flutter/Generated.xcconfig
+app/ios/Flutter/flutter_export_environment.sh
+app/ios/Runner/GeneratedPluginRegistrant.*
+app/ios/Pods/
+app/ios/.symlinks/
+
+# Environment files and credentials
+.env
+.env*
+**/google-services.json
+**/GoogleService-Info.plist
+
+# Firestore seed script — service-account key, venv, python caches
+script/*firebase-adminsdk*.json
+script/.venv/
+script/__pycache__/
+
+# Agents and LLMs configurations
+AGENTS.md
+.agents/
+CLAUDE.md
+.claude/
+
+# IDE and OS configurations
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

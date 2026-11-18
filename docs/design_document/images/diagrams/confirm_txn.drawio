@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="ConfirmTxn" id="confirm-txn-diagram">
+    <mxGraphModel dx="803" dy="522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="960" pageHeight="640" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="prep" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=34;fillColor=#f5f5f5;strokeColor=#999999;fontStyle=5;verticalAlign=top;" value="Pre-read phase — outside the transaction (queries only)" vertex="1">
+          <mxGeometry height="560" width="380" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" parent="prep" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Assert match.state == awaitingConfirmation" vertex="1">
+          <mxGeometry height="60" width="320" x="30" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" parent="prep" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Resolve winner/loser keys&lt;br&gt;(singles: uid · doubles: pairId via getOrCreatePairRating)" vertex="1">
+          <mxGeometry height="70" width="320" x="30" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" parent="prep" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Project King of the Table win count via a bounded count() aggregation" vertex="1">
+          <mxGeometry height="70" width="320" x="30" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="p4" parent="prep" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Load badge inputs (history, facility scan, current badges) — try/catch degrades to empty on failure" vertex="1">
+          <mxGeometry height="90" width="320" x="30" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="txn" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=34;fillColor=#f5f5f5;strokeColor=#999999;fontStyle=5;verticalAlign=top;" value="Transaction — atomic (runTransaction)" vertex="1">
+          <mxGeometry height="560" width="420" x="500" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="t1" parent="txn" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Re-assert match.state == awaitingConfirmation (fails fast on a concurrent dispute/timeout)" vertex="1">
+          <mxGeometry height="70" width="360" x="30" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t2" parent="txn" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Read winner &amp; loser rating docs, facility doc, tournament doc (if any)" vertex="1">
+          <mxGeometry height="70" width="360" x="30" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="t3" parent="txn" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Materialise inactivity decay: eloBefore = EloCalculator.decayedElo(elo, lastMatchAt, now) for both sides" vertex="1">
+          <mxGeometry height="80" width="360" x="30" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="t4" parent="txn" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="computeUpdate(eloBefore, multiplier) → eloDeltas" vertex="1">
+          <mxGeometry height="60" width="360" x="30" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="t5" parent="txn" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" value="Commit: match (confirmed + eloBefore + eloDeltas + confirmedAt) · both rating docs (elo, matchesPlayed+1, lastMatchAt) · facility (free, currentMatchId=null, freedAt, King of the Table) · users.badges merge" vertex="1">
+          <mxGeometry height="110" width="360" x="30" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="e-p1p2" edge="1" parent="1" source="p1" style="endArrow=block;html=1;" target="p2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-p2p3" edge="1" parent="1" source="p2" style="endArrow=block;html=1;" target="p3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-p3p4" edge="1" parent="1" source="p3" style="endArrow=block;html=1;" target="p4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-t1t2" edge="1" parent="1" source="t1" style="endArrow=block;html=1;" target="t2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-t2t3" edge="1" parent="1" source="t2" style="endArrow=block;html=1;" target="t3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-t3t4" edge="1" parent="1" source="t3" style="endArrow=block;html=1;" target="t4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-t4t5" edge="1" parent="1" source="t4" style="endArrow=block;html=1;" target="t5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-bridge" edge="1" parent="1" source="p4" style="endArrow=block;html=1;strokeWidth=2;fontStyle=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="t1" value="enter transaction">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="460" y="425" />
+              <mxPoint x="460" y="125" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

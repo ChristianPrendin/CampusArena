@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="MatchState" id="match-state-diagram">
+    <mxGraphModel dx="1505" dy="979" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="occupied" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;occupied&lt;/b&gt;&lt;br&gt;check-in complete, game in progress" vertex="1">
+          <mxGeometry height="80" width="240" x="60" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="awaiting" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;awaitingConfirmation&lt;/b&gt;&lt;br&gt;one side submitted a result" vertex="1">
+          <mxGeometry height="80" width="260" x="480" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="confirmed" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" value="&lt;b&gt;confirmed&lt;/b&gt;&lt;br&gt;ELO applied, facility freed" vertex="1">
+          <mxGeometry height="80" width="260" x="880" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="disputed" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" value="&lt;b&gt;disputed&lt;/b&gt;&lt;br&gt;opponent rejects — no ELO change, facility freed" vertex="1">
+          <mxGeometry height="80" width="260" x="880" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="unconfirmed" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" value="&lt;b&gt;unconfirmed&lt;/b&gt;&lt;br&gt;24h with no confirmation — no ELO change, facility freed" vertex="1">
+          <mxGeometry height="80" width="260" x="880" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="abandoned" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" value="&lt;b&gt;abandoned&lt;/b&gt;&lt;br&gt;4h with no result submitted — no ELO change, facility freed" vertex="1">
+          <mxGeometry height="80" width="260" x="50" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="t1" edge="1" parent="1" source="occupied" style="endArrow=block;html=1;" target="awaiting" value="result submitted">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t2" edge="1" parent="1" source="awaiting" style="endArrow=block;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="confirmed" value="opponent confirms">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t3" edge="1" parent="1" source="awaiting" style="endArrow=block;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" target="disputed" value="opponent disputes">
+          <mxGeometry relative="1" x="0.2615" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="675" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t4" edge="1" parent="1" source="awaiting" style="endArrow=block;html=1;dashed=1;" target="unconfirmed" value="24h timeout&#xa;(resolveTimeout)">
+          <mxGeometry relative="1" x="-0.0588" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="610" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t5" edge="1" parent="1" source="occupied" style="endArrow=block;html=1;dashed=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="abandoned" value="4h timeout&#xa;(resolveTimeout)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="150" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontStyle=2;fontColor=#666666;whiteSpace=wrap;" value="free is not a match state — it is facility.status = free, the absence of an active match. Dashed transitions are evaluated lazily by whichever client next reads the facility or scans its QR code (no server)." vertex="1">
+          <mxGeometry height="50" width="1100" x="60" y="440" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

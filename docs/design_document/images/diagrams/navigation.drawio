@@ -1,0 +1,137 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Navigation" id="navigation-map-diagram">
+    <mxGraphModel dx="122" dy="79" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1950" pageHeight="400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="splash" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Splash&#xa;/" vertex="1">
+          <mxGeometry height="60" width="140" x="40" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="landing" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Landing&#xa;/landing" vertex="1">
+          <mxGeometry height="60" width="150" x="220" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="login" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Login&#xa;/login" vertex="1">
+          <mxGeometry height="60" width="150" x="410" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="register" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Register&#xa;/register" vertex="1">
+          <mxGeometry height="60" width="150" x="410" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="onboarding" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Onboarding tutorial&#xa;/onboarding/tutorial" vertex="1">
+          <mxGeometry height="60" width="180" x="600" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="_XDfFfHrDTXWpv3NiDqg-4" edge="1" parent="1" source="shell" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.911;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;curved=0;dashed=1;" target="tournaments">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="320" />
+              <mxPoint x="1380" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_XDfFfHrDTXWpv3NiDqg-5" edge="1" parent="1" source="shell" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;exitX=0.869;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" target="friends">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1020" y="330" />
+              <mxPoint x="1585" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="shell" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Four-tab Shell&#xa;Home / Map / Leaderboards / Profile&#xa;StatefulShellRoute.indexedStack" vertex="1">
+          <mxGeometry height="80" width="230" x="820" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="scan" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="QR scan&#xa;/play/scan" vertex="1">
+          <mxGeometry height="60" width="140" x="1060" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="active" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Active match" vertex="1">
+          <mxGeometry height="60" width="140" x="1230" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="result" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Result entry" vertex="1">
+          <mxGeometry height="60" width="140" x="1400" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="confirm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Confirmation" vertex="1">
+          <mxGeometry height="60" width="140" x="1570" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="summary" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="Summary&#xa;ELO delta" vertex="1">
+          <mxGeometry height="60" width="140" x="1740" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="facility" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Facility detail&#xa;/play/facility/:id" vertex="1">
+          <mxGeometry height="60" width="190" x="1320" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="chatbot" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Arena Assistant&#xa;/chatbot" vertex="1">
+          <mxGeometry height="60" width="150" x="1100" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="tournaments" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Tournaments&#xa;/tournaments (+create, detail, bracket)" vertex="1">
+          <mxGeometry height="60" width="200" x="1280" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="friends" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Friends&#xa;/friends" vertex="1">
+          <mxGeometry height="60" width="150" x="1510" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="settings" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Settings&#xa;/settings" vertex="1">
+          <mxGeometry height="60" width="150" x="1690" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="splash" style="endArrow=block;html=1;" target="landing">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="landing" style="endArrow=block;html=1;" target="login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="landing" style="endArrow=block;html=1;" target="register">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="login" style="endArrow=block;html=1;" target="onboarding">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="register" style="endArrow=block;html=1;" target="onboarding">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="onboarding" style="endArrow=block;html=1;" target="shell">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="shell" style="endArrow=block;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="scan" value="Home tab">
+          <mxGeometry relative="1" x="0.234" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="935" y="60" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="scan" style="endArrow=block;html=1;" target="active">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="active" style="endArrow=block;html=1;" target="result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="result" style="endArrow=block;html=1;" target="confirm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="confirm" style="endArrow=block;html=1;" target="summary">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="shell" style="endArrow=block;html=1;" target="facility" value="Map tab">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="shell" style="endArrow=block;html=1;dashed=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=1.003;exitY=0.865;exitDx=0;exitDy=0;exitPerimeter=0;" target="chatbot" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1175" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_XDfFfHrDTXWpv3NiDqg-2" connectable="0" parent="e13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="pushed on root navigator" vertex="1">
+          <mxGeometry relative="1" x="-0.396" y="-1" as="geometry">
+            <mxPoint x="71" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_XDfFfHrDTXWpv3NiDqg-6" edge="1" parent="1" source="shell" style="rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;exitX=0.825;exitY=1.008;exitDx=0;exitDy=0;exitPerimeter=0;" target="settings">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1010" y="340" />
+              <mxPoint x="1765" y="340" />
+            </Array>
+            <mxPoint x="1010" y="260" as="sourcePoint" />
+            <mxPoint x="1575" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

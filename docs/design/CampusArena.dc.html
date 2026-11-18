@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<!-- eslint-disable -->
+<!-- htmlhint disable -->
+<!-- prettier-ignore -->
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<meta name="design_doc_mode" content="canvas">
+<style>
+  body { margin:0; font-family:'Roboto',system-ui,sans-serif; }
+  .msy { font-family:'Material Symbols Outlined'; font-weight:normal; font-style:normal; line-height:1; letter-spacing:normal; text-transform:none; white-space:nowrap; word-wrap:normal; direction:ltr; -webkit-font-feature-settings:'liga'; -webkit-font-smoothing:antialiased; }
+  .msf { font-variation-settings:'FILL' 1; }
+  ::-webkit-scrollbar { width:0; height:0; }
+  @keyframes caspin { to { transform:rotate(360deg); } }
+  @keyframes cablink { 0%,100%{opacity:.25} 50%{opacity:1} }
+  @keyframes capop { 0%{transform:scale(.7);opacity:0} 60%{transform:scale(1.1)} 100%{transform:scale(1);opacity:1} }
+  @keyframes cascanline { 0%,100%{transform:translateY(0)} 50%{transform:translateY(140px)} }
+</style>
+</helmet>
+<div style="{{ rootStyle }}min-height:100vh;background:var(--ca-canvas);color:var(--ca-on);padding:0 0 80px">
+
+  <!-- ============ CONTROL BAR ============ -->
+  <div style="position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:16px 28px;background:var(--ca-toolbar);backdrop-filter:blur(8px);border-bottom:1px solid var(--ca-outline)">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div style="width:38px;height:38px;border-radius:11px;background:var(--ca-free);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,168,107,.4)">
+        <span class="msy msf" style="font-size:24px;color:#fff">sports_tennis</span>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:17px;letter-spacing:-.2px;color:var(--ca-on)">CampusArena</div>
+        <div style="font-size:11px;color:var(--ca-on-var)">Material 3 · Politecnico di Milano</div>
+      </div>
+    </div>
+    <div style="flex:1"></div>
+    <!-- theme toggle -->
+    <div style="display:flex;align-items:center;gap:8px">
+      <span style="font-size:12px;color:var(--ca-on-var);font-weight:500">THEME</span>
+      <div style="display:flex;background:var(--ca-surface-c);border-radius:999px;padding:3px;gap:2px;border:1px solid var(--ca-outline)">
+        <button onClick="{{ setLight }}" style="{{ segLight }}">
+          <span class="msy" style="font-size:16px">light_mode</span>Light</button>
+        <button onClick="{{ setDark }}" style="{{ segDark }}">
+          <span class="msy" style="font-size:16px">dark_mode</span>Dark</button>
+      </div>
+    </div>
+    <!-- language toggle -->
+    <div style="display:flex;align-items:center;gap:8px">
+      <span style="font-size:12px;color:var(--ca-on-var);font-weight:500">LANG</span>
+      <div style="display:flex;background:var(--ca-surface-c);border-radius:999px;padding:3px;gap:2px;border:1px solid var(--ca-outline)">
+        <button onClick="{{ setEn }}" style="{{ segEn }}">EN</button>
+        <button onClick="{{ setIt }}" style="{{ segIt }}">IT</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:32px 28px;max-width:1400px;margin:0 auto">
+
+    <!-- ============ SECTION A: AUTH & ONBOARDING ============ -->
+    <div id="secA" style="margin-bottom:8px">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:var(--ca-primary-c);color:var(--ca-on-primary-c);padding:8px 16px;border-radius:999px;font-weight:600;font-size:14px;margin-bottom:6px">
+        <span class="msy" style="font-size:18px">login</span>{{ t.secA }}
+      </div>
+      <div style="color:var(--ca-on-var);font-size:13px;margin-bottom:22px">{{ t.secAsub }}</div>
+    </div>
+    <div style="display:flex;gap:28px;flex-wrap:wrap">
+
+      <!-- Splash -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbar }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;background:var(--ca-free)">
+            <div style="width:96px;height:96px;border-radius:28px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)">
+              <span class="msy msf" style="font-size:56px;color:#fff">sports_tennis</span>
+            </div>
+            <div style="font-size:30px;font-weight:700;color:#fff;letter-spacing:-.5px">CampusArena</div>
+            <div style="font-size:13px;color:rgba(255,255,255,.8);font-weight:500">{{ t.splashTag }}</div>
+            <div style="position:absolute;bottom:56px;width:40px;height:40px;border:3px solid rgba(255,255,255,.25);border-top-color:#fff;border-radius:50%;animation:caspin 1s linear infinite"></div>
+          </div>
+        </div>
+        <div style="{{ cap }}">1 · {{ t.capSplash }}</div>
+      </div>
+
+      <!-- Landing -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="flex:1;display:flex;flex-direction:column;padding:0 24px 28px;overflow:hidden">
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px">
+              <div style="width:80px;height:80px;border-radius:24px;background:var(--ca-primary-c);display:flex;align-items:center;justify-content:center">
+                <span class="msy msf" style="font-size:46px;color:var(--ca-on-primary-c)">sports_tennis</span>
+              </div>
+              <div style="font-size:26px;font-weight:700;letter-spacing:-.4px;text-align:center">CampusArena</div>
+              <div style="font-size:14px;color:var(--ca-on-var);text-align:center;line-height:1.5;max-width:230px">{{ t.landingSub }}</div>
+            </div>
+            <button style="{{ btnFilled }}">{{ t.register }}</button>
+            <button style="{{ btnOutlined }}">{{ t.login }}</button>
+          </div>
+        </div>
+        <div style="{{ cap }}">2 · {{ t.capLanding }}</div>
+      </div>
+
+      <!-- Login -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbar }}"><span class="msy" style="font-size:22px">arrow_back</span><span style="flex:1;text-align:center;font-weight:500;font-size:16px">{{ t.login }}</span><span style="width:22px"></span></div>
+          <div style="flex:1;padding:20px 24px;display:flex;flex-direction:column;gap:16px">
+            <div style="{{ tf }}"><span class="msy" style="font-size:20px;color:var(--ca-on-var)">mail</span><div><div style="{{ tfLabel }}">{{ t.email }}</div><div style="{{ tfVal }}">mario.rossi@mail.polimi.it</div></div></div>
+            <div style="{{ tf }}"><span class="msy" style="font-size:20px;color:var(--ca-on-var)">lock</span><div style="flex:1"><div style="{{ tfLabel }}">{{ t.password }}</div><div style="{{ tfVal }}">••••••••••</div></div><span class="msy" style="font-size:20px;color:var(--ca-on-var)">visibility_off</span></div>
+            <div style="text-align:right;color:var(--ca-primary);font-size:13px;font-weight:500">{{ t.forgot }}</div>
+            <div style="flex:1"></div>
+            <button style="{{ btnFilled }}">{{ t.login }}</button>
+            <div style="text-align:center;font-size:13px;color:var(--ca-on-var)">{{ t.noAccount }} <span style="color:var(--ca-primary);font-weight:600">{{ t.register }}</span></div>
+          </div>
+        </div>
+        <div style="{{ cap }}">3 · {{ t.capLogin }}</div>
+      </div>
+
+      <!-- Registration -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbar }}"><span class="msy" style="font-size:22px">arrow_back</span><span style="flex:1;text-align:center;font-weight:500;font-size:16px">{{ t.createAccount }}</span><span style="width:22px"></span></div>
+          <div style="flex:1;padding:16px 24px;display:flex;flex-direction:column;gap:12px;overflow:hidden">
+            <div style="{{ tfSm }}"><div style="{{ tfLabel }}">{{ t.fullName }}</div><div style="{{ tfVal }}">Mario Rossi</div></div>
+            <div style="{{ tfSm }}"><div style="{{ tfLabel }}">{{ t.username }}</div><div style="{{ tfVal }}">@mrossi</div></div>
+            <div style="{{ tfSm }}"><div style="{{ tfLabel }}">{{ t.email }}</div><div style="{{ tfVal }}">mario.rossi@mail.polimi.it</div></div>
+            <div style="{{ tfSm }}"><div style="{{ tfLabel }}">{{ t.password }}</div><div style="{{ tfVal }}">••••••••</div></div>
+            <div style="{{ tfSm }}display:flex;align-items:center;justify-content:space-between"><div><div style="{{ tfLabel }}">{{ t.degree }}</div><div style="{{ tfVal }}">Ing. Informatica</div></div><span class="msy" style="font-size:22px;color:var(--ca-on-var)">arrow_drop_down</span></div>
+            <div style="flex:1"></div>
+            <button style="{{ btnFilled }}">{{ t.register }}</button>
+          </div>
+        </div>
+        <div style="{{ cap }}">4 · {{ t.capReg }}</div>
+      </div>
+
+      <!-- Profile setup -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbar }}"><span class="msy" style="font-size:22px">arrow_back</span><span style="flex:1;text-align:center;font-weight:500;font-size:16px">{{ t.setupProfile }}</span><span style="width:22px"></span></div>
+          <div style="flex:1;padding:16px 24px;display:flex;flex-direction:column;gap:14px;overflow:hidden">
+            <div style="font-size:13px;color:var(--ca-on-var);font-weight:500">{{ t.pickAvatar }}</div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+              <sc-for list="{{ avatars }}" as="a" hint-placeholder-count="8">
+                <div style="aspect-ratio:1;border-radius:50%;background:{{ a.bg }};display:flex;align-items:center;justify-content:center;border:{{ a.ring }}"><span class="msy msf" style="font-size:22px;color:{{ a.fg }}">{{ a.icon }}</span></div>
+              </sc-for>
+            </div>
+            <div style="{{ permCard }}"><span class="msy" style="font-size:22px;color:var(--ca-primary)">photo_camera</span><div style="flex:1"><div style="font-weight:500;font-size:13px">{{ t.camera }}</div><div style="font-size:11px;color:var(--ca-on-var)">{{ t.cameraSub }}</div></div><div style="{{ chipTonal }}">{{ t.allow }}</div></div>
+            <div style="{{ permCard }}"><span class="msy" style="font-size:22px;color:var(--ca-primary)">location_on</span><div style="flex:1"><div style="font-weight:500;font-size:13px">{{ t.locationP }}</div><div style="font-size:11px;color:var(--ca-on-var)">{{ t.locationSub }}</div></div><div style="{{ chipTonal }}">{{ t.allow }}</div></div>
+            <div style="flex:1"></div>
+            <button style="{{ btnFilled }}">{{ t.continueBtn }}</button>
+          </div>
+        </div>
+        <div style="{{ cap }}">6 · {{ t.capSetup }}</div>
+      </div>
+
+      <!-- Tutorial (map step) -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="flex:1;display:flex;flex-direction:column;padding:0 0 26px;overflow:hidden">
+            <div style="text-align:right;padding:14px 24px 0;color:var(--ca-on-var);font-size:13px;font-weight:500">{{ t.skip }}</div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:0 24px">
+              <div style="width:180px;height:180px;border-radius:24px;background:var(--ca-surface-c);position:relative;overflow:hidden;border:1px solid var(--ca-outline)">
+                <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,var(--ca-surface-ch),var(--ca-surface-ch) 8px,transparent 8px,transparent 16px)"></div>
+                <span class="msy msf" style="position:absolute;top:38px;left:44px;font-size:30px;color:var(--ca-free)">location_on</span>
+                <span class="msy msf" style="position:absolute;top:90px;left:110px;font-size:30px;color:var(--ca-occupied)">location_on</span>
+                <span class="msy msf" style="position:absolute;top:120px;left:56px;font-size:30px;color:var(--ca-queued)">location_on</span>
+              </div>
+              <div style="font-size:20px;font-weight:700;text-align:center">{{ t.tutTitle }}</div>
+              <div style="font-size:14px;color:var(--ca-on-var);text-align:center;line-height:1.5;max-width:240px">{{ t.tutBody }}</div>
+              <div style="display:flex;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:var(--ca-outline)"></span><span style="width:20px;height:7px;border-radius:4px;background:var(--ca-primary)"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--ca-outline)"></span></div>
+            </div>
+            <div style="padding:0 24px"><button style="{{ btnFilled }}">{{ t.next }}</button></div>
+          </div>
+        </div>
+        <div style="{{ cap }}">7 · {{ t.capTut }}</div>
+      </div>
+
+    </div>
+    <!-- ============ SECTION B: HOME ============ -->
+    <div style="margin:44px 0 8px">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:var(--ca-primary-c);color:var(--ca-on-primary-c);padding:8px 16px;border-radius:999px;font-weight:600;font-size:14px;margin-bottom:6px"><span class="msy" style="font-size:18px">home</span>{{ t.secB }}</div>
+      <div style="color:var(--ca-on-var);font-size:13px;max-width:640px">{{ t.secBsub }}</div>
+    </div>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start">
+
+      <!-- Home phone -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbarC }}"><span>{{ t.navHome }}</span></div>
+          <div style="{{ body }}">
+            <div style="{{ scroll }}">
+              <!-- sport selector -->
+              <div style="display:flex;gap:8px">
+                <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:7px;background:var(--ca-primary);color:var(--ca-on-primary);border-radius:999px;padding:10px;font-size:13px;font-weight:600"><span class="msy msf" style="font-size:18px">sports_tennis</span>{{ t.pingpong }}</div>
+                <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:7px;background:var(--ca-surface-c);color:var(--ca-on-var);border-radius:999px;padding:10px;font-size:13px;font-weight:600;border:1px solid var(--ca-outline)"><span class="msy" style="font-size:18px">sports_soccer</span>{{ t.foosball }}</div>
+              </div>
+              <!-- ELO card -->
+              <div style="{{ card }}padding:18px;background:linear-gradient(135deg,var(--ca-primary) 0%,color-mix(in oklab,var(--ca-primary),#000 14%) 100%);border:none;color:var(--ca-on-primary);position:relative;overflow:hidden">
+                <span class="msy msf" style="position:absolute;right:-14px;top:-10px;font-size:110px;opacity:.12">sports_tennis</span>
+                <div style="font-size:12px;font-weight:600;opacity:.85;letter-spacing:.4px;text-transform:uppercase">{{ t.eloLabel }}</div>
+                <div style="font-size:46px;font-weight:700;line-height:1.05;margin:2px 0 4px">1482</div>
+                <div style="display:flex;align-items:center;gap:14px">
+                  <div style="display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.18);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600"><span class="msy" style="font-size:14px">trending_up</span>+14</div>
+                  <div style="font-size:13px;opacity:.9">{{ t.campusRank }} <b style="font-size:15px">#12</b></div>
+                </div>
+              </div>
+              <!-- Play -->
+              <button style="{{ fabPrimary }}"><span class="msy msf" style="font-size:24px">qr_code_scanner</span>{{ t.play }}</button>
+              <!-- pending challenge -->
+              <div style="{{ card }}padding:14px;background:var(--ca-secondary-c);border:none;display:flex;align-items:center;gap:12px">
+                <div style="width:42px;height:42px;border-radius:50%;background:#7C4DFF;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px">MB</div>
+                <div style="flex:1;min-width:0"><div style="font-weight:600;font-size:13px;color:var(--ca-on-secondary-c)">M. Bruno</div><div style="font-size:11px;color:var(--ca-on-secondary-c);opacity:.8">{{ t.challengedYou }}</div></div>
+                <div style="display:flex;gap:6px">
+                  <div style="width:34px;height:34px;border-radius:50%;background:var(--ca-primary);display:flex;align-items:center;justify-content:center"><span class="msy" style="font-size:20px;color:var(--ca-on-primary)">check</span></div>
+                  <div style="width:34px;height:34px;border-radius:50%;background:var(--ca-surface);display:flex;align-items:center;justify-content:center;border:1px solid var(--ca-outline)"><span class="msy" style="font-size:20px;color:var(--ca-on-var)">close</span></div>
+                </div>
+              </div>
+              <!-- Assistant entry -->
+              <div style="{{ card }}padding:14px;display:flex;align-items:center;gap:13px;border:1.5px solid var(--ca-primary)">
+                <div style="width:44px;height:44px;border-radius:14px;background:var(--ca-primary-c);display:flex;align-items:center;justify-content:center"><span class="msy msf" style="font-size:26px;color:var(--ca-on-primary-c)">smart_toy</span></div>
+                <div style="flex:1;min-width:0"><div style="font-weight:600;font-size:14px">{{ t.assistant }}</div><div style="font-size:11px;color:var(--ca-on-var)">{{ t.assistantSub }}</div></div>
+                <span class="msy" style="font-size:22px;color:var(--ca-primary)">arrow_forward</span>
+              </div>
+              <!-- recent -->
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px"><div style="font-weight:600;font-size:14px">{{ t.recent }}</div><div style="font-size:12px;color:var(--ca-primary);font-weight:600">{{ t.viewAll }}</div></div>
+              <div style="{{ card }}padding:4px 0">
+                <sc-for list="{{ recentMatches }}" as="m" hint-placeholder-count="5">
+                  <div style="display:flex;align-items:center;gap:11px;padding:9px 14px">
+                    <div style="width:34px;height:34px;border-radius:50%;background:{{ m.bg }};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:12px">{{ m.ini }}</div>
+                    <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500">{{ m.opp }}</div><div style="font-size:11px;color:var(--ca-on-var)">{{ m.score }}</div></div>
+                    <div style="font-size:14px;font-weight:700;color:{{ m.deltaColor }}">{{ m.delta }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+            <!-- bottom nav -->
+            <div style="{{ navBar }}">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px"><div style="background:var(--ca-primary-c);border-radius:999px;padding:2px 18px"><span class="msy msf" style="font-size:22px;color:var(--ca-on-primary-c)">home</span></div><span style="font-size:11px;font-weight:600;color:var(--ca-on)">{{ t.navHome }}</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--ca-on-var)"><span class="msy" style="font-size:22px">map</span><span style="font-size:11px">{{ t.navMap }}</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--ca-on-var)"><span class="msy" style="font-size:22px">leaderboard</span><span style="font-size:11px">{{ t.navLb }}</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--ca-on-var)"><span class="msy" style="font-size:22px">person</span><span style="font-size:11px">{{ t.navProfile }}</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">8 · {{ t.capHome }}</div>
+      </div>
+
+      <!-- Home tablet split -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="position:relative;width:600px;height:640px;background:var(--ca-bg);border-radius:26px;overflow:hidden;display:flex;box-shadow:var(--ca-frame-sh);border:1px solid var(--ca-outline)">
+          <!-- rail -->
+          <div style="width:80px;flex-shrink:0;background:var(--ca-surface-c);display:flex;flex-direction:column;align-items:center;padding-top:22px;gap:22px;border-right:1px solid var(--ca-outline)">
+            <div style="width:44px;height:44px;border-radius:13px;background:var(--ca-free);display:flex;align-items:center;justify-content:center;margin-bottom:8px"><span class="msy msf" style="font-size:24px;color:#fff">sports_tennis</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div style="background:var(--ca-primary-c);border-radius:999px;padding:4px 16px"><span class="msy msf" style="font-size:22px;color:var(--ca-on-primary-c)">home</span></div><span style="font-size:10px;font-weight:600">{{ t.navHome }}</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--ca-on-var)"><span class="msy" style="font-size:22px">map</span><span style="font-size:10px">{{ t.navMap }}</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--ca-on-var)"><span class="msy" style="font-size:22px">leaderboard</span><span style="font-size:10px">{{ t.navLb }}</span></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--ca-on-var)"><span class="msy" style="font-size:22px">person</span><span style="font-size:10px">{{ t.navProfile }}</span></div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;min-width:0">
+            <div style="height:52px;flex-shrink:0;display:flex;align-items:center;padding:0 22px;font-weight:500;font-size:17px">{{ t.navHome }}</div>
+            <div style="flex:1;display:flex;gap:16px;padding:0 20px 20px;min-height:0">
+              <!-- left: ELO summary -->
+              <div style="flex:1;display:flex;flex-direction:column;gap:14px;min-width:0">
+                <div style="display:flex;gap:8px">
+                  <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--ca-primary);color:var(--ca-on-primary);border-radius:999px;padding:9px;font-size:12px;font-weight:600"><span class="msy msf" style="font-size:16px">sports_tennis</span>{{ t.pingpong }}</div>
+                  <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--ca-surface-c);color:var(--ca-on-var);border-radius:999px;padding:9px;font-size:12px;font-weight:600;border:1px solid var(--ca-outline)"><span class="msy" style="font-size:16px">sports_soccer</span>{{ t.foosball }}</div>
+                </div>
+                <div style="{{ card }}padding:22px;background:linear-gradient(135deg,var(--ca-primary),color-mix(in oklab,var(--ca-primary),#000 14%));border:none;color:var(--ca-on-primary);position:relative;overflow:hidden;flex:1;display:flex;flex-direction:column;justify-content:center">
+                  <span class="msy msf" style="position:absolute;right:-20px;bottom:-16px;font-size:150px;opacity:.12">sports_tennis</span>
+                  <div style="font-size:12px;font-weight:600;opacity:.85;text-transform:uppercase;letter-spacing:.4px">{{ t.eloLabel }}</div>
+                  <div style="font-size:64px;font-weight:700;line-height:1">1482</div>
+                  <div style="display:flex;align-items:center;gap:12px;margin-top:10px">
+                    <div style="display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.18);padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600"><span class="msy" style="font-size:15px">trending_up</span>+14</div>
+                    <div style="font-size:14px;opacity:.9">{{ t.campusRank }} <b style="font-size:17px">#12</b></div>
+                  </div>
+                </div>
+                <button style="{{ fabPrimary }}"><span class="msy msf" style="font-size:22px">qr_code_scanner</span>{{ t.play }}</button>
+              </div>
+              <!-- right: activity -->
+              <div style="flex:1;display:flex;flex-direction:column;gap:12px;min-width:0">
+                <div style="{{ card }}padding:14px;display:flex;align-items:center;gap:12px;border:1.5px solid var(--ca-primary)">
+                  <div style="width:40px;height:40px;border-radius:12px;background:var(--ca-primary-c);display:flex;align-items:center;justify-content:center"><span class="msy msf" style="font-size:24px;color:var(--ca-on-primary-c)">smart_toy</span></div>
+                  <div style="flex:1;min-width:0"><div style="font-weight:600;font-size:13px">{{ t.assistant }}</div><div style="font-size:11px;color:var(--ca-on-var)">{{ t.assistantSub }}</div></div>
+                </div>
+                <div style="font-weight:600;font-size:14px">{{ t.recent }}</div>
+                <div style="{{ card }}padding:4px 0;flex:1;overflow:hidden">
+                  <sc-for list="{{ recentMatches }}" as="m" hint-placeholder-count="5">
+                    <div style="display:flex;align-items:center;gap:11px;padding:10px 14px">
+                      <div style="width:34px;height:34px;border-radius:50%;background:{{ m.bg }};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:12px">{{ m.ini }}</div>
+                      <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500">{{ m.opp }}</div><div style="font-size:11px;color:var(--ca-on-var)">{{ m.score }}</div></div>
+                      <div style="font-size:14px;font-weight:700;color:{{ m.deltaColor }}">{{ m.delta }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">9 · {{ t.capHomeTab }}</div>
+      </div>
+
+    </div>
+
+    <!-- ============ SECTION C: MAP & FACILITIES ============ -->
+    <div style="margin:44px 0 8px">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:var(--ca-primary-c);color:var(--ca-on-primary-c);padding:8px 16px;border-radius:999px;font-weight:600;font-size:14px;margin-bottom:6px"><span class="msy" style="font-size:18px">map</span>{{ t.secC }}</div>
+      <div style="color:var(--ca-on-var);font-size:13px;max-width:640px">{{ t.secCsub }}</div>
+    </div>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start">
+
+      <!-- Map view -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbarC }}"><span>{{ t.navMap }}</span></div>
+          <div style="{{ body }}">
+            <div style="flex:1;position:relative;overflow:hidden;background:var(--ca-surface-ch)">
+              <!-- fake map streets -->
+              <div style="position:absolute;inset:0;background:
+                linear-gradient(var(--ca-outline),var(--ca-outline)) 0 30%/100% 6px no-repeat,
+                linear-gradient(var(--ca-outline),var(--ca-outline)) 0 68%/100% 6px no-repeat,
+                linear-gradient(var(--ca-outline),var(--ca-outline)) 26% 0/6px 100% no-repeat,
+                linear-gradient(var(--ca-outline),var(--ca-outline)) 62% 0/6px 100% no-repeat;opacity:.5"></div>
+              <div style="position:absolute;top:30%;left:26%;width:120px;height:100px;background:color-mix(in oklab,var(--ca-primary),transparent 88%);border-radius:6px"></div>
+              <!-- toggle -->
+              <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);display:flex;background:var(--ca-surface);border-radius:999px;padding:3px;box-shadow:var(--ca-elev);border:1px solid var(--ca-outline)">
+                <div style="display:flex;align-items:center;gap:5px;background:var(--ca-primary);color:var(--ca-on-primary);border-radius:999px;padding:7px 15px;font-size:12px;font-weight:600"><span class="msy" style="font-size:16px">map</span>{{ t.tMap }}</div>
+                <div style="display:flex;align-items:center;gap:5px;color:var(--ca-on-var);border-radius:999px;padding:7px 15px;font-size:12px;font-weight:600"><span class="msy" style="font-size:16px">list</span>{{ t.tList }}</div>
+              </div>
+              <!-- pins -->
+              <sc-for list="{{ pins }}" as="p" hint-placeholder-count="5">
+                <div style="position:absolute;top:{{ p.top }};left:{{ p.left }};transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center">
+                  <div style="width:32px;height:32px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:{{ p.color }};display:flex;align-items:center;justify-content:center;box-shadow:0 3px 6px rgba(0,0,0,.35);border:2px solid #fff"><span class="msy msf" style="font-size:16px;color:#fff;transform:rotate(45deg)">sports_tennis</span></div>
+                </div>
+              </sc-for>
+              <!-- my location -->
+              <div style="position:absolute;top:50%;left:44%;width:16px;height:16px;border-radius:50%;background:#1a73e8;border:3px solid #fff;box-shadow:0 0 0 6px rgba(26,115,232,.25)"></div>
+              <!-- legend -->
+              <div style="position:absolute;bottom:12px;left:12px;display:flex;gap:12px;background:var(--ca-surface);padding:8px 12px;border-radius:12px;box-shadow:var(--ca-elev);border:1px solid var(--ca-outline)">
+                <div style="display:flex;align-items:center;gap:5px;font-size:11px;font-weight:500"><span style="width:9px;height:9px;border-radius:50%;background:var(--ca-free)"></span>{{ t.sFree }}</div>
+                <div style="display:flex;align-items:center;gap:5px;font-size:11px;font-weight:500"><span style="width:9px;height:9px;border-radius:50%;background:var(--ca-occupied)"></span>{{ t.sOccupied }}</div>
+                <div style="display:flex;align-items:center;gap:5px;font-size:11px;font-weight:500"><span style="width:9px;height:9px;border-radius:50%;background:var(--ca-queued)"></span>{{ t.sQueued }}</div>
+              </div>
+            </div>
+            <div style="{{ navBar }}">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--ca-on-var)"><span class="msy" style="font-size:22px">home</span><span style="font-size:11px">{{ t.navHome }}</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px"><div style="background:var(--ca-primary-c);border-radius:999px;padding:2px 18px"><span class="msy msf" style="font-size:22px;color:var(--ca-on-primary-c)">map</span></div><span style="font-size:11px;font-weight:600;color:var(--ca-on)">{{ t.navMap }}</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--ca-on-var)"><span class="msy" style="font-size:22px">leaderboard</span><span style="font-size:11px">{{ t.navLb }}</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--ca-on-var)"><span class="msy" style="font-size:22px">person</span><span style="font-size:11px">{{ t.navProfile }}</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">10 · {{ t.capMap }}</div>
+      </div>
+
+      <!-- List view -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbarC }}"><span>{{ t.navMap }}</span></div>
+          <div style="{{ body }}">
+            <div style="padding:10px 16px 0;display:flex;justify-content:center">
+              <div style="display:flex;background:var(--ca-surface-c);border-radius:999px;padding:3px;border:1px solid var(--ca-outline)">
+                <div style="display:flex;align-items:center;gap:5px;color:var(--ca-on-var);border-radius:999px;padding:7px 16px;font-size:12px;font-weight:600"><span class="msy" style="font-size:16px">map</span>{{ t.tMap }}</div>
+                <div style="display:flex;align-items:center;gap:5px;background:var(--ca-primary);color:var(--ca-on-primary);border-radius:999px;padding:7px 16px;font-size:12px;font-weight:600"><span class="msy" style="font-size:16px">list</span>{{ t.tList }}</div>
+              </div>
+            </div>
+            <div style="padding:10px 16px 4px;font-size:12px;color:var(--ca-on-var);font-weight:500;display:flex;align-items:center;gap:6px"><span class="msy" style="font-size:15px">near_me</span>{{ t.nearby }}</div>
+            <div style="{{ scroll }}padding-top:4px">
+              <sc-for list="{{ facilities }}" as="f" hint-placeholder-count="5">
+                <div style="{{ card }}padding:13px 14px;display:flex;align-items:center;gap:12px">
+                  <div style="width:42px;height:42px;border-radius:12px;background:var(--ca-surface-c);display:flex;align-items:center;justify-content:center;position:relative">
+                    <span class="msy msf" style="font-size:24px;color:var(--ca-on-var)">{{ f.sport }}</span>
+                    <span style="position:absolute;top:-2px;right:-2px;width:12px;height:12px;border-radius:50%;background:{{ f.color }};border:2px solid var(--ca-surface)"></span>
+                  </div>
+                  <div style="flex:1;min-width:0">
+                    <div style="font-size:14px;font-weight:600">{{ f.name }}</div>
+                    <div style="display:flex;align-items:center;gap:8px;margin-top:3px">
+                      <span style="display:inline-flex;align-items:center;gap:4px;background:color-mix(in oklab,{{ f.color }},transparent 84%);color:{{ f.color }};font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px"><span style="width:7px;height:7px;border-radius:50%;background:{{ f.color }}"></span>{{ f.label }}</span>
+                      <sc-if value="{{ f.outdoor }}" hint-placeholder-val="{{ true }}"><span style="display:inline-flex;align-items:center;gap:3px;font-size:11px;color:var(--ca-on-var)"><span class="msy" style="font-size:13px">wb_sunny</span>{{ t.outdoor }}</span></sc-if>
+                    </div>
+                  </div>
+                  <div style="text-align:right"><div style="font-size:12px;font-weight:600;color:var(--ca-on-var)">{{ f.dist }}</div><div style="font-size:10px;color:var(--ca-on-var)">{{ f.queueTxt }}</div></div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="{{ navBar }}">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--ca-on-var)"><span class="msy" style="font-size:22px">home</span><span style="font-size:11px">{{ t.navHome }}</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px"><div style="background:var(--ca-primary-c);border-radius:999px;padding:2px 18px"><span class="msy msf" style="font-size:22px;color:var(--ca-on-primary-c)">map</span></div><span style="font-size:11px;font-weight:600;color:var(--ca-on)">{{ t.navMap }}</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--ca-on-var)"><span class="msy" style="font-size:22px">leaderboard</span><span style="font-size:11px">{{ t.navLb }}</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--ca-on-var)"><span class="msy" style="font-size:22px">person</span><span style="font-size:11px">{{ t.navProfile }}</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">11 · {{ t.capList }}</div>
+      </div>
+
+      <!-- Facility detail slide-up -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="flex:1;position:relative;overflow:hidden">
+            <!-- dimmed map behind -->
+            <div style="position:absolute;inset:0;background:var(--ca-surface-ch)"></div>
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,.32)"></div>
+            <!-- sheet -->
+            <div style="position:absolute;left:0;right:0;bottom:0;background:var(--ca-surface);border-radius:24px 24px 0 0;box-shadow:0 -8px 24px rgba(0,0,0,.25);padding:8px 18px 20px;display:flex;flex-direction:column;gap:13px">
+              <div style="width:36px;height:4px;border-radius:2px;background:var(--ca-outline);align-self:center"></div>
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="width:44px;height:44px;border-radius:12px;background:var(--ca-primary-c);display:flex;align-items:center;justify-content:center"><span class="msy msf" style="font-size:26px;color:var(--ca-on-primary-c)">sports_tennis</span></div>
+                <div style="flex:1;min-width:0"><div style="font-size:17px;font-weight:700">{{ detail.name }}</div><div style="display:flex;align-items:center;gap:6px;margin-top:3px"><span style="display:inline-flex;align-items:center;gap:5px;background:color-mix(in oklab,var(--ca-occupied),transparent 84%);color:var(--ca-occupied);font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px"><span style="width:7px;height:7px;border-radius:50%;background:var(--ca-occupied)"></span>{{ detail.label }}</span><span style="font-size:11px;color:var(--ca-on-var);display:inline-flex;align-items:center;gap:3px"><span class="msy" style="font-size:13px">wb_sunny</span>{{ t.outdoor }}</span></div></div>
+              </div>
+              <!-- players + duration -->
+              <div style="display:flex;gap:10px">
+                <div style="flex:1;background:var(--ca-surface-c);border-radius:12px;padding:10px 12px"><div style="font-size:11px;color:var(--ca-on-var)">{{ t.players }}</div><div style="font-size:16px;font-weight:700;display:flex;align-items:center;gap:5px"><span class="msy" style="font-size:16px;color:var(--ca-on-var)">group</span>{{ detail.players }}</div></div>
+                <div style="flex:1;background:var(--ca-surface-c);border-radius:12px;padding:10px 12px"><div style="font-size:11px;color:var(--ca-on-var)">{{ t.matchDur }}</div><div style="font-size:16px;font-weight:700;display:flex;align-items:center;gap:5px"><span class="msy" style="font-size:16px;color:var(--ca-on-var)">timer</span>{{ detail.dur }}</div></div>
+                <div style="flex:1;background:var(--ca-surface-c);border-radius:12px;padding:10px 12px"><div style="font-size:11px;color:var(--ca-on-var)">{{ t.queueLen }}</div><div style="font-size:16px;font-weight:700;display:flex;align-items:center;gap:5px"><span class="msy" style="font-size:16px;color:var(--ca-queued)">groups</span>{{ detail.queue }}</div></div>
+              </div>
+              <!-- King of table -->
+              <div style="display:flex;align-items:center;gap:11px;background:var(--ca-secondary-c);border-radius:12px;padding:10px 13px">
+                <span class="msy msf" style="font-size:22px;color:var(--ca-queued)">workspace_premium</span>
+                <div style="width:36px;height:36px;border-radius:50%;background:#7C4DFF;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px">{{ detail.king.ini }}</div>
+                <div style="flex:1;min-width:0"><div style="font-size:11px;color:var(--ca-on-secondary-c);opacity:.85">{{ t.kingTable }}</div><div style="font-size:14px;font-weight:600;color:var(--ca-on-secondary-c)">{{ detail.king.name }}</div></div>
+                <div style="font-size:13px;font-weight:700;color:var(--ca-on-secondary-c)">{{ detail.king.wins }} {{ t.wins }}</div>
+              </div>
+              <!-- weather -->
+              <div style="display:flex;align-items:center;gap:8px;background:var(--ca-surface-c);border-radius:12px;padding:9px 13px">
+                <span class="msy msf" style="font-size:22px;color:var(--ca-queued)">{{ detail.weather.icon }}</span>
+                <div style="font-size:12px;color:var(--ca-on-var);font-weight:500">{{ t.weather }}</div>
+                <div style="flex:1"></div>
+                <div style="display:flex;gap:12px;font-size:12px;font-weight:600"><span style="display:flex;align-items:center;gap:3px"><span class="msy" style="font-size:14px;color:var(--ca-on-var)">thermostat</span>{{ detail.weather.temp }}</span><span style="display:flex;align-items:center;gap:3px"><span class="msy" style="font-size:14px;color:var(--ca-on-var)">water_drop</span>{{ detail.weather.precip }}</span><span style="display:flex;align-items:center;gap:3px"><span class="msy" style="font-size:14px;color:var(--ca-on-var)">air</span>{{ detail.weather.wind }}</span></div>
+              </div>
+              <button style="{{ btnFilled }}"><span class="msy" style="font-size:20px;vertical-align:-4px;margin-right:6px">login</span>{{ t.joinQueue }}</button>
+              <div style="font-size:10px;color:var(--ca-on-var);text-align:center;line-height:1.4;display:flex;gap:5px;align-items:flex-start"><span class="msy" style="font-size:13px">info</span><span style="text-align:left">{{ t.disclaimer }}</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">12 · {{ t.capDetail }}</div>
+      </div>
+
+    </div>
+
+    <!-- ============ SECTION D: LEADERBOARDS ============ -->
+    <div style="margin:44px 0 8px">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:var(--ca-primary-c);color:var(--ca-on-primary-c);padding:8px 16px;border-radius:999px;font-weight:600;font-size:14px;margin-bottom:6px"><span class="msy" style="font-size:18px">leaderboard</span>{{ t.secD }}</div>
+      <div style="color:var(--ca-on-var);font-size:13px;max-width:640px">{{ t.secDsub }}</div>
+    </div>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start">
+
+      <!-- Leaderboard -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbarC }}"><span>{{ t.lbTitle }}</span></div>
+          <div style="{{ body }}">
+            <div style="padding:6px 16px 0;display:flex;flex-direction:column;gap:11px">
+              <div style="display:flex;align-items:center;gap:10px;background:var(--ca-surface-c);border-radius:999px;padding:11px 16px;border:1px solid var(--ca-outline)"><span class="msy" style="font-size:20px;color:var(--ca-on-var)">search</span><span style="font-size:13px;color:var(--ca-on-var)">{{ t.searchPlayers }}</span></div>
+              <div style="display:flex;gap:7px;overflow:hidden">
+                <div style="display:flex;align-items:center;gap:5px;background:var(--ca-primary);color:var(--ca-on-primary);border-radius:999px;padding:7px 13px;font-size:12px;font-weight:600;flex-shrink:0"><span class="msy msf" style="font-size:15px">sports_tennis</span>{{ t.pingpong }}</div>
+                <div style="display:flex;align-items:center;gap:5px;background:var(--ca-surface-c);color:var(--ca-on-var);border-radius:999px;padding:7px 13px;font-size:12px;font-weight:600;border:1px solid var(--ca-outline);flex-shrink:0"><span class="msy" style="font-size:15px">group</span>{{ t.friends }}</div>
+                <div style="display:flex;align-items:center;gap:5px;background:var(--ca-surface-c);color:var(--ca-on-var);border-radius:999px;padding:7px 13px;font-size:12px;font-weight:600;border:1px solid var(--ca-outline);flex-shrink:0"><span class="msy" style="font-size:15px">school</span>{{ t.myCourse }}</div>
+              </div>
+            </div>
+            <div style="{{ scroll }}padding-top:14px;gap:14px">
+              <!-- podium -->
+              <div style="display:flex;align-items:flex-end;justify-content:center;gap:9px;padding:6px 2px 0">
+                <sc-for list="{{ podium }}" as="p" hint-placeholder-count="3">
+                  <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px">
+                    <sc-if value="{{ p.crown }}" hint-placeholder-val="{{ true }}"><span class="msy msf" style="font-size:22px;color:#F4B400;margin-bottom:-2px">workspace_premium</span></sc-if>
+                    <div style="position:relative;display:flex;justify-content:center">
+                      <div style="width:{{ p.avSize }};height:{{ p.avSize }};border-radius:50%;background:{{ p.bg }};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:17px;border:3px solid {{ p.medalColor }};box-shadow:var(--ca-elev)">{{ p.ini }}</div>
+                      <div style="position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);width:22px;height:22px;border-radius:50%;background:{{ p.medalColor }};color:#3a2c00;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;border:2px solid var(--ca-bg)">{{ p.rank }}</div>
+                    </div>
+                    <div style="text-align:center;width:100%;min-width:0;margin-top:2px"><div style="font-size:11px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.name }}</div><div style="font-size:14px;font-weight:800;color:var(--ca-primary);line-height:1.1">{{ p.elo }}</div></div>
+                    <div style="width:100%;height:{{ p.barH }};border-radius:12px 12px 0 0;background:linear-gradient(180deg,color-mix(in oklab,{{ p.medalColor }},transparent 55%),color-mix(in oklab,{{ p.medalColor }},transparent 80%));display:flex;align-items:flex-start;justify-content:center;padding-top:6px;font-size:20px;font-weight:800;color:{{ p.medalColor }}">{{ p.rank }}</div>
+                  </div>
+                </sc-for>
+              </div>
+              <!-- ranked list -->
+              <div style="{{ card }}padding:2px 0;overflow:hidden">
+                <sc-for list="{{ lbRest }}" as="p" hint-placeholder-count="4">
+                  <div style="display:flex;align-items:center;gap:12px;padding:10px 13px;border-bottom:1px solid color-mix(in oklab,var(--ca-outline),transparent 45%)">
+                    <div style="width:22px;text-align:center;font-weight:700;font-size:14px;color:var(--ca-on-var)">{{ p.rank }}</div>
+                    <div style="width:38px;height:38px;border-radius:50%;background:{{ p.bg }};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:13px">{{ p.ini }}</div>
+                    <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:600">{{ p.name }}</div><div style="font-size:11px;color:var(--ca-on-var);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.degree }}</div></div>
+                    <div style="font-size:15px;font-weight:800;color:var(--ca-primary)">{{ p.elo }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+            <!-- sticky you -->
+            <div style="flex-shrink:0;padding:10px 14px;border-top:1px solid var(--ca-outline);background:var(--ca-primary-c);display:flex;align-items:center;gap:11px">
+              <div style="width:26px;text-align:center;font-weight:700;font-size:14px;color:var(--ca-on-primary-c)">{{ myRank.rank }}</div>
+              <div style="width:38px;height:38px;border-radius:50%;background:{{ myRank.bg }};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:13px">{{ myRank.ini }}</div>
+              <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;color:var(--ca-on-primary-c)">{{ myRank.name }}</div><div style="font-size:11px;color:var(--ca-on-primary-c);opacity:.75">{{ myRank.degree }}</div></div>
+              <div style="font-size:15px;font-weight:700;color:var(--ca-on-primary-c)">{{ myRank.elo }}</div>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">13 · {{ t.capLb }}</div>
+      </div>
+
+      <!-- Leaderboard empty -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbarC }}"><span>{{ t.lbTitle }}</span></div>
+          <div style="{{ body }}">
+            <div style="padding:6px 16px 0;display:flex;flex-direction:column;gap:11px">
+              <div style="display:flex;align-items:center;gap:10px;background:var(--ca-surface-c);border-radius:999px;padding:11px 16px;border:1px solid var(--ca-outline)"><span class="msy" style="font-size:20px;color:var(--ca-on-var)">search</span><span style="font-size:13px;color:var(--ca-on-var)">{{ t.searchPlayers }}</span></div>
+              <div style="display:flex;gap:7px">
+                <div style="display:flex;align-items:center;gap:5px;background:var(--ca-surface-c);color:var(--ca-on-var);border-radius:999px;padding:7px 13px;font-size:12px;font-weight:600;border:1px solid var(--ca-outline)"><span class="msy msf" style="font-size:15px">sports_tennis</span>{{ t.pingpong }}</div>
+                <div style="display:flex;align-items:center;gap:5px;background:var(--ca-primary);color:var(--ca-on-primary);border-radius:999px;padding:7px 13px;font-size:12px;font-weight:600"><span class="msy" style="font-size:15px">group</span>{{ t.friends }}</div>
+              </div>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:0 32px;text-align:center">
+              <div style="width:88px;height:88px;border-radius:50%;background:var(--ca-surface-c);display:flex;align-items:center;justify-content:center"><span class="msy" style="font-size:44px;color:var(--ca-on-var)">groups</span></div>
+              <div style="font-size:17px;font-weight:700">{{ t.emptyTitle }}</div>
+              <div style="font-size:13px;color:var(--ca-on-var);line-height:1.5">{{ t.emptyBody }}</div>
+              <button style="{{ btnOutlined }}margin-top:0;width:auto;padding:0 22px"><span class="msy" style="font-size:18px;vertical-align:-4px;margin-right:6px">person_add</span>{{ t.addFriends }}</button>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">14 · {{ t.capLbEmpty }}</div>
+      </div>
+
+    </div>
+
+    <!-- ============ SECTION E: PROFILE & STATS ============ -->
+    <div style="margin:44px 0 8px">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:var(--ca-primary-c);color:var(--ca-on-primary-c);padding:8px 16px;border-radius:999px;font-weight:600;font-size:14px;margin-bottom:6px"><span class="msy" style="font-size:18px">person</span>{{ t.secE }}</div>
+      <div style="color:var(--ca-on-var);font-size:13px;max-width:640px">{{ t.secEsub }}</div>
+    </div>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start">
+
+      <!-- Profile & stats -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="height:52px;flex-shrink:0;display:flex;align-items:center;justify-content:center;position:relative;font-weight:500;font-size:16px">{{ t.navProfile }}<span class="msy" style="position:absolute;right:18px;font-size:22px;color:var(--ca-on-var)">settings</span></div>
+          <div style="{{ body }}">
+            <div style="{{ scroll }}gap:14px">
+              <!-- header -->
+              <div style="display:flex;flex-direction:column;align-items:center;gap:9px;padding-top:4px">
+                <div style="width:84px;height:84px;border-radius:50%;background:var(--ca-free);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:30px;box-shadow:var(--ca-elev-hi)">MR</div>
+                <div style="text-align:center"><div style="font-size:19px;font-weight:700">Mario Rossi</div><div style="font-size:13px;color:var(--ca-on-var)">@mrossi · Ing. Informatica</div></div>
+                <div style="display:flex;gap:8px">
+                  <sc-for list="{{ eloChips }}" as="c" hint-placeholder-count="2">
+                    <div style="display:flex;align-items:center;gap:6px;background:var(--ca-secondary-c);border-radius:999px;padding:6px 13px"><span class="msy msf" style="font-size:16px;color:var(--ca-primary)">{{ c.s }}</span><span style="font-size:12px;color:var(--ca-on-secondary-c)">{{ c.label }}</span><b style="font-size:13px;color:var(--ca-on-secondary-c)">{{ c.elo }}</b></div>
+                  </sc-for>
+                </div>
+              </div>
+              <!-- ELO trend -->
+              <div style="{{ card }}padding:14px">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+                  <div style="font-size:14px;font-weight:600">{{ t.eloTrend }}</div>
+                  <div style="display:flex;background:var(--ca-surface-c);border-radius:999px;padding:2px;border:1px solid var(--ca-outline)"><span style="background:var(--ca-primary);color:var(--ca-on-primary);border-radius:999px;padding:4px 11px;font-size:11px;font-weight:600">{{ t.pingpong }}</span><span style="color:var(--ca-on-var);padding:4px 11px;font-size:11px;font-weight:600">{{ t.foosball }}</span></div>
+                </div>
+                <svg viewBox="0 0 {{ cw }} {{ ch }}" style="width:100%;height:92px;display:block" preserveAspectRatio="none" data-om-raster>
+                  <defs><linearGradient id="caGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--ca-primary)" stop-opacity="0.28"/><stop offset="1" stop-color="var(--ca-primary)" stop-opacity="0"/></linearGradient></defs>
+                  <path d="{{ chartArea }}" fill="url(#caGrad)"></path>
+                  <polyline points="{{ chartLine }}" fill="none" stroke="var(--ca-primary)" stroke-width="2.5" stroke-linjoin="round" stroke-linecap="round"></polyline>
+                  <circle cx="{{ lastX }}" cy="{{ lastY }}" r="4" fill="var(--ca-primary)" stroke="var(--ca-surface)" stroke-width="2"></circle>
+                </svg>
+              </div>
+              <!-- stats grid -->
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+                <sc-for list="{{ stats }}" as="s" hint-placeholder-count="6">
+                  <div style="{{ card }}padding:11px 8px;display:flex;flex-direction:column;align-items:center;gap:3px"><span class="msy msf" style="font-size:20px;color:{{ s.color }}">{{ s.icon }}</span><div style="font-size:18px;font-weight:700">{{ s.val }}</div><div style="font-size:10px;color:var(--ca-on-var)">{{ s.label }}</div></div>
+                </sc-for>
+              </div>
+              <!-- fun stats -->
+              <div style="display:flex;gap:10px">
+                <div style="{{ card }}padding:12px;flex:1;min-width:0">
+                  <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--ca-occupied);font-weight:700;margin-bottom:8px"><span class="msy msf" style="font-size:15px">mood_bad</span>{{ t.blackBeast }}</div>
+                  <div style="display:flex;align-items:center;gap:8px"><div style="width:34px;height:34px;border-radius:50%;background:#E53935;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:12px">SR</div><div style="min-width:0"><div style="font-size:12px;font-weight:600">S. Romano</div><div style="font-size:11px;color:var(--ca-occupied);font-weight:600">2W–7L</div></div></div>
+                </div>
+                <div style="{{ card }}padding:12px;flex:1;min-width:0">
+                  <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--ca-free);font-weight:700;margin-bottom:8px"><span class="msy msf" style="font-size:15px">favorite</span>{{ t.favVictim }}</div>
+                  <div style="display:flex;align-items:center;gap:8px"><div style="width:34px;height:34px;border-radius:50%;background:#43A047;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:12px">FC</div><div style="min-width:0"><div style="font-size:12px;font-weight:600">F. Colombo</div><div style="font-size:11px;color:var(--ca-free);font-weight:600">9W–1L</div></div></div>
+                </div>
+              </div>
+              <!-- achievements -->
+              <div style="font-size:14px;font-weight:600;margin-top:2px">{{ t.achievements }}</div>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+                <sc-for list="{{ achievements }}" as="a" hint-placeholder-count="6">
+                  <div style="border-radius:12px;padding:12px 6px;display:flex;flex-direction:column;align-items:center;gap:6px;background:{{ a.tileBg }};opacity:{{ a.op }}"><span class="msy msf" style="font-size:26px;color:{{ a.iconColor }}">{{ a.icon }}</span><div style="font-size:10px;text-align:center;font-weight:500;color:{{ a.nameColor }};line-height:1.2">{{ a.name }}</div></div>
+                </sc-for>
+              </div>
+              <!-- match history -->
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-top:2px"><div style="font-size:14px;font-weight:600">{{ t.matchHistory }}</div><div style="font-size:12px;color:var(--ca-primary);font-weight:600">{{ t.viewAll }}</div></div>
+              <div style="{{ card }}padding:4px 0">
+                <sc-for list="{{ recentMatches }}" as="m" hint-placeholder-count="5">
+                  <div style="display:flex;align-items:center;gap:11px;padding:9px 14px">
+                    <div style="width:32px;height:32px;border-radius:50%;background:{{ m.bg }};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:11px">{{ m.ini }}</div>
+                    <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500">{{ m.opp }}</div><div style="font-size:11px;color:var(--ca-on-var)">{{ m.score }}</div></div>
+                    <div style="font-size:14px;font-weight:700;color:{{ m.deltaColor }}">{{ m.delta }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+            <div style="{{ navBar }}">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--ca-on-var)"><span class="msy" style="font-size:22px">home</span><span style="font-size:11px">{{ t.navHome }}</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--ca-on-var)"><span class="msy" style="font-size:22px">map</span><span style="font-size:11px">{{ t.navMap }}</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--ca-on-var)"><span class="msy" style="font-size:22px">leaderboard</span><span style="font-size:11px">{{ t.navLb }}</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px"><div style="background:var(--ca-primary-c);border-radius:999px;padding:2px 18px"><span class="msy msf" style="font-size:22px;color:var(--ca-on-primary-c)">person</span></div><span style="font-size:11px;font-weight:600;color:var(--ca-on)">{{ t.navProfile }}</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">15 · {{ t.capProfile }}</div>
+      </div>
+
+      <!-- Settings -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbar }}"><span class="msy" style="font-size:22px">arrow_back</span><span style="flex:1;text-align:center;font-weight:500;font-size:16px">{{ t.settings }}</span><span style="width:22px"></span></div>
+          <div style="{{ body }}">
+            <div style="{{ scroll }}gap:8px">
+              <div style="font-size:12px;font-weight:700;color:var(--ca-primary);padding:4px 4px 0;text-transform:uppercase;letter-spacing:.4px">{{ t.account }}</div>
+              <div style="{{ card }}padding:2px 0">
+                <div style="display:flex;align-items:center;gap:14px;padding:13px 15px"><span class="msy" style="font-size:22px;color:var(--ca-on-var)">lock</span><span style="flex:1;font-size:14px">{{ t.setPassword }}</span><span class="msy" style="font-size:20px;color:var(--ca-on-var)">chevron_right</span></div>
+                <div style="height:1px;background:var(--ca-outline);margin:0 15px"></div>
+                <div style="display:flex;align-items:center;gap:14px;padding:13px 15px"><span class="msy" style="font-size:22px;color:var(--ca-on-var)">shield</span><span style="flex:1;font-size:14px">{{ t.setPrivacy }}</span><span class="msy" style="font-size:20px;color:var(--ca-on-var)">chevron_right</span></div>
+              </div>
+              <div style="font-size:12px;font-weight:700;color:var(--ca-primary);padding:10px 4px 0;text-transform:uppercase;letter-spacing:.4px">{{ t.preferences }}</div>
+              <div style="{{ card }}padding:2px 0">
+                <div style="display:flex;align-items:center;gap:14px;padding:11px 15px"><span class="msy" style="font-size:22px;color:var(--ca-on-var)">notifications</span><span style="flex:1;font-size:14px">{{ t.setNotif }}</span>
+                  <div style="width:44px;height:26px;border-radius:999px;background:var(--ca-primary);position:relative"><div style="position:absolute;top:3px;right:3px;width:20px;height:20px;border-radius:50%;background:#fff"></div></div>
+                </div>
+                <div style="height:1px;background:var(--ca-outline);margin:0 15px"></div>
+                <div style="display:flex;align-items:center;gap:14px;padding:11px 15px"><span class="msy" style="font-size:22px;color:var(--ca-on-var)">translate</span><span style="flex:1;font-size:14px">{{ t.setLang }}</span>
+                  <div style="display:flex;background:var(--ca-surface-c);border-radius:999px;padding:2px;border:1px solid var(--ca-outline)"><span style="{{ langEnPill }}">EN</span><span style="{{ langItPill }}">IT</span></div>
+                </div>
+              </div>
+              <div style="flex:1"></div>
+              <button style="width:100%;min-height:48px;border:1.5px solid var(--ca-error);border-radius:12px;background:transparent;color:var(--ca-error);font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;margin-top:12px"><span class="msy" style="font-size:20px;vertical-align:-4px;margin-right:6px">logout</span>{{ t.setLogout }}</button>
+              <div style="text-align:center;font-size:11px;color:var(--ca-on-var);padding-top:4px">CampusArena · v1.0.0</div>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">16 · {{ t.capSettings }}</div>
+      </div>
+
+    </div>
+
+    <!-- ============ SECTION F: MATCH FLOW ============ -->
+    <div style="margin:44px 0 8px">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:var(--ca-primary-c);color:var(--ca-on-primary-c);padding:8px 16px;border-radius:999px;font-weight:600;font-size:14px;margin-bottom:6px"><span class="msy" style="font-size:18px">sports_score</span>{{ t.secF }}</div>
+      <div style="color:var(--ca-on-var);font-size:13px;max-width:640px">{{ t.secFsub }}</div>
+    </div>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start">
+
+      <!-- 1 QR scan -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}background:#0C0F0E;">
+          <div style="{{ statusbar }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="flex:1;position:relative;display:flex;flex-direction:column;align-items:center;overflow:hidden">
+            <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,#1c2320,#0C0F0E)"></div>
+            <div style="position:relative;display:flex;align-items:center;gap:8px;color:#fff;font-weight:500;font-size:16px;padding:14px 0"><span class="msy" style="font-size:22px">arrow_back</span><span style="flex:1"></span></div>
+            <!-- gps warning -->
+            <div style="position:relative;margin:0 20px;display:flex;align-items:flex-start;gap:9px;background:rgba(245,164,0,.16);border:1px solid var(--ca-queued);border-radius:12px;padding:10px 12px;color:#FFE0A3">
+              <span class="msy" style="font-size:18px;color:var(--ca-queued)">location_off</span><span style="font-size:11px;line-height:1.4">{{ t.gpsWarn }}</span>
+            </div>
+            <div style="flex:1;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;width:100%">
+              <div style="position:relative;width:190px;height:190px">
+                <div style="position:absolute;top:0;left:0;width:44px;height:44px;border-top:4px solid var(--ca-free);border-left:4px solid var(--ca-free);border-radius:10px 0 0 0"></div>
+                <div style="position:absolute;top:0;right:0;width:44px;height:44px;border-top:4px solid var(--ca-free);border-right:4px solid var(--ca-free);border-radius:0 10px 0 0"></div>
+                <div style="position:absolute;bottom:0;left:0;width:44px;height:44px;border-bottom:4px solid var(--ca-free);border-left:4px solid var(--ca-free);border-radius:0 0 0 10px"></div>
+                <div style="position:absolute;bottom:0;right:0;width:44px;height:44px;border-bottom:4px solid var(--ca-free);border-right:4px solid var(--ca-free);border-radius:0 0 10px 0"></div>
+                <div style="position:absolute;left:8px;right:8px;top:24px;height:2px;background:var(--ca-free);box-shadow:0 0 10px var(--ca-free);opacity:.8;animation:cascanline 2s ease-in-out infinite"></div>
+                <span class="msy" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:60px;color:rgba(255,255,255,.22)">qr_code_2</span>
+              </div>
+              <div style="text-align:center;color:#fff"><div style="font-size:17px;font-weight:600">{{ t.scanTitle }}</div><div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;max-width:220px">{{ t.scanHint }}</div></div>
+            </div>
+            <div style="position:relative;width:100%;padding:0 22px 26px"><button style="width:100%;min-height:48px;border:1.5px solid rgba(255,255,255,.4);border-radius:12px;background:rgba(255,255,255,.08);color:#fff;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer"><span class="msy" style="font-size:19px;vertical-align:-4px;margin-right:6px">keyboard</span>{{ t.enterManually }}</button></div>
+          </div>
+        </div>
+        <div style="{{ cap }}">17 · {{ t.capQR }}</div>
+      </div>
+
+      <!-- 2 Active game -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbarC }}"><span>Table 3 — BL27</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;padding:8px 22px 26px">
+            <div style="display:flex;justify-content:center;margin-bottom:8px"><div style="display:flex;align-items:center;gap:6px;background:color-mix(in oklab,var(--ca-occupied),transparent 84%);color:var(--ca-occupied);border-radius:999px;padding:5px 13px;font-size:12px;font-weight:700"><span style="width:8px;height:8px;border-radius:50%;background:var(--ca-occupied);animation:cablink 1.4s infinite"></span>{{ t.liveNow }}</div></div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">
+              <div style="font-size:13px;color:var(--ca-on-var);font-weight:500">{{ t.pingpong }}</div>
+              <div style="font-size:60px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:1px">08:24</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin:8px 0 20px">
+              <div style="flex:1;{{ card }}padding:16px 10px;display:flex;flex-direction:column;align-items:center;gap:8px"><div style="width:52px;height:52px;border-radius:50%;background:{{ me.bg }};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px">{{ me.ini }}</div><div style="font-size:13px;font-weight:600">{{ me.name }}</div><div style="font-size:12px;color:var(--ca-primary);font-weight:700">{{ me.elo }} ELO</div></div>
+              <div style="font-size:14px;font-weight:700;color:var(--ca-on-var)">{{ t.vs }}</div>
+              <div style="flex:1;{{ card }}padding:16px 10px;display:flex;flex-direction:column;align-items:center;gap:8px"><div style="width:52px;height:52px;border-radius:50%;background:{{ opp.bg }};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px">{{ opp.ini }}</div><div style="font-size:13px;font-weight:600">{{ opp.name }}</div><div style="font-size:12px;color:var(--ca-primary);font-weight:700">{{ opp.elo }} ELO</div></div>
+            </div>
+            <button style="{{ fabPrimary }}"><span class="msy" style="font-size:22px">scoreboard</span>{{ t.recordResult }}</button>
+          </div>
+        </div>
+        <div style="{{ cap }}">18 · {{ t.capActive }}</div>
+      </div>
+
+      <!-- 3 Result input -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbar }}"><span class="msy" style="font-size:22px">close</span><span style="flex:1;text-align:center;font-weight:500;font-size:16px">{{ t.enterScore }}</span><span style="width:22px"></span></div>
+          <div style="flex:1;display:flex;flex-direction:column;padding:8px 20px 24px">
+            <div style="display:flex;gap:12px;padding:0 6px 10px">
+              <div style="flex:1;text-align:center;display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:36px;height:36px;border-radius:50%;background:{{ me.bg }};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:12px">{{ me.ini }}</div><div style="font-size:12px;font-weight:600;color:var(--ca-primary)">{{ t.you }}</div></div>
+              <div style="width:40px"></div>
+              <div style="flex:1;text-align:center;display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:36px;height:36px;border-radius:50%;background:{{ opp.bg }};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:12px">{{ opp.ini }}</div><div style="font-size:12px;font-weight:600;color:var(--ca-on-var)">{{ t.opponent }}</div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px;flex:1">
+              <sc-for list="{{ sets }}" as="s" hint-placeholder-count="3">
+                <div style="{{ card }}padding:10px 12px;display:flex;align-items:center;gap:10px">
+                  <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px"><span class="msy" style="font-size:22px;color:var(--ca-outline)">remove</span><span style="font-size:22px;font-weight:700;min-width:24px;text-align:center">{{ s.a }}</span><span class="msy" style="font-size:22px;color:var(--ca-primary)">add</span></div>
+                  <div style="font-size:11px;color:var(--ca-on-var);font-weight:600;width:44px;text-align:center">{{ t.set }} {{ s.n }}</div>
+                  <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px"><span class="msy" style="font-size:22px;color:var(--ca-outline)">remove</span><span style="font-size:22px;font-weight:700;min-width:24px;text-align:center">{{ s.b }}</span><span class="msy" style="font-size:22px;color:var(--ca-primary)">add</span></div>
+                </div>
+              </sc-for>
+              <div style="display:flex;align-items:center;justify-content:center;gap:6px;color:var(--ca-primary);font-size:13px;font-weight:600;padding:6px"><span class="msy" style="font-size:19px">add_circle</span>{{ t.addSet }}</div>
+            </div>
+            <button style="{{ fabPrimary }}">{{ t.submit }}</button>
+          </div>
+        </div>
+        <div style="{{ cap }}">19 · {{ t.capResult }}</div>
+      </div>
+
+      <!-- 4 Confirmation -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbarC }}"><span>{{ t.confirmResult }}</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;padding:10px 22px 24px">
+            <div style="display:flex;align-items:center;gap:8px;background:var(--ca-secondary-c);border-radius:12px;padding:10px 13px;margin-bottom:14px"><span class="msy" style="font-size:19px;color:var(--ca-primary)">how_to_reg</span><div style="font-size:12px;color:var(--ca-on-secondary-c)">{{ t.submittedBy }} <b>L. Bianchi</b></div></div>
+            <div style="{{ card }}padding:16px;flex:1;display:flex;flex-direction:column">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+                <div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1"><div style="width:44px;height:44px;border-radius:50%;background:{{ me.bg }};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px">{{ me.ini }}</div><div style="font-size:12px;font-weight:600">{{ t.you }}</div></div>
+                <div style="text-align:center"><div style="font-size:34px;font-weight:800;font-variant-numeric:tabular-nums">2 – 1</div><div style="font-size:10px;color:var(--ca-on-var)">{{ t.set }}s</div></div>
+                <div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1"><div style="width:44px;height:44px;border-radius:50%;background:{{ opp.bg }};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px">{{ opp.ini }}</div><div style="font-size:12px;font-weight:600">L. Bianchi</div></div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <sc-for list="{{ sets }}" as="s" hint-placeholder-count="3">
+                  <div style="display:flex;align-items:center;justify-content:center;gap:16px;font-size:14px;font-weight:600;padding:5px;background:var(--ca-surface-c);border-radius:8px"><span style="min-width:20px;text-align:right">{{ s.a }}</span><span style="font-size:10px;color:var(--ca-on-var)">{{ t.set }} {{ s.n }}</span><span style="min-width:20px;text-align:left">{{ s.b }}</span></div>
+                </sc-for>
+              </div>
+              <div style="flex:1"></div>
+              <div style="text-align:center;font-size:11px;color:var(--ca-on-var);margin-top:12px">{{ t.waitingOpp }}</div>
+            </div>
+            <div style="display:flex;gap:10px;margin-top:14px">
+              <button style="flex:1;min-height:48px;border:1px solid var(--ca-error);border-radius:12px;background:transparent;color:var(--ca-error);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer">{{ t.dispute }}</button>
+              <button style="flex:2;min-height:48px;border:none;border-radius:12px;background:var(--ca-primary);color:var(--ca-on-primary);font-family:inherit;font-size:15px;font-weight:600;cursor:pointer">{{ t.confirm }}</button>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">20 · {{ t.capConfirm }}</div>
+      </div>
+
+      <!-- 5 Summary -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbar }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;padding:0 24px 24px;position:relative;overflow:hidden;background:linear-gradient(160deg,var(--ca-primary),color-mix(in oklab,var(--ca-primary),#000 22%))">
+            <span class="msy msf" style="position:absolute;top:-20px;right:-24px;font-size:150px;color:rgba(255,255,255,.1)">emoji_events</span>
+            <div style="color:#fff;font-size:15px;font-weight:600;margin-top:16px;letter-spacing:.5px">{{ t.victory }}</div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;position:relative">
+              <div style="font-size:15px;color:rgba(255,255,255,.8);font-weight:500">ELO</div>
+              <div style="display:flex;align-items:baseline;gap:4px;color:#fff;animation:capop .6s ease-out"><span class="msy" style="font-size:34px;color:#fff">trending_up</span><span style="font-size:56px;font-weight:800">+14</span></div>
+              <div style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.85);font-size:15px;font-weight:600"><span>1468</span><span class="msy" style="font-size:18px">arrow_forward</span><span style="font-size:20px;font-weight:800;color:#fff">1482</span></div>
+              <div style="margin-top:14px;background:rgba(255,255,255,.16);border-radius:12px;padding:10px 18px;text-align:center;color:#fff"><div style="font-size:11px;opacity:.85">{{ t.newRankLbl }}</div><div style="font-size:22px;font-weight:800;display:flex;align-items:center;gap:6px;justify-content:center">#12 <span class="msy" style="font-size:18px;color:#B6FFDE">arrow_upward</span></div></div>
+            </div>
+            <!-- badge unlock -->
+            <div style="width:100%;background:rgba(255,255,255,.95);border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:12px;margin-bottom:14px;animation:capop .7s ease-out .2s both">
+              <div style="width:44px;height:44px;border-radius:12px;background:#00A86B;display:flex;align-items:center;justify-content:center"><span class="msy msf" style="font-size:26px;color:#fff">local_fire_department</span></div>
+              <div style="flex:1;min-width:0"><div style="font-size:10px;color:#00A86B;font-weight:700;text-transform:uppercase;letter-spacing:.4px">{{ t.badgeUnlocked }}</div><div style="font-size:15px;font-weight:700;color:#111">{{ t.ach5 }}</div></div>
+              <span class="msy msf" style="font-size:22px;color:#F4B400">stars</span>
+            </div>
+            <button style="width:100%;min-height:48px;border:none;border-radius:12px;background:#fff;color:var(--ca-primary);font-family:inherit;font-size:15px;font-weight:700;cursor:pointer">{{ t.done }}</button>
+          </div>
+        </div>
+        <div style="{{ cap }}">21 · {{ t.capSummary }}</div>
+      </div>
+
+    </div>
+
+    <!-- ============ SECTION G: TOURNAMENTS ============ -->
+    <div style="margin:44px 0 8px">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:var(--ca-primary-c);color:var(--ca-on-primary-c);padding:8px 16px;border-radius:999px;font-weight:600;font-size:14px;margin-bottom:6px"><span class="msy" style="font-size:18px">emoji_events</span>{{ t.secG }}</div>
+      <div style="color:var(--ca-on-var);font-size:13px;max-width:640px">{{ t.secGsub }}</div>
+    </div>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start">
+
+      <!-- Browser -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbarC }}"><span>{{ t.tournaments }}</span><span class="msy" style="position:absolute;right:18px;font-size:24px;color:var(--ca-primary)">add_circle</span></div>
+          <div style="{{ body }}">
+            <div style="padding:6px 16px 0;display:flex;gap:7px">
+              <div style="display:flex;align-items:center;gap:5px;background:var(--ca-primary);color:var(--ca-on-primary);border-radius:999px;padding:7px 13px;font-size:12px;font-weight:600"><span class="msy msf" style="font-size:15px">sports_tennis</span>{{ t.pingpong }}</div>
+              <div style="display:flex;align-items:center;gap:5px;background:var(--ca-surface-c);color:var(--ca-on-var);border-radius:999px;padding:7px 13px;font-size:12px;font-weight:600;border:1px solid var(--ca-outline)"><span class="msy" style="font-size:15px">sports_soccer</span>{{ t.foosball }}</div>
+            </div>
+            <div style="{{ scroll }}gap:10px;padding-top:12px">
+              <div style="font-size:12px;font-weight:700;color:var(--ca-on-var);text-transform:uppercase;letter-spacing:.4px">{{ t.upcoming }}</div>
+              <sc-for list="{{ toursUp }}" as="x" hint-placeholder-count="2">
+                <div style="{{ card }}padding:13px 14px;display:flex;flex-direction:column;gap:9px">
+                  <div style="display:flex;align-items:center;gap:11px">
+                    <div style="width:40px;height:40px;border-radius:11px;background:var(--ca-secondary-c);display:flex;align-items:center;justify-content:center"><span class="msy msf" style="font-size:22px;color:var(--ca-primary)">{{ x.sport }}</span></div>
+                    <div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:700">{{ x.name }}</div><div style="font-size:11px;color:var(--ca-on-var);display:flex;align-items:center;gap:5px"><span class="msy" style="font-size:13px">schedule</span>{{ x.time }}<sc-if value="{{ x.outdoor }}" hint-placeholder-val="{{ true }}"><span class="msy" style="font-size:13px;color:var(--ca-queued)">wb_sunny</span></sc-if></div></div>
+                    <span style="background:color-mix(in oklab,{{ x.color }},transparent 84%);color:{{ x.color }};font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px">{{ x.label }}</span>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:10px">
+                    <div style="flex:1;height:6px;border-radius:3px;background:var(--ca-surface-ch);overflow:hidden"><div style="width:{{ x.pct }};height:100%;background:var(--ca-primary)"></div></div>
+                    <span style="font-size:11px;color:var(--ca-on-var);font-weight:600">{{ x.pmax }}</span>
+                    <button style="border:none;background:var(--ca-primary);color:var(--ca-on-primary);border-radius:999px;padding:6px 15px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer">{{ t.registerBtn }}</button>
+                  </div>
+                </div>
+              </sc-for>
+              <div style="font-size:12px;font-weight:700;color:var(--ca-on-var);text-transform:uppercase;letter-spacing:.4px;margin-top:4px">{{ t.ongoing }}</div>
+              <sc-for list="{{ toursOn }}" as="x" hint-placeholder-count="2">
+                <div style="{{ card }}padding:13px 14px;display:flex;align-items:center;gap:11px">
+                  <div style="width:40px;height:40px;border-radius:11px;background:var(--ca-secondary-c);display:flex;align-items:center;justify-content:center"><span class="msy msf" style="font-size:22px;color:var(--ca-primary)">{{ x.sport }}</span></div>
+                  <div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:700">{{ x.name }}</div><div style="font-size:11px;color:var(--ca-on-var)">{{ x.pmax }} · {{ x.time }}</div></div>
+                  <span style="background:color-mix(in oklab,{{ x.color }},transparent 84%);color:{{ x.color }};font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px">{{ x.label }}</span>
+                  <button style="border:1px solid var(--ca-outline);background:transparent;color:var(--ca-primary);border-radius:999px;padding:6px 14px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer">{{ t.viewBtn }}</button>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">22 · {{ t.capTourB }}</div>
+      </div>
+
+      <!-- Create form -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbar }}"><span class="msy" style="font-size:22px">close</span><span style="flex:1;text-align:center;font-weight:500;font-size:16px">{{ t.createTournament }}</span><span style="width:22px"></span></div>
+          <div style="flex:1;display:flex;flex-direction:column;padding:12px 20px 22px;gap:12px">
+            <div style="{{ tfSm }}"><div style="{{ tfLabel }}">{{ t.tName }}</div><div style="{{ tfVal }}">Spring Slam</div></div>
+            <div><div style="font-size:11px;color:var(--ca-primary);font-weight:500;margin-bottom:6px">{{ t.tSport }}</div><div style="display:flex;gap:8px"><div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--ca-primary);color:var(--ca-on-primary);border-radius:12px;padding:11px;font-size:13px;font-weight:600"><span class="msy msf" style="font-size:17px">sports_tennis</span>{{ t.pingpong }}</div><div style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--ca-surface-c);color:var(--ca-on-var);border-radius:12px;padding:11px;font-size:13px;font-weight:600;border:1px solid var(--ca-outline)"><span class="msy" style="font-size:17px">sports_soccer</span>{{ t.foosball }}</div></div></div>
+            <div style="{{ tfSm }}display:flex;align-items:center;justify-content:space-between"><div><div style="{{ tfLabel }}">{{ t.tFacility }}</div><div style="{{ tfVal }}">Table 3 — BL27</div></div><span class="msy" style="font-size:22px;color:var(--ca-on-var)">arrow_drop_down</span></div>
+            <div style="{{ tfSm }}display:flex;align-items:center;justify-content:space-between"><div><div style="{{ tfLabel }}">{{ t.tMax }}</div><div style="{{ tfVal }}">16</div></div><div style="display:flex;gap:6px"><span class="msy" style="font-size:24px;color:var(--ca-outline)">remove_circle</span><span class="msy" style="font-size:24px;color:var(--ca-primary)">add_circle</span></div></div>
+            <div style="{{ tfSm }}display:flex;align-items:center;justify-content:space-between"><div><div style="{{ tfLabel }}">{{ t.tDeadline }}</div><div style="{{ tfVal }}">Fri, 17:00</div></div><span class="msy" style="font-size:20px;color:var(--ca-on-var)">event</span></div>
+            <div style="{{ tfSm }}display:flex;align-items:center;justify-content:space-between"><div><div style="{{ tfLabel }}">{{ t.tSchedule }}</div><div style="{{ tfVal }}">Fri, 18:00</div></div><span class="msy" style="font-size:20px;color:var(--ca-on-var)">schedule</span></div>
+            <div style="flex:1"></div>
+            <button style="{{ fabPrimary }}">{{ t.createBtn }}</button>
+          </div>
+        </div>
+        <div style="{{ cap }}">23 · {{ t.capTourC }}</div>
+      </div>
+
+      <!-- Detail -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbar }}"><span class="msy" style="font-size:22px">arrow_back</span><span style="flex:1;text-align:center;font-weight:500;font-size:15px">Friday Night Smash</span><span class="msy" style="font-size:22px;color:var(--ca-on-var)">more_vert</span></div>
+          <div style="{{ body }}">
+            <div style="{{ scroll }}gap:12px">
+              <div style="display:flex;align-items:center;gap:10px">
+                <span style="background:color-mix(in oklab,var(--ca-queued),transparent 84%);color:var(--ca-queued);font-size:11px;font-weight:700;padding:4px 11px;border-radius:999px">{{ t.sActive }}</span>
+                <span style="font-size:12px;color:var(--ca-on-var);display:flex;align-items:center;gap:5px"><span class="msy" style="font-size:15px">sports_tennis</span>{{ t.pingpong }}</span>
+                <span style="font-size:12px;color:var(--ca-on-var);display:flex;align-items:center;gap:5px"><span class="msy" style="font-size:15px">group</span>12/16</span>
+              </div>
+              <div style="font-size:13px;font-weight:600">{{ t.standings }}</div>
+              <div style="{{ card }}padding:4px 0">
+                <sc-for list="{{ leaderboard }}" as="p" hint-placeholder-count="4">
+                  <div style="display:flex;align-items:center;gap:10px;padding:8px 13px">
+                    <span style="width:18px;font-weight:700;font-size:13px;color:var(--ca-on-var)">{{ p.rank }}</span>
+                    <div style="width:30px;height:30px;border-radius:50%;background:{{ p.bg }};display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:11px">{{ p.ini }}</div>
+                    <span style="flex:1;font-size:13px;font-weight:500">{{ p.name }}</span>
+                    <span style="font-size:12px;font-weight:700;color:var(--ca-primary)">{{ p.elo }}</span>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="font-size:13px;font-weight:600;margin-top:2px">{{ t.organizerCtrl }}</div>
+              <div style="display:flex;gap:8px">
+                <button style="flex:1;min-height:44px;border:1px solid var(--ca-outline);background:var(--ca-surface);color:var(--ca-on);border-radius:12px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px"><span class="msy" style="font-size:18px;color:var(--ca-primary)">skip_next</span>{{ t.advance }}</button>
+                <button style="flex:1;min-height:44px;border:1px solid var(--ca-error);background:transparent;color:var(--ca-error);border-radius:12px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px"><span class="msy" style="font-size:18px">flag</span>{{ t.forfeit }}</button>
+              </div>
+              <button style="{{ fabPrimary }}min-height:48px"><span class="msy" style="font-size:20px">account_tree</span>{{ t.bracketT }}</button>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">24 · {{ t.capTourD }}</div>
+      </div>
+
+      <!-- Bracket -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbar }}"><span class="msy" style="font-size:22px">arrow_back</span><span style="flex:1;text-align:center;font-weight:500;font-size:15px">Bovisa Open</span><span style="width:22px"></span></div>
+          <div style="{{ body }}">
+            <!-- forecast strip -->
+            <div style="margin:6px 14px 0;background:var(--ca-secondary-c);border-radius:12px;padding:9px 10px">
+              <div style="font-size:10px;font-weight:700;color:var(--ca-on-secondary-c);text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px;display:flex;align-items:center;gap:5px"><span class="msy" style="font-size:14px">wb_sunny</span>{{ t.forecast }}</div>
+              <div style="display:flex;justify-content:space-between">
+                <sc-for list="{{ forecastHrs }}" as="w" hint-placeholder-count="4">
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:3px"><span style="font-size:10px;color:var(--ca-on-secondary-c);opacity:.8">{{ w.h }}</span><span class="msy msf" style="font-size:19px;color:var(--ca-queued)">{{ w.i }}</span><span style="font-size:12px;font-weight:700;color:var(--ca-on-secondary-c)">{{ w.t }}</span></div>
+                </sc-for>
+              </div>
+            </div>
+            <div style="flex:1;overflow:auto;padding:14px;display:flex;gap:14px;align-items:stretch">
+              <!-- QF -->
+              <div style="display:flex;flex-direction:column;min-width:120px">
+                <div style="font-size:10px;font-weight:700;color:var(--ca-on-var);text-transform:uppercase;letter-spacing:.3px;margin-bottom:8px">{{ t.quarters }}</div>
+                <div style="flex:1;display:flex;flex-direction:column;justify-content:space-around;gap:10px">
+                  <sc-for list="{{ qf }}" as="m" hint-placeholder-count="4">
+                    <div style="{{ card }}padding:2px 0;font-size:11px">
+                      <div style="padding:6px 9px;{{ m.topStyle }}">{{ m.topN }}</div>
+                      <div style="height:1px;background:var(--ca-outline);margin:0 8px"></div>
+                      <div style="padding:6px 9px;{{ m.botStyle }}">{{ m.botN }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+              <!-- SF -->
+              <div style="display:flex;flex-direction:column;min-width:120px">
+                <div style="font-size:10px;font-weight:700;color:var(--ca-on-var);text-transform:uppercase;letter-spacing:.3px;margin-bottom:8px">{{ t.semis }}</div>
+                <div style="flex:1;display:flex;flex-direction:column;justify-content:space-around;gap:10px">
+                  <sc-for list="{{ sf }}" as="m" hint-placeholder-count="2">
+                    <div style="{{ card }}padding:2px 0;font-size:11px">
+                      <div style="padding:6px 9px;{{ m.topStyle }}">{{ m.topN }}</div>
+                      <div style="height:1px;background:var(--ca-outline);margin:0 8px"></div>
+                      <div style="padding:6px 9px;{{ m.botStyle }}">{{ m.botN }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+              <!-- Final -->
+              <div style="display:flex;flex-direction:column;min-width:120px">
+                <div style="font-size:10px;font-weight:700;color:var(--ca-queued);text-transform:uppercase;letter-spacing:.3px;margin-bottom:8px">{{ t.finalR }}</div>
+                <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+                  <sc-for list="{{ fn }}" as="m" hint-placeholder-count="1">
+                    <div style="border:1.5px solid var(--ca-queued);border-radius:12px;padding:2px 0;font-size:11px;background:var(--ca-surface)">
+                      <div style="padding:7px 9px;{{ m.topStyle }}">{{ m.topN }}</div>
+                      <div style="height:1px;background:var(--ca-outline);margin:0 8px"></div>
+                      <div style="padding:7px 9px;{{ m.botStyle }}">{{ m.botN }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">25 · {{ t.capTourBr }}</div>
+      </div>
+
+    </div>
+
+    <!-- ============ SECTION H: ARENA ASSISTANT ============ -->
+    <div style="margin:44px 0 8px">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:var(--ca-primary-c);color:var(--ca-on-primary-c);padding:8px 16px;border-radius:999px;font-weight:600;font-size:14px;margin-bottom:6px"><span class="msy msf" style="font-size:18px">smart_toy</span>{{ t.secH }}</div>
+      <div style="color:var(--ca-on-var);font-size:13px;max-width:640px">{{ t.secHsub }}</div>
+    </div>
+    <div style="display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start">
+
+      <!-- H1 First-open -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbar }}"><span class="msy" style="font-size:22px">arrow_back</span><div style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px"><div style="width:28px;height:28px;border-radius:9px;background:var(--ca-primary-c);display:flex;align-items:center;justify-content:center"><span class="msy msf" style="font-size:18px;color:var(--ca-on-primary-c)">smart_toy</span></div><span style="font-weight:500;font-size:15px">{{ t.asstTitle }}</span></div><span class="msy" style="font-size:22px;color:var(--ca-on-var)">more_vert</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;overflow:hidden">
+            <div style="flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:14px">
+              <!-- greeting -->
+              <div style="align-self:flex-start;max-width:82%;background:var(--ca-surface-c);border-radius:4px 16px 16px 16px;padding:12px 14px;font-size:13px;line-height:1.45">{{ t.asstGreeting }}</div>
+              <!-- info banner -->
+              <div style="background:var(--ca-secondary-c);border-radius:12px;padding:11px 12px;display:flex;gap:9px;align-items:flex-start">
+                <span class="msy" style="font-size:18px;color:var(--ca-primary);flex-shrink:0">info</span>
+                <span style="font-size:11px;line-height:1.45;color:var(--ca-on-secondary-c);flex:1">{{ t.asstBanner }}</span>
+                <span class="msy" style="font-size:17px;color:var(--ca-on-secondary-c);opacity:.7;flex-shrink:0">close</span>
+              </div>
+              <div style="flex:1"></div>
+              <!-- suggestion chips -->
+              <div style="display:flex;flex-wrap:wrap;gap:8px">
+                <sc-for list="{{ asstChips }}" as="c" hint-placeholder-count="4">
+                  <div style="background:var(--ca-surface);border:1px solid var(--ca-primary);color:var(--ca-primary);border-radius:999px;padding:8px 13px;font-size:12px;font-weight:600">{{ c }}</div>
+                </sc-for>
+              </div>
+            </div>
+            <!-- input bar -->
+            <div style="flex-shrink:0;padding:10px 14px;display:flex;align-items:center;gap:9px;border-top:1px solid var(--ca-outline)">
+              <div style="flex:1;background:var(--ca-surface-c);border:1px solid var(--ca-outline);border-radius:999px;padding:11px 16px;font-size:13px;color:var(--ca-on-var)">{{ t.inputPh }}</div>
+              <div style="width:44px;height:44px;border-radius:50%;background:var(--ca-primary);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span class="msy msf" style="font-size:22px;color:var(--ca-on-primary)">send</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">26 · {{ t.capAsstFirst }}</div>
+      </div>
+
+      <!-- H2 Rich cards -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbar }}"><span class="msy" style="font-size:22px">arrow_back</span><div style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px"><div style="width:28px;height:28px;border-radius:9px;background:var(--ca-primary-c);display:flex;align-items:center;justify-content:center"><span class="msy msf" style="font-size:18px;color:var(--ca-on-primary-c)">smart_toy</span></div><span style="font-weight:500;font-size:15px">{{ t.asstTitle }}</span></div><span class="msy" style="font-size:22px;color:var(--ca-on-var)">more_vert</span></div>
+          <div style="flex:1;display:flex;flex-direction:column;overflow:hidden">
+            <div style="flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:12px">
+              <div style="align-self:flex-end;max-width:80%;background:var(--ca-primary-c);color:var(--ca-on-primary-c);border-radius:16px 16px 4px 16px;padding:10px 14px;font-size:13px">{{ t.chip1 }}</div>
+              <div style="align-self:flex-start;max-width:82%;background:var(--ca-surface-c);border-radius:4px 16px 16px 16px;padding:11px 13px;font-size:13px;line-height:1.4">{{ t.asstAvailAns }}</div>
+              <!-- availability card -->
+              <div style="align-self:flex-start;width:88%;{{ card }}padding:0;overflow:hidden">
+                <sc-for list="{{ availList }}" as="f" hint-placeholder-count="3">
+                  <div style="display:flex;align-items:center;gap:10px;padding:10px 13px;border-bottom:1px solid var(--ca-outline)">
+                    <span style="width:9px;height:9px;border-radius:50%;background:{{ f.color }};flex-shrink:0"></span>
+                    <span class="msy" style="font-size:18px;color:var(--ca-on-var)">{{ f.sport }}</span>
+                    <span style="flex:1;font-size:12px;font-weight:600;min-width:0">{{ f.name }}</span>
+                    <span style="font-size:11px;color:var(--ca-on-var);display:flex;align-items:center;gap:3px"><span class="msy" style="font-size:14px">groups</span>{{ f.queue }}</span>
+                  </div>
+                </sc-for>
+                <div style="display:flex;align-items:center;gap:5px;color:var(--ca-primary);font-size:12px;font-weight:600;padding:9px 13px"><span class="msy" style="font-size:16px">map</span>{{ t.openMap }}</div>
+                <div style="display:flex;gap:5px;align-items:flex-start;padding:0 13px 10px;font-size:10px;color:var(--ca-on-var);line-height:1.4"><span class="msy" style="font-size:12px">info</span><span>{{ t.disclaimer }}</span></div>
+              </div>
+              <div style="align-self:flex-end;max-width:80%;background:var(--ca-primary-c);color:var(--ca-on-primary-c);border-radius:16px 16px 4px 16px;padding:10px 14px;font-size:13px">{{ t.chip2 }}</div>
+              <!-- tournament card -->
+              <div style="align-self:flex-start;width:88%;{{ card }}padding:13px 14px;display:flex;flex-direction:column;gap:9px">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div style="width:38px;height:38px;border-radius:11px;background:var(--ca-secondary-c);display:flex;align-items:center;justify-content:center"><span class="msy msf" style="font-size:20px;color:var(--ca-primary)">{{ tourCard.sport }}</span></div>
+                  <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700">{{ tourCard.name }}</div><div style="font-size:11px;color:var(--ca-on-var)">{{ tourCard.time }} · {{ tourCard.pmax }}</div></div>
+                  <span style="background:color-mix(in oklab,{{ tourCard.color }},transparent 84%);color:{{ tourCard.color }};font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px">{{ tourCard.label }}</span>
+                </div>
+                <button style="border:1px solid var(--ca-outline);background:transparent;color:var(--ca-primary);border-radius:10px;padding:8px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer">{{ t.viewBtn }}</button>
+              </div>
+              <!-- typing indicator -->
+              <div style="align-self:flex-start;background:var(--ca-surface-c);border-radius:16px;padding:12px 15px;display:flex;gap:5px">
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--ca-on-var);animation:cablink 1.2s infinite"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--ca-on-var);animation:cablink 1.2s infinite .2s"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--ca-on-var);animation:cablink 1.2s infinite .4s"></span>
+              </div>
+            </div>
+            <div style="flex-shrink:0;padding:10px 14px;display:flex;align-items:center;gap:9px;border-top:1px solid var(--ca-outline)">
+              <div style="flex:1;background:var(--ca-surface-c);border:1px solid var(--ca-outline);border-radius:999px;padding:11px 16px;font-size:13px;color:var(--ca-on-var)">{{ t.inputPh }}</div>
+              <div style="width:44px;height:44px;border-radius:50%;background:var(--ca-outline);display:flex;align-items:center;justify-content:center;flex-shrink:0;opacity:.6"><span class="msy msf" style="font-size:22px;color:var(--ca-surface)">send</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">27 · {{ t.capAsstChat }}</div>
+      </div>
+
+      <!-- H3 Error / offline -->
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="{{ frame }}">
+          <div style="{{ statusbarLite }}"><span>9:41</span><span style="display:flex;gap:5px"><span class="msy" style="font-size:15px">signal_cellular_alt</span><span class="msy" style="font-size:15px">wifi</span><span class="msy" style="font-size:15px">battery_full</span></span></div>
+          <div style="{{ appbar }}"><span class="msy" style="font-size:22px">arrow_back</span><div style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px"><div style="width:28px;height:28px;border-radius:9px;background:var(--ca-primary-c);display:flex;align-items:center;justify-content:center"><span class="msy msf" style="font-size:18px;color:var(--ca-on-primary-c)">smart_toy</span></div><span style="font-weight:500;font-size:15px">{{ t.asstTitle }}</span></div><span class="msy" style="font-size:22px;color:var(--ca-on-var)">more_vert</span></div>
+          <!-- limited mode pill -->
+          <div style="flex-shrink:0;display:flex;justify-content:center;padding:2px 0 6px"><div style="display:flex;align-items:center;gap:6px;background:color-mix(in oklab,var(--ca-queued),transparent 82%);color:var(--ca-queued);border-radius:999px;padding:5px 13px;font-size:11px;font-weight:700"><span class="msy" style="font-size:15px">cloud_off</span>{{ t.limitedMode }}</div></div>
+          <div style="flex:1;display:flex;flex-direction:column;overflow:hidden">
+            <div style="flex:1;overflow-y:auto;padding:8px 16px;display:flex;flex-direction:column;gap:12px">
+              <div style="align-self:flex-end;max-width:80%;background:var(--ca-primary-c);color:var(--ca-on-primary-c);border-radius:16px 16px 4px 16px;padding:10px 14px;font-size:13px">{{ t.chip3 }}</div>
+              <!-- error bubble -->
+              <div style="align-self:flex-start;max-width:86%;background:var(--ca-error-c);border-radius:4px 16px 16px 16px;padding:12px 14px;display:flex;flex-direction:column;gap:10px">
+                <div style="display:flex;gap:9px;align-items:flex-start"><span class="msy" style="font-size:19px;color:var(--ca-error)">error</span><span style="font-size:13px;line-height:1.4;color:var(--ca-on-error-c)">{{ t.errBubble }}</span></div>
+                <button style="align-self:flex-start;display:flex;align-items:center;gap:6px;border:1px solid var(--ca-error);background:transparent;color:var(--ca-error);border-radius:999px;padding:6px 14px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer"><span class="msy" style="font-size:16px">refresh</span>{{ t.retry }}</button>
+              </div>
+            </div>
+            <div style="flex-shrink:0;padding:10px 14px;display:flex;align-items:center;gap:9px;border-top:1px solid var(--ca-outline)">
+              <div style="flex:1;background:var(--ca-surface-c);border:1px solid var(--ca-outline);border-radius:999px;padding:11px 16px;font-size:13px;color:var(--ca-on-var)">{{ t.inputPh }}</div>
+              <div style="width:44px;height:44px;border-radius:50%;background:var(--ca-primary);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span class="msy msf" style="font-size:22px;color:var(--ca-on-primary)">send</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="{{ cap }}">28 · {{ t.capAsstError }}</div>
+      </div>
+
+    </div>
+
+    <!-- ============ COMPONENT SHEET ============ -->
+    <div style="margin:44px 0 8px">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:var(--ca-free);color:#fff;padding:8px 16px;border-radius:999px;font-weight:600;font-size:14px;margin-bottom:6px"><span class="msy" style="font-size:18px">widgets</span>{{ t.secComp }}</div>
+      <div style="color:var(--ca-on-var);font-size:13px;max-width:640px">{{ t.secCompSub }}</div>
+    </div>
+    <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;max-width:1000px">
+
+      <!-- Buttons -->
+      <div style="{{ card }}background:var(--ca-bg);padding:18px;width:300px;display:flex;flex-direction:column;gap:11px">
+        <div style="font-size:13px;font-weight:700;color:var(--ca-on-var);text-transform:uppercase;letter-spacing:.4px">{{ t.cButtons }}</div>
+        <button style="{{ btnFilled }}margin-top:0">{{ t.bFilled }}</button>
+        <button style="width:100%;min-height:48px;border:none;border-radius:12px;background:var(--ca-secondary-c);color:var(--ca-on-secondary-c);font-family:inherit;font-size:15px;font-weight:600;cursor:pointer">{{ t.bTonal }}</button>
+        <button style="{{ btnOutlined }}margin-top:0">{{ t.bText }} · Outlined</button>
+        <button style="width:100%;min-height:48px;border:1px solid var(--ca-error);border-radius:12px;background:transparent;color:var(--ca-error);font-family:inherit;font-size:15px;font-weight:600;cursor:pointer">{{ t.bDestr }}</button>
+        <button style="width:100%;min-height:48px;border:none;border-radius:12px;background:var(--ca-surface-ch);color:var(--ca-on-var);font-family:inherit;font-size:15px;font-weight:600;opacity:.55">{{ t.bDisabled }}</button>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:2px"><div style="width:52px;height:52px;border-radius:16px;background:var(--ca-primary);display:flex;align-items:center;justify-content:center;box-shadow:var(--ca-elev-hi)"><span class="msy msf" style="font-size:26px;color:var(--ca-on-primary)">qr_code_scanner</span></div><span style="font-size:12px;color:var(--ca-on-var)">FAB · 16dp radius</span></div>
+      </div>
+
+      <!-- Chips -->
+      <div style="{{ card }}background:var(--ca-bg);padding:18px;width:300px;display:flex;flex-direction:column;gap:12px">
+        <div style="font-size:13px;font-weight:700;color:var(--ca-on-var);text-transform:uppercase;letter-spacing:.4px">{{ t.cChips }}</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="display:flex;align-items:center;gap:5px;background:var(--ca-primary);color:var(--ca-on-primary);border-radius:999px;padding:8px 13px;font-size:12px;font-weight:600"><span class="msy msf" style="font-size:15px">sports_tennis</span>{{ t.pingpong }}</span>
+          <span style="display:flex;align-items:center;gap:5px;background:var(--ca-surface-c);color:var(--ca-on-var);border-radius:999px;padding:8px 13px;font-size:12px;font-weight:600;border:1px solid var(--ca-outline)"><span class="msy" style="font-size:15px">sports_soccer</span>{{ t.foosball }}</span>
+          <span style="display:flex;align-items:center;gap:5px;background:var(--ca-surface-c);color:var(--ca-on-var);border-radius:999px;padding:8px 13px;font-size:12px;font-weight:600;border:1px solid var(--ca-outline)"><span class="msy" style="font-size:15px">group</span>{{ t.friends }}</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;background:color-mix(in oklab,var(--ca-free),transparent 84%);color:var(--ca-free);font-size:11px;font-weight:700;padding:4px 11px;border-radius:999px"><span style="width:7px;height:7px;border-radius:50%;background:var(--ca-free)"></span>{{ t.sFree }}</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;background:color-mix(in oklab,var(--ca-occupied),transparent 84%);color:var(--ca-occupied);font-size:11px;font-weight:700;padding:4px 11px;border-radius:999px"><span style="width:7px;height:7px;border-radius:50%;background:var(--ca-occupied)"></span>{{ t.sOccupied }}</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;background:color-mix(in oklab,var(--ca-queued),transparent 84%);color:var(--ca-queued);font-size:11px;font-weight:700;padding:4px 11px;border-radius:999px"><span style="width:7px;height:7px;border-radius:50%;background:var(--ca-queued)"></span>{{ t.sQueued }}</span>
+        </div>
+      </div>
+
+      <!-- Status language -->
+      <div style="{{ card }}background:var(--ca-bg);padding:18px;width:300px;display:flex;flex-direction:column;gap:12px">
+        <div style="font-size:13px;font-weight:700;color:var(--ca-on-var);text-transform:uppercase;letter-spacing:.4px">{{ t.cStatus }}</div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="width:16px;height:16px;border-radius:50%;background:var(--ca-free)"></span><div style="flex:1"><div style="font-size:13px;font-weight:600">🟢 {{ t.sFree }}</div><div style="font-size:11px;color:var(--ca-on-var)">#00A86B</div></div></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="width:16px;height:16px;border-radius:50%;background:var(--ca-occupied)"></span><div style="flex:1"><div style="font-size:13px;font-weight:600">🔴 {{ t.sOccupied }}</div><div style="font-size:11px;color:var(--ca-on-var)">#E53935</div></div></div>
+        <div style="display:flex;align-items:center;gap:12px"><span style="width:16px;height:16px;border-radius:50%;background:var(--ca-queued)"></span><div style="flex:1"><div style="font-size:13px;font-weight:600">🟡 {{ t.sQueued }}</div><div style="font-size:11px;color:var(--ca-on-var)">#F5A400</div></div></div>
+      </div>
+
+      <!-- Banners -->
+      <div style="{{ card }}background:var(--ca-bg);padding:18px;width:300px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:13px;font-weight:700;color:var(--ca-on-var);text-transform:uppercase;letter-spacing:.4px">{{ t.cBanners }}</div>
+        <div style="background:var(--ca-secondary-c);border-radius:12px;padding:11px 12px;display:flex;gap:9px;align-items:center"><span class="msy" style="font-size:18px;color:var(--ca-primary)">info</span><span style="font-size:11px;color:var(--ca-on-secondary-c)">Info · tonal surface</span></div>
+        <div style="background:color-mix(in oklab,var(--ca-queued),transparent 84%);border:1px solid var(--ca-queued);border-radius:12px;padding:11px 12px;display:flex;gap:9px;align-items:center"><span class="msy" style="font-size:18px;color:var(--ca-queued)">warning</span><span style="font-size:11px;color:var(--ca-on)">GPS soft-warning</span></div>
+        <div style="background:var(--ca-error-c);border-radius:12px;padding:11px 12px;display:flex;gap:9px;align-items:center"><span class="msy" style="font-size:18px;color:var(--ca-error)">error</span><span style="font-size:11px;color:var(--ca-on-error-c)">Error state</span></div>
+      </div>
+
+      <!-- Chat bubbles -->
+      <div style="{{ card }}background:var(--ca-bg);padding:18px;width:300px;display:flex;flex-direction:column;gap:10px">
+        <div style="font-size:13px;font-weight:700;color:var(--ca-on-var);text-transform:uppercase;letter-spacing:.4px">{{ t.cBubbles }}</div>
+        <div style="align-self:flex-end;background:var(--ca-primary-c);color:var(--ca-on-primary-c);border-radius:16px 16px 4px 16px;padding:9px 13px;font-size:12px">{{ t.userBubble }}</div>
+        <div style="align-self:flex-start;background:var(--ca-surface-c);border-radius:4px 16px 16px 16px;padding:9px 13px;font-size:12px">{{ t.asstBubble }}</div>
+        <div style="align-self:flex-start;background:var(--ca-surface-c);border-radius:16px;padding:11px 14px;display:flex;gap:5px"><span style="width:6px;height:6px;border-radius:50%;background:var(--ca-on-var);animation:cablink 1.2s infinite"></span><span style="width:6px;height:6px;border-radius:50%;background:var(--ca-on-var);animation:cablink 1.2s infinite .2s"></span><span style="width:6px;height:6px;border-radius:50%;background:var(--ca-on-var);animation:cablink 1.2s infinite .4s"></span></div>
+      </div>
+
+      <!-- Cards & elevation -->
+      <div style="{{ card }}background:var(--ca-bg);padding:18px;width:300px;display:flex;flex-direction:column;gap:12px">
+        <div style="font-size:13px;font-weight:700;color:var(--ca-on-var);text-transform:uppercase;letter-spacing:.4px">{{ t.cCards }}</div>
+        <div style="{{ card }}padding:14px;display:flex;align-items:center;gap:11px"><div style="width:38px;height:38px;border-radius:11px;background:var(--ca-secondary-c);display:flex;align-items:center;justify-content:center"><span class="msy msf" style="font-size:20px;color:var(--ca-primary)">sports_tennis</span></div><div style="flex:1"><div style="font-size:13px;font-weight:600">{{ t.cardElev }}</div><div style="font-size:11px;color:var(--ca-on-var)">2 (light) · 4 (dark)</div></div></div>
+      </div>
+
+      <!-- Interaction states -->
+      <div style="{{ card }}background:var(--ca-bg);padding:18px;width:auto;flex:1;min-width:300px;display:flex;flex-direction:column;gap:12px">
+        <div style="font-size:13px;font-weight:700;color:var(--ca-on-var);text-transform:uppercase;letter-spacing:.4px">{{ t.cNotes }}</div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <div style="display:flex;align-items:center;gap:7px;background:var(--ca-surface-c);border-radius:10px;padding:9px 13px;font-size:12px;font-weight:600"><span class="msy" style="font-size:17px;color:var(--ca-primary)">check_circle</span>{{ t.stDefault }}</div>
+          <div style="display:flex;align-items:center;gap:7px;background:var(--ca-surface-c);border-radius:10px;padding:9px 13px;font-size:12px;font-weight:600"><span class="msy" style="font-size:17px;color:var(--ca-on-var);animation:caspin 1.4s linear infinite">progress_activity</span>{{ t.stLoading }}</div>
+          <div style="display:flex;align-items:center;gap:7px;background:var(--ca-surface-c);border-radius:10px;padding:9px 13px;font-size:12px;font-weight:600"><span class="msy" style="font-size:17px;color:var(--ca-on-var)">inbox</span>{{ t.stEmpty }}</div>
+          <div style="display:flex;align-items:center;gap:7px;background:var(--ca-error-c);border-radius:10px;padding:9px 13px;font-size:12px;font-weight:600;color:var(--ca-on-error-c)"><span class="msy" style="font-size:17px;color:var(--ca-error)">error</span>{{ t.stError }}</div>
+          <div style="display:flex;align-items:center;gap:7px;background:var(--ca-surface-c);border-radius:10px;padding:9px 13px;font-size:12px;font-weight:600;opacity:.5"><span class="msy" style="font-size:17px;color:var(--ca-on-var)">block</span>{{ t.stDisabled }}</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- APPEND -->
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1400,&quot;height&quot;:900},&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;light&quot;,&quot;tsType&quot;:&quot;'light'|'dark'&quot;},&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;it&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;'en'|'it'&quot;}}">
+const STR = {
+  en: {
+    secA:'A · Auth & Onboarding', secAsub:'Splash, landing, sign-in, registration, profile setup, tutorial.',
+    splashTag:'Own the table.', capSplash:'Splash', capLanding:'Landing', capLogin:'Log in', capReg:'Registration', capSetup:'Profile setup', capTut:'Tutorial — map step',
+    register:'Create account', login:'Log in', landingSub:'Track your ELO, climb the campus ranks, and rule ping pong & foosball at PoliMi.',
+    email:'University email', password:'Password', forgot:'Forgot password?', noAccount:"Don't have an account?",
+    createAccount:'Create account', fullName:'Full name', username:'Username', degree:'Degree program',
+    setupProfile:'Set up profile', pickAvatar:'Pick an avatar', camera:'Camera access', cameraSub:'Take a profile photo',
+    locationP:'Location access', locationSub:'Find nearby tables', allow:'Allow', continueBtn:'Continue',
+    skip:'Skip', tutTitle:'Find a free table', tutBody:'Green pins are free, red are busy, amber have a queue. Tap a pin for live status.', next:'Next',
+    navHome:'Home', navMap:'Map', navLb:'Ranks', navProfile:'Profile',
+    pingpong:'Ping Pong', foosball:'Foosball', eloLabel:'ELO Rating', campusRank:'Campus rank',
+    play:'Play', playSub:'Scan a table QR to start a match', recent:'Recent matches', viewAll:'View all',
+    pending:'Pending challenge', challengedYou:'challenged you to Ping Pong', accept:'Accept', decline:'Decline',
+    assistant:'Arena Assistant', assistantSub:'Ask about free tables, queues & ELO', askNow:'Ask now',
+    secB:'B · Home / Dashboard', secBsub:'Sport selector, ELO + rank card, Play button, recent matches, challenge banner, assistant entry, tablet split.',
+    capHome:'Home', capHomeTab:'Home — tablet split (≥600dp)', activity:'Activity', thisWeek:'this week',
+    secC:'C · Map & Facilities', secCsub:'Map ↔ list toggle, colour-coded pins, slide-up facility detail with live status, queue, King of the Table & weather.',
+    capMap:'Map view', capList:'List view — by proximity', capDetail:'Facility detail (slide-up)',
+    tMap:'Map', tList:'List', sFree:'Free', sOccupied:'Occupied', sQueued:'Queued', nearby:'Sorted by proximity',
+    joinQueue:'Join Queue', kingTable:'King of the Table', wins:'wins', players:'Players', matchDur:'Match duration',
+    queueLen:'In queue', weather:'Weather', outdoor:'Outdoor', away:'away',
+    disclaimer:'Based on app activity only — the table may be in use by non-app players. Not a reservation.',
+    secD:'D · Leaderboards', secDsub:'Top-100 with highlighted podium, search, filter chips (sport, friends, course rivalry) and empty states.',
+    capLb:'Leaderboard', capLbEmpty:'Empty state — friends filter', lbTitle:'Leaderboards',
+    searchPlayers:'Search players', friends:'Friends', myCourse:'My course',
+    emptyTitle:'No ranked friends yet', emptyBody:'Add friends and play ranked matches — they will show up on this board.', addFriends:'Add friends',
+    secE:'E · Profile & Stats', secEsub:'Header with per-sport ELO, interactive trend chart, stat tiles, fun-stat cards, achievements grid, match history and settings.',
+    capProfile:'Profile & stats', capSettings:'Settings',
+    eloTrend:'ELO trend', statGames:'Games', statWins:'Wins', statLosses:'Losses', statWinRate:'Win rate', statStreak:'Streak', statBest:'Best',
+    blackBeast:'Black Beast', blackBeastSub:'Beats you most', favVictim:'Favorite Victim', favVictimSub:'You beat most',
+    achievements:'Achievements', matchHistory:'Match history', settings:'Settings',
+    setPassword:'Change password', setNotif:'Notifications', setLang:'Language', setPrivacy:'Privacy', setLogout:'Log out', account:'Account', preferences:'Preferences',
+    achFirst:'First Victory', ach5:'5-Win Streak', achGiant:'Giant Slayer', achExplorer:'Explorer', achChampion:'Tournament Champion', achWork:'Workaholic',
+    secF:'F · Active Match Flow', secFsub:'QR scan (+GPS soft-warning), live game, sport-specific score entry, opponent confirmation, animated summary with badge unlock.',
+    capQR:'QR scan', capActive:'Active game', capResult:'Result input', capConfirm:'Opponent confirmation', capSummary:'Match summary',
+    scanTitle:'Scan table QR', scanHint:'Point your camera at the QR code on the table', enterManually:'Enter code manually',
+    gpsWarn:'You seem far from this table — check-in still allowed', vs:'VS', recordResult:'Record result', liveNow:'Live',
+    enterScore:'Enter score', you:'You', opponent:'Opponent', set:'Set', addSet:'Add set', submit:'Submit result',
+    confirmResult:'Confirm result', submittedBy:'Submitted by', confirm:'Confirm', dispute:'Dispute', waitingOpp:'Waiting for opponent to confirm…',
+    matchResult:'Match result', victory:'Victory!', newRankLbl:'New campus rank', badgeUnlocked:'Achievement unlocked', done:'Done',
+    secG:'G · Tournaments', secGsub:'Browser (upcoming/ongoing), create form, detail with organizer controls, live single-elimination bracket with BYE slots and outdoor forecast strip.',
+    capTourB:'Browser', capTourC:'Create form', capTourD:'Detail & standings', capTourBr:'Live bracket',
+    tournaments:'Tournaments', upcoming:'Upcoming', ongoing:'Ongoing', today:'Today', tomorrow:'Tomorrow',
+    sRegistering:'Registering', sSeeded:'Seeded', sActive:'Active', sCompleted:'Completed',
+    createTournament:'Create tournament', tName:'Tournament name', tSport:'Sport', tFacility:'Facility', tMax:'Max participants', tDeadline:'Registration deadline', tSchedule:'Scheduled time', createBtn:'Create',
+    participants:'Participants', standings:'Standings', organizerCtrl:'Organizer controls', advance:'Advance slot', forfeit:'Mark forfeit', viewBtn:'View', bracketT:'Bracket', bye:'BYE', forecast:'Forecast',
+    quarters:'Quarterfinals', semis:'Semifinals', finalR:'Final', registerBtn:'Register',
+    secH:'H · Arena Assistant (AI chat)', secHsub:'Full-screen chat: first-open greeting + info banner + suggestion chips, rich availability & tournament cards, typing indicator, error & offline states.',
+    capAsstFirst:'First-open state', capAsstChat:'Rich answer cards', capAsstError:'Error & offline state',
+    asstTitle:'Arena Assistant',
+    asstGreeting:"Hi! I'm your Arena Assistant. Ask me about free tables, queues, tournaments, or how ELO works.",
+    asstBanner:"Availability shows CampusArena activity only. A table marked as empty may still be in use by people who aren't playing through the app. CampusArena is not a booking service — spots can't be reserved.",
+    chip1:'What tables are empty?', chip2:'Tournaments today', chip3:'How does ELO work?', chip4:'Where am I in the queue?',
+    inputPh:'Ask the assistant…', openMap:'Open Map', clearChat:'Clear chat',
+    asstAvailAns:'Here are the ping pong tables with the most availability right now:',
+    asstTourAns:'One tournament is happening today:',
+    errBubble:"I couldn't reach the assistant — showing basic answers.", retry:'Retry', limitedMode:'Limited mode — offline',
+    secComp:'Component Sheet', secCompSub:'Core Material 3 building blocks used across every screen, in the current theme & language.',
+    cButtons:'Buttons', cChips:'Chips & filters', cStatus:'Status colour language', cCards:'Cards & elevation', cBanners:'Banners', cBubbles:'Chat bubbles', cNotes:'Interaction states',
+    bFilled:'Filled', bTonal:'Tonal', bText:'Text', bDestr:'Destructive', bDisabled:'Disabled',
+    stDefault:'Default', stLoading:'Loading', stEmpty:'Empty', stError:'Error', stDisabled:'Disabled',
+    cardElev:'Card · 12dp radius · elevation', userBubble:'User', asstBubble:'Assistant', typing:'Typing',
+  },
+  it: {
+    secA:'A · Accesso e Onboarding', secAsub:'Splash, landing, accesso, registrazione, configurazione profilo, tutorial.',
+    splashTag:'Domina il tavolo.', capSplash:'Splash', capLanding:'Landing', capLogin:'Accesso', capReg:'Registrazione', capSetup:'Configura profilo', capTut:'Tutorial — passo mappa',
+    register:'Crea account', login:'Accedi', landingSub:'Traccia il tuo ELO, scala la classifica del campus e domina a ping pong e calcbalilla al PoliMi.',
+    email:'Email universitaria', password:'Password', forgot:'Password dimenticata?', noAccount:'Non hai un account?',
+    createAccount:'Crea account', fullName:'Nome completo', username:'Username', degree:'Corso di laurea',
+    setupProfile:'Configura profilo', pickAvatar:'Scegli un avatar', camera:'Accesso fotocamera', cameraSub:'Scatta una foto profilo',
+    locationP:'Accesso posizione', locationSub:'Trova i tavoli vicini', allow:'Consenti', continueBtn:'Continua',
+    skip:'Salta', tutTitle:'Trova un tavolo libero', tutBody:'I pin verdi sono liberi, i rossi occupati, gli ambra in coda. Tocca un pin per lo stato dal vivo.', next:'Avanti',
+    navHome:'Home', navMap:'Mappa', navLb:'Classifiche', navProfile:'Profilo',
+    pingpong:'Ping Pong', foosball:'Calciobalilla', eloLabel:'Punteggio ELO', campusRank:'Rank campus',
+    play:'Gioca', playSub:'Scansiona il QR di un tavolo per iniziare', recent:'Partite recenti', viewAll:'Vedi tutte',
+    pending:'Sfida in sospeso', challengedYou:'ti ha sfidato a Ping Pong', accept:'Accetta', decline:'Rifiuta',
+    assistant:'Arena Assistant', assistantSub:'Chiedi di tavoli liberi, code ed ELO', askNow:'Chiedi ora',
+    secB:'B · Home / Dashboard', secBsub:'Selettore sport, card ELO + rank, pulsante Gioca, partite recenti, banner sfida, assistente, split tablet.',
+    capHome:'Home', capHomeTab:'Home — split tablet (≥600dp)', activity:'Attività', thisWeek:'questa settimana',
+    secC:'C · Mappa e Strutture', secCsub:'Toggle mappa ↔ lista, pin colorati, card struttura a scomparsa con stato live, coda, Re del Tavolo e meteo.',
+    capMap:'Vista mappa', capList:'Vista lista — per vicinanza', capDetail:'Dettaglio struttura',
+    tMap:'Mappa', tList:'Lista', sFree:'Libero', sOccupied:'Occupato', sQueued:'In coda', nearby:'Ordinati per vicinanza',
+    joinQueue:'Entra in coda', kingTable:'Re del Tavolo', wins:'vittorie', players:'Giocatori', matchDur:'Durata partita',
+    queueLen:'In coda', weather:'Meteo', outdoor:'Esterno', away:'di distanza',
+    disclaimer:"Basato solo sull'attività dell'app — il tavolo potrebbe essere usato da giocatori non iscritti. Non è una prenotazione.",
+    secD:'D · Classifiche', secDsub:'Top-100 con podio evidenziato, ricerca, chip filtro (sport, amici, rivalità corso) e stati vuoti.',
+    capLb:'Classifica', capLbEmpty:'Stato vuoto — filtro amici', lbTitle:'Classifiche',
+    searchPlayers:'Cerca giocatori', friends:'Amici', myCourse:'Il mio corso',
+    emptyTitle:'Ancora nessun amico in classifica', emptyBody:'Aggiungi amici e gioca partite ranked — appariranno qui.', addFriends:'Aggiungi amici',
+    secE:'E · Profilo e Statistiche', secEsub:'Header con ELO per sport, grafico andamento, tile statistiche, card curiose, griglia obiettivi, cronologia e impostazioni.',
+    capProfile:'Profilo e statistiche', capSettings:'Impostazioni',
+    eloTrend:'Andamento ELO', statGames:'Partite', statWins:'Vittorie', statLosses:'Sconfitte', statWinRate:'% Vittorie', statStreak:'Serie', statBest:'Record',
+    blackBeast:'Bestia Nera', blackBeastSub:'Ti batte di più', favVictim:'Vittima Preferita', favVictimSub:'Batti di più',
+    achievements:'Obiettivi', matchHistory:'Cronologia partite', settings:'Impostazioni',
+    setPassword:'Cambia password', setNotif:'Notifiche', setLang:'Lingua', setPrivacy:'Privacy', setLogout:'Esci', account:'Account', preferences:'Preferenze',
+    achFirst:'Prima Vittoria', ach5:'Serie da 5', achGiant:'Ammazza Giganti', achExplorer:'Esploratore', achChampion:'Campione Torneo', achWork:'Instancabile',
+    secF:'F · Flusso Partita', secFsub:'Scan QR (+avviso GPS), partita live, inserimento punteggio per sport, conferma avversario, riepilogo animato con sblocco badge.',
+    capQR:'Scan QR', capActive:'Partita in corso', capResult:'Inserimento punteggio', capConfirm:'Conferma avversario', capSummary:'Riepilogo partita',
+    scanTitle:'Scansiona QR tavolo', scanHint:'Inquadra il codice QR sul tavolo', enterManually:'Inserisci codice manualmente',
+    gpsWarn:'Sembri lontano da questo tavolo — check-in comunque consentito', vs:'VS', recordResult:'Registra risultato', liveNow:'Live',
+    enterScore:'Inserisci punteggio', you:'Tu', opponent:'Avversario', set:'Set', addSet:'Aggiungi set', submit:'Invia risultato',
+    confirmResult:'Conferma risultato', submittedBy:'Inviato da', confirm:'Conferma', dispute:'Contesta', waitingOpp:"In attesa della conferma dell'avversario…",
+    matchResult:'Risultato partita', victory:'Vittoria!', newRankLbl:'Nuovo rank campus', badgeUnlocked:'Obiettivo sbloccato', done:'Fatto',
+    secG:'G · Tornei', secGsub:'Browser (prossimi/in corso), form creazione, dettaglio con controlli organizzatore, tabellone a eliminazione con slot BYE e striscia meteo per esterni.',
+    capTourB:'Browser', capTourC:'Form creazione', capTourD:'Dettaglio e classifica', capTourBr:'Tabellone live',
+    tournaments:'Tornei', upcoming:'Prossimi', ongoing:'In corso', today:'Oggi', tomorrow:'Domani',
+    sRegistering:'Iscrizioni', sSeeded:'Sorteggiato', sActive:'In corso', sCompleted:'Concluso',
+    createTournament:'Crea torneo', tName:'Nome torneo', tSport:'Sport', tFacility:'Struttura', tMax:'Max partecipanti', tDeadline:'Scadenza iscrizioni', tSchedule:'Orario previsto', createBtn:'Crea',
+    participants:'Partecipanti', standings:'Classifica', organizerCtrl:'Controlli organizzatore', advance:'Avanza slot', forfeit:'Segna forfait', viewBtn:'Vedi', bracketT:'Tabellone', bye:'BYE', forecast:'Previsioni',
+    quarters:'Quarti', semis:'Semifinali', finalR:'Finale', registerBtn:'Iscriviti',
+    secH:'H · Arena Assistant (chat AI)', secHsub:'Chat a schermo intero: saluto iniziale + banner info + chip suggerimenti, card disponibilità e tornei, indicatore digitazione, stati errore e offline.',
+    capAsstFirst:'Stato iniziale', capAsstChat:'Card risposte', capAsstError:'Stato errore e offline',
+    asstTitle:'Arena Assistant',
+    asstGreeting:"Ciao! Sono il tuo Arena Assistant. Chiedimi di tavoli liberi, code, tornei o come funziona l'ELO.",
+    asstBanner:"La disponibilità mostra solo l'attività di CampusArena. Un tavolo segnato come vuoto potrebbe essere in uso da persone che non giocano tramite l'app. CampusArena non è un servizio di prenotazione — i posti non possono essere riservati.",
+    chip1:'Quali tavoli sono liberi?', chip2:'Tornei oggi', chip3:"Come funziona l'ELO?", chip4:'A che punto sono in coda?',
+    inputPh:"Chiedi all'assistente…", openMap:'Apri mappa', clearChat:'Cancella chat',
+    asstAvailAns:'Ecco i tavoli da ping pong con più disponibilità in questo momento:',
+    asstTourAns:'Oggi si gioca un torneo:',
+    errBubble:"Non riesco a contattare l'assistente — mostro risposte di base.", retry:'Riprova', limitedMode:'Modalità limitata — offline',
+    secComp:'Libreria Componenti', secCompSub:'Blocchi Material 3 usati in tutte le schermate, nel tema e lingua correnti.',
+    cButtons:'Pulsanti', cChips:'Chip e filtri', cStatus:'Codice colore stato', cCards:'Card ed elevazione', cBanners:'Banner', cBubbles:'Bolle chat', cNotes:'Stati interazione',
+    bFilled:'Filled', bTonal:'Tonal', bText:'Text', bDestr:'Distruttivo', bDisabled:'Disabilitato',
+    stDefault:'Default', stLoading:'Caricamento', stEmpty:'Vuoto', stError:'Errore', stDisabled:'Disabilitato',
+    cardElev:'Card · raggio 12dp · elevazione', userBubble:'Utente', asstBubble:'Assistente', typing:'Digitando',
+  }
+};
+
+const LIGHT = {
+  '--ca-canvas':'#E6EAE7','--ca-toolbar':'rgba(240,244,241,.82)','--ca-bg':'#FBFDF9','--ca-surface':'#FFFFFF',
+  '--ca-surface-c':'#EEF2ED','--ca-surface-ch':'#E4E9E4','--ca-on':'#191C1A','--ca-on-var':'#414942',
+  '--ca-outline':'#C6CCC5','--ca-primary':'#006C4C','--ca-on-primary':'#FFFFFF','--ca-primary-c':'#8FF7C6',
+  '--ca-on-primary-c':'#00201400','--ca-on-primary-c':'#002014','--ca-secondary-c':'#CFE9D9','--ca-on-secondary-c':'#0A1F17',
+  '--ca-error':'#BA1A1A','--ca-error-c':'#FFDAD6','--ca-on-error-c':'#410002',
+  '--ca-free':'#00A86B','--ca-occupied':'#E53935','--ca-queued':'#F5A400',
+  '--ca-elev':'0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.08)','--ca-elev-hi':'0 4px 14px rgba(0,0,0,.14)',
+  '--ca-frame-sh':'0 12px 32px rgba(0,0,0,.16)',
+};
+const DARK = {
+  '--ca-canvas':'#0A0B0A','--ca-toolbar':'rgba(24,26,25,.82)','--ca-bg':'#121212','--ca-surface':'#1E1E1E',
+  '--ca-surface-c':'#242624','--ca-surface-ch':'#2C2E2C','--ca-on':'#E2E3DE','--ca-on-var':'#BFC9C1',
+  '--ca-outline':'#3B403C','--ca-primary':'#57DBA6','--ca-on-primary':'#00391F','--ca-primary-c':'#00513A',
+  '--ca-on-primary-c':'#73F8C1','--ca-secondary-c':'#334B3F','--ca-on-secondary-c':'#CFE9D9',
+  '--ca-error':'#FFB4AB','--ca-error-c':'#93000A','--ca-on-error-c':'#FFDAD6',
+  '--ca-free':'#22C48A','--ca-occupied':'#FF6B66','--ca-queued':'#FFC24D',
+  '--ca-elev':'0 2px 6px rgba(0,0,0,.5)','--ca-elev-hi':'0 6px 18px rgba(0,0,0,.6)',
+  '--ca-frame-sh':'0 12px 34px rgba(0,0,0,.6)',
+};
+
+class Component extends DCLogic {
+  state = { theme: this.props.theme || 'light', lang: this.props.lang || 'en' };
+
+  seg(active){
+    return `display:flex;align-items:center;gap:5px;border:none;cursor:pointer;font-family:inherit;font-size:12px;font-weight:600;padding:7px 13px;border-radius:999px;transition:.15s;`+
+      (active? 'background:var(--ca-primary);color:var(--ca-on-primary)' : 'background:transparent;color:var(--ca-on-var)');
+  }
+
+  renderVals(){
+    const { theme, lang } = this.state;
+    const tok = theme==='dark'?DARK:LIGHT;
+    const rootStyle = Object.entries(tok).map(([k,v])=>`${k}:${v}`).join(';')+';';
+    const t = STR[lang];
+
+    const frame = "position:relative;width:300px;height:640px;background:var(--ca-bg);border-radius:30px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--ca-frame-sh);border:1px solid var(--ca-outline);";
+    const statusbar = "height:30px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-size:12px;font-weight:600;color:#fff;";
+    const statusbarLite = "height:30px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-size:12px;font-weight:600;color:var(--ca-on);";
+    const appbar = "height:52px;flex-shrink:0;display:flex;align-items:center;padding:0 18px;gap:8px;color:var(--ca-on);";
+    const cap = "font-size:12px;color:var(--ca-on-var);text-align:center;font-weight:500;max-width:300px;";
+    const btnFilled = "width:100%;min-height:48px;border:none;border-radius:12px;background:var(--ca-primary);color:var(--ca-on-primary);font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;margin-top:4px;";
+    const btnOutlined = "width:100%;min-height:48px;border:1.5px solid var(--ca-primary);border-radius:12px;background:transparent;color:var(--ca-primary);font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;margin-top:10px;";
+    const tf = "display:flex;align-items:center;gap:12px;background:var(--ca-surface-c);border-radius:12px;padding:12px 14px;border:1px solid var(--ca-outline);";
+    const tfSm = "background:var(--ca-surface-c);border-radius:12px;padding:9px 14px;border:1px solid var(--ca-outline);";
+    const tfLabel = "font-size:11px;color:var(--ca-primary);font-weight:500;";
+    const tfVal = "font-size:14px;color:var(--ca-on);margin-top:1px;";
+    const permCard = "display:flex;align-items:center;gap:12px;background:var(--ca-surface-c);border-radius:12px;padding:12px 14px;";
+    const chipTonal = "background:var(--ca-primary-c);color:var(--ca-on-primary-c);font-size:12px;font-weight:600;padding:6px 14px;border-radius:999px;";
+
+    const av=(bg,fg,icon,ring)=>({bg,fg,icon,ring:ring||'none'});
+    const avatars = [
+      av('var(--ca-free)','#fff','sports_tennis','3px solid var(--ca-primary)'),
+      av('#7C4DFF33','#7C4DFF','sports_soccer'), av('#FF6D0033','#FF6D00','bolt'),
+      av('#00B8D433','#00B8D4','rocket_launch'), av('#E5393533','#E53935','local_fire_department'),
+      av('#43A04733','#43A047','pets'), av('#8D6E6333','#8D6E63','psychology'),
+      av('#3949AB33','#3949AB','military_tech'),
+    ];
+
+    const card = "flex-shrink:0;background:var(--ca-surface);border-radius:12px;box-shadow:var(--ca-elev);border:1px solid var(--ca-outline);";
+    const body = "flex:1;overflow:hidden;display:flex;flex-direction:column;";
+    const scroll = "flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:14px;";
+    const navBar = "flex-shrink:0;height:64px;display:flex;background:var(--ca-surface-c);border-top:1px solid var(--ca-outline);";
+    const appbarC = "height:52px;flex-shrink:0;display:flex;align-items:center;justify-content:center;position:relative;color:var(--ca-on);font-weight:500;font-size:16px;";
+    const fabPrimary = "flex-shrink:0;width:100%;min-height:56px;border:none;border-radius:16px;background:var(--ca-primary);color:var(--ca-on-primary);font-family:inherit;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-size:16px;box-shadow:var(--ca-elev-hi);";
+
+    const recentMatches = [
+      { opp:'L. Bianchi', ini:'LB', bg:'#7C4DFF', score:'3–1', delta:'+14', win:true },
+      { opp:'G. Verdi', ini:'GV', bg:'#FF6D00', score:'2–3', delta:'−11', win:false },
+      { opp:'A. Neri', ini:'AN', bg:'#00B8D4', score:'3–0', delta:'+9', win:true },
+      { opp:'F. Colombo', ini:'FC', bg:'#43A047', score:'3–2', delta:'+8', win:true },
+      { opp:'S. Romano', ini:'SR', bg:'#E53935', score:'1–3', delta:'−13', win:false },
+    ].map(m=>({ ...m, deltaColor: m.win?'var(--ca-free)':'var(--ca-occupied)' }));
+
+    const stColor = { free:'var(--ca-free)', occupied:'var(--ca-occupied)', queued:'var(--ca-queued)' };
+    const stLabel = { free:t.sFree, occupied:t.sOccupied, queued:t.sQueued };
+    const facilitiesRaw = [
+      { name:'Table 1 — BL27', sport:'sports_tennis', status:'free', dist:'40 m', queue:0, outdoor:false },
+      { name:'Table 3 — BL27', sport:'sports_tennis', status:'occupied', dist:'40 m', queue:2, outdoor:false, players:'2', dur:'12 min', king:{ini:'GF',name:'G. Ferrari',wins:24,bg:'#7C4DFF'} },
+      { name:'Foosball — L26', sport:'sports_soccer', status:'queued', dist:'85 m', queue:3, outdoor:false, players:'4', dur:'6 min', king:{ini:'DR',name:'D. Rizzo',wins:17,bg:'#FF6D00'} },
+      { name:'Table 2 — Bovisa Yard', sport:'sports_tennis', status:'free', dist:'120 m', queue:0, outdoor:true, weather:{temp:'19°',precip:'0 mm',wind:'8 km/h',icon:'wb_sunny'} },
+      { name:'Foosball — Cabassi', sport:'sports_soccer', status:'occupied', dist:'160 m', queue:1, outdoor:true, players:'4', dur:'3 min', king:{ini:'LM',name:'L. Moretti',wins:11,bg:'#00B8D4'}, weather:{temp:'18°',precip:'0 mm',wind:'12 km/h',icon:'wb_cloudy'} },
+    ];
+    const facilities = facilitiesRaw.map(f=>({ ...f, color:stColor[f.status], label:stLabel[f.status], queueTxt: f.queue>0 ? (f.queue+' '+t.queueLen) : '—' }));
+    const detail = { name:'Table 2 — Bovisa Yard', sport:'sports_tennis', status:'occupied', color:stColor.occupied, label:stLabel.occupied,
+      players:'2', dur:'12 min', queue:2, outdoor:true, king:{ini:'GF',name:'G. Ferrari',wins:24,bg:'#7C4DFF'},
+      weather:{temp:'19°',precip:'0 mm',wind:'8 km/h',icon:'wb_sunny'} };
+    const pins = [
+      { top:'28%', left:'22%', status:'free' }, { top:'44%', left:'58%', status:'occupied' },
+      { top:'62%', left:'34%', status:'queued' }, { top:'34%', left:'74%', status:'free' },
+      { top:'70%', left:'68%', status:'occupied' },
+    ].map(p=>({ ...p, color:stColor[p.status] }));
+
+    const medal = ['#F4B400','#B0BEC5','#CD7F32'];
+    const lbRaw = [
+      { name:'A. Esposito', ini:'AE', bg:'#7C4DFF', degree:'Ing. Informatica', elo:1687 },
+      { name:'C. Ricci', ini:'CR', bg:'#00B8D4', degree:'Design', elo:1642 },
+      { name:'M. Gallo', ini:'MG', bg:'#FF6D00', degree:'Ing. Meccanica', elo:1610 },
+      { name:'S. Conti', ini:'SC', bg:'#43A047', degree:'Architettura', elo:1588 },
+      { name:'F. De Luca', ini:'FD', bg:'#E5395', degree:'Ing. Gestionale', elo:1571 },
+      { name:'G. Marino', ini:'GM', bg:'#8D6E63', degree:'Fisica', elo:1559 },
+      { name:'V. Greco', ini:'VG', bg:'#3949AB', degree:'Ing. Informatica', elo:1544 },
+    ];
+    const leaderboard = lbRaw.map((p,i)=>({ ...p, rank:i+1, top3:i<3, notTop3:i>=3, medalColor:i<3?medal[i]:'transparent', rowBg:i<3?'var(--ca-secondary-c)':'var(--ca-surface)' }));
+    const myRank = { name:'M. Rossi', ini:'MR', bg:'#00A86B', degree:'Ing. Informatica', elo:1482, rank:12 };
+    const podium = [
+      { ...lbRaw[1], rank:2, medalColor:'#B6BEC8', barH:'54px', avSize:'58px', crown:false, order:1 },
+      { ...lbRaw[0], rank:1, medalColor:'#F4B400', barH:'78px', avSize:'70px', crown:true,  order:2 },
+      { ...lbRaw[2], rank:3, medalColor:'#CD7F32', barH:'40px', avSize:'52px', crown:false, order:3 },
+    ];
+    const lbRest = lbRaw.slice(3).map((p,i)=>({ ...p, rank:i+4 }));
+
+    // ELO trend chart
+    const series = [1402,1388,1425,1410,1455,1440,1468,1452,1482];
+    const cw=264, ch=92, pad=6;
+    const mn=Math.min(...series), mx=Math.max(...series);
+    const pts = series.map((v,i)=>{ const x=pad+i*(cw-2*pad)/(series.length-1); const y=pad+(ch-2*pad)*(1-(v-mn)/(mx-mn||1)); return [x,y]; });
+    const chartLine = pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+    const chartArea = `M${pts[0][0].toFixed(1)},${ch} `+pts.map(p=>'L'+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ')+` L${pts[pts.length-1][0].toFixed(1)},${ch} Z`;
+    const lastPt = pts[pts.length-1];
+
+    const stats = [
+      { label:t.statGames, val:'87', icon:'stadia_controller', color:'var(--ca-on)' },
+      { label:t.statWins, val:'58', icon:'emoji_events', color:'var(--ca-free)' },
+      { label:t.statLosses, val:'29', icon:'do_not_disturb_on', color:'var(--ca-occupied)' },
+      { label:t.statWinRate, val:'67%', icon:'percent', color:'var(--ca-primary)' },
+      { label:t.statStreak, val:'4', icon:'local_fire_department', color:'var(--ca-queued)' },
+      { label:t.statBest, val:'9', icon:'military_tech', color:'var(--ca-on)' },
+    ];
+    const achievements = [
+      { name:t.achFirst, icon:'emoji_events', on:true }, { name:t.ach5, icon:'local_fire_department', on:true },
+      { name:t.achGiant, icon:'bolt', on:true }, { name:t.achExplorer, icon:'explore', on:false },
+      { name:t.achChampion, icon:'workspace_premium', on:false }, { name:t.achWork, icon:'fitness_center', on:true },
+    ].map(a=>({ ...a, tileBg:a.on?'var(--ca-secondary-c)':'var(--ca-surface-c)', iconColor:a.on?'var(--ca-primary)':'var(--ca-outline)', nameColor:a.on?'var(--ca-on)':'var(--ca-on-var)', op:a.on?'1':'0.55' }));
+    const eloChips = [ { s:'sports_tennis', label:t.pingpong, elo:1482, on:true }, { s:'sports_soccer', label:t.foosball, elo:1305, on:false } ];
+    const pill=a=> a? 'background:var(--ca-primary);color:var(--ca-on-primary);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600' : 'color:var(--ca-on-var);padding:4px 12px;font-size:12px;font-weight:600';
+    const me = { name:'Mario Rossi', ini:'MR', bg:'#00A86B', elo:1482 };
+    const opp = { name:'L. Bianchi', ini:'LB', bg:'#7C4DFF', elo:1468 };
+    const sets = [ {n:1, a:11, b:8}, {n:2, a:9, b:11}, {n:3, a:11, b:6} ];
+
+    const tstColor = { registering:'var(--ca-free)', seeded:'#7C4DFF', active:'var(--ca-queued)', completed:'var(--ca-on-var)' };
+    const tstLabel = { registering:t.sRegistering, seeded:t.sSeeded, active:t.sActive, completed:t.sCompleted };
+    const toursRaw = [
+      { name:'Friday Night Smash', sport:'sports_tennis', time:t.today+' · 18:00', p:12, max:16, status:'registering', outdoor:false, group:'up' },
+      { name:'Bovisa Open', sport:'sports_tennis', time:t.tomorrow+' · 15:00', p:6, max:16, status:'registering', outdoor:true, group:'up' },
+      { name:'Foosball Cup', sport:'sports_soccer', time:t.today+' · 16:30', p:8, max:8, status:'active', outdoor:false, group:'on' },
+      { name:'Aula Masters', sport:'sports_tennis', time:t.today+' · 12:00', p:8, max:8, status:'active', outdoor:false, group:'on' },
+    ];
+    const tours = toursRaw.map(x=>({ ...x, color:tstColor[x.status], label:tstLabel[x.status], pmax:x.p+'/'+x.max, pct:Math.round(x.p/x.max*100)+'%' }));
+    const toursUp = tours.filter(x=>x.group==='up');
+    const toursOn = tours.filter(x=>x.group==='on');
+
+    const M=(tn,tw,bn,bw,bye)=>({ topN:tn, topWin:tw, botN:bn, botWin:bw, bye:!!bye,
+      topStyle:tw?'font-weight:700;color:var(--ca-primary)':'font-weight:500;color:var(--ca-on)',
+      botStyle:bye?'font-weight:500;color:var(--ca-on-var);font-style:italic':(bw?'font-weight:700;color:var(--ca-primary)':'font-weight:500;color:var(--ca-on)') });
+    const qf = [ M('A. Esposito',true,t.bye,false,true), M('S. Conti',true,'G. Marino',false), M('M. Gallo',false,'V. Greco',true), M('C. Ricci',false,'M. Rossi',true) ];
+    const sf = [ M('A. Esposito',true,'S. Conti',false), M('V. Greco',false,'M. Rossi',true) ];
+    const fn = [ M('A. Esposito',false,'M. Rossi',false) ];
+    const forecastHrs = [ {h:'15:00',i:'wb_sunny',t:'19°'}, {h:'16:00',i:'wb_sunny',t:'18°'}, {h:'17:00',i:'partly_cloudy_day',t:'17°'}, {h:'18:00',i:'wb_cloudy',t:'16°'} ];
+    const navTabs = [
+      { icon:'home', label:t.navHome, active:true },
+      { icon:'map', label:t.navMap, active:false },
+      { icon:'leaderboard', label:t.navLb, active:false },
+      { icon:'person', label:t.navProfile, active:false },
+    ];
+
+    return {
+      rootStyle, t, card, body, scroll, navBar, appbarC, fabPrimary, recentMatches, navTabs,
+      setLight:()=>this.setState({theme:'light'}), setDark:()=>this.setState({theme:'dark'}),
+      setEn:()=>this.setState({lang:'en'}), setIt:()=>this.setState({lang:'it'}),
+      segLight:this.seg(theme==='light'), segDark:this.seg(theme==='dark'),
+      segEn:this.seg(lang==='en'), segIt:this.seg(lang==='it'),
+      frame, statusbar, statusbarLite, appbar, cap, btnFilled, btnOutlined,
+      tf, tfSm, tfLabel, tfVal, permCard, chipTonal, avatars,
+      facilities, detail, pins, leaderboard, myRank, podium, lbRest,
+      chartLine, chartArea, cw, ch, lastX:lastPt[0].toFixed(1), lastY:lastPt[1].toFixed(1), stats, achievements, eloChips,
+      langEnPill:pill(lang==='en'), langItPill:pill(lang==='it'), me, opp, sets,
+      toursUp, toursOn, qf, sf, fn, forecastHrs,
+      asstChips:[t.chip1,t.chip2,t.chip3,t.chip4], availList:facilities.slice(0,3), tourCard:tours[0],
+    };
+  }
+}
+</script>
+</body>
+</html>

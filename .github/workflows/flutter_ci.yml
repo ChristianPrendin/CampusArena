@@ -1,0 +1,83 @@
+name: Flutter CI
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+  push:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    name: Unit Tests & Coverage
+    runs-on: ubuntu-latest
+    
+    # Add 'contents: read' so checkout@v4 can access your private repository
+    # Required for the coverage report action to comment on Pull Requests
+    permissions:
+      contents: read
+      pull-requests: write
+    
+    defaults:
+      run:
+        working-directory: ./app
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Verify Formatting
+        run: dart format --set-exit-if-changed .
+
+      - name: Static Analysis
+        run: flutter analyze --fatal-infos --fatal-warnings
+
+      - name: Run Tests with Coverage
+        # Generates ./app/coverage/lcov.info
+        run: flutter test --coverage
+
+      - name: Filter Generated Files from Coverage
+        # l10n string tables and firebase_options are machine-generated
+        # (flutter gen-l10n / FlutterFire) — exclude them so the reported
+        # metric reflects hand-written code only.
+        run: |
+          sudo apt-get update && sudo apt-get install -y lcov
+          lcov --remove coverage/lcov.info \
+            'lib/l10n/*' '*firebase_options.dart' \
+            --ignore-errors unused,empty -o coverage/lcov.info
+
+      - name: Coverage Summary
+        # Renders the totals into the Actions run summary — no third-party
+        # dependency, always available under the job's Summary tab.
+        run: |
+          {
+            echo "### Test coverage (generated l10n/firebase excluded)"
+            echo '```'
+            lcov --summary coverage/lcov.info --ignore-errors empty,unused 2>&1 \
+              | grep -E 'lines|functions' || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Coverage Report
+        # Human-readable lcov report posted directly to the PR.
+        # NB: `uses:` steps ignore defaults.run.working-directory, 
+        # so this path points explicitly from the repository root.
+        uses: zgosalvez/github-actions-report-lcov@v4
+        with:
+          coverage-files: ./app/coverage/lcov.info
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          working-directory: ./app
+
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: app/coverage/lcov.info

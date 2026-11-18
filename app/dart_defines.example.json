@@ -1,0 +1,9 @@
+{
+  "_comment": "Copy this file to dart_defines.json and fill in ASSISTANT_API_KEY. dart_defines.json is gitignored and must never be committed.",
+  "_providers": "One of: regolo | openai | openrouter | anthropic | gemini",
+  "_models": "Leave ASSISTANT_MODEL empty to use the provider's default (regolo -> qwen3.5-122b)",
+
+  "ASSISTANT_PROVIDER": "regolo",
+  "ASSISTANT_API_KEY": "",
+  "ASSISTANT_MODEL": "qwen3.5-122b"
+}
